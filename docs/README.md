@@ -62,4 +62,4 @@ the API.
 - [ ] Team members
 - [ ] Infinite Scroll
 
-[live]: http://www.herokuapp.com
+[live]: http://www.raymondlee.io/
