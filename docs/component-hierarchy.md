@@ -12,7 +12,7 @@
   * IntroTimer
   * Logo
 
- **AppContainer**
+**AppContainer**
 - Loading
 - Sidebar
 
