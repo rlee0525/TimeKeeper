@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+html, body, main {
+  height: 100%;
+  margin: 0;
+}
+
+.home {
+  height: 100%;
+  background-image: url("http://res.cloudinary.com/rlee0525/image/upload/o_70/v1484000163/gpnovprp0s8-saksham-gangwar_mdy4kj.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.logo {
+  padding: 20px 0 0 50px;
+}

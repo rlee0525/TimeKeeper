@@ -1,8 +1,9 @@
 import React from 'react';
+import HeadingsContainer from './home/headings_container';
 
 const App = ({ children }) => (
-  <div>
-    <h1>TimeKeeper!</h1>
+  <div className="home">
+    <HeadingsContainer />
     { children }
   </div>
 );
