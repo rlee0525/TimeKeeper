@@ -33,6 +33,7 @@
 **ProjectContainer**
 - ProjectHeadings
 - Project
+  * Tasks
 
 **TeamsContainer**
 - TeamsHeadings
