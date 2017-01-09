@@ -50,16 +50,15 @@ the API.
 
 **Objective:** Timer belongs to Projects that can be created, read, edited and destroyed through the API.
 
-### Phase 4: Tags (1 days)
-
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
-
-### Phase 5: Bar graphs and pie charts in summary page (3 days)
+### Phase 4: Bar graphs and pie charts in Project page (3 days)
 
 **objective:** Allow bar graphs and pie charts implementation in summary page
 
+### Phase 5: Tags (2 days)
+
+**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+
 ### Bonus Features (TBD)
 - [ ] Team members
-- [ ] Infinite Scroll
 
 [live]: http://www.raymondlee.io/
