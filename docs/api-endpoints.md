@@ -34,6 +34,10 @@
 - `POST /api/projects/:project_id/tasks/task_id`
 - `DELETE /api/projects/:project_id/tasks/task_id`
 
+### Teams
+- `GET /api/projects/:project_id/teams`
+- `DELETE /api/projects/:project_id/teams/:team_id`
+
 ### Tags
 
 - A note's tags will be included in the project show template

@@ -25,6 +25,14 @@ author_id   | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 seconds     | integer   |
 
+## teams
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+name        | string    | not null
+image_url   | string    | not null
+project_id  | integer   |
+
 ## tags
 column name | data type | details
 ------------|-----------|-----------------------

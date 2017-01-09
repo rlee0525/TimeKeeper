@@ -21,6 +21,13 @@
           name: "Redux"
         }
       }
+      teams: {
+        1: {
+          id: 1
+          name: "Luke"
+          image_url: "image.com"
+        }
+      }
     }
   },
   tasks: {
@@ -29,6 +36,12 @@
       seconds: 1700,
       author_id: 1,
       project_id: 1
+    }
+  }
+  teams: {
+    1: {
+      name: "Luke",
+      image_url: "image.com"
     }
   }
   tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of notes
