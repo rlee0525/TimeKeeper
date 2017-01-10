@@ -1,11 +1,11 @@
 import React from 'react';
 import HeadingsContainer from './home/headings_container';
-import Home from './home/home';
+import HomeContainer from './home/home_container';
 
 const App = ({ children }) => (
   <div className="home">
     <HeadingsContainer />
-    <Home />
+    <HomeContainer />
     { children }
   </div>
 );
