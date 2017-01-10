@@ -21,7 +21,7 @@ html, body, main {
 
 .home {
   height: 100%;
-  background-image: url("http://res.cloudinary.com/rlee0525/image/upload/o_70/v1484000163/gpnovprp0s8-saksham-gangwar_mdy4kj.jpg");
+  background-image: url("splash.jpg");
   background-size: cover;
   background-position: center;
 }

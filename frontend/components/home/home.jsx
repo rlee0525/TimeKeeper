@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './logo';
-import { Link, hashHistory } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 const personalGreeting = (currentUser, logout) => (
   <hgroup>
@@ -26,7 +26,7 @@ class Home extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    hashHistory.push("/signup");
+    this.props.router.push("/signup");
   }
 
   render() {
@@ -49,4 +49,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default withRouter(Home);
