@@ -21,7 +21,7 @@ html, body, main {
 
 .home {
   height: 100%;
-  background-image: url("splash.jpg");
+  background-image: url("http://res.cloudinary.com/rlee0525/image/upload/o_80/v1484000163/splash.jpg");
   background-size: cover;
   background-position: center;
 }
