@@ -12,11 +12,11 @@ class HomeTimer extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(this.tick, 100);
+    setInterval(this.tick, 1000);
   }
 
   componentWillUnmount() {
-
+    clearInterval(this.tick);
   }
 
   tick() {
@@ -24,19 +24,27 @@ class HomeTimer extends React.Component {
     this.setState({ elapsed: new Date() - start });
   }
 
-  padding(time) {
-    time = time < 10 ? `0${time}` : time;
-    return time;
+  displayTime(time) {
+    let seconds = Math.floor(time / 1000);
+    let minutes;
+
+    if (seconds < 2) {
+      return `${seconds} second`;
+    } else if (seconds < 60) {
+      return `${seconds} seconds`;
+    } else {
+      minutes = Math.floor(seconds / 60);
+      seconds = seconds - (minutes * 60);
+
+      return `${minutes} minutes ${seconds} seconds`;
+    }
   }
 
   render() {
-    let seconds = Math.round(this.state.elapsed / 1000);
-    let minutes = Math.round(seconds / 60);
-    let hours = Math.floor(seconds / 3600);
-
     return (
       <div className="home-timer">
-        Reading TimeKeeper.. {this.padding(hours)}:{this.padding(minutes)}:{this.padding(seconds)}
+        Reading TimeKeeper.. {this.displayTime(this.state.elapsed)}
+        <button>Stop</button>
       </div>
     );
   }
