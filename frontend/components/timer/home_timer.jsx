@@ -93,7 +93,8 @@ class HomeTimer extends React.Component {
             {this.displayTime(this.state.elapsed)}
           </div>
           <button className="timer-button" onClick={this.handleTimerStatus}>
-            <FontAwesome className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'} />
+            <FontAwesome className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'}
+              name='playbutton'/>
           </button>
         </div>
       </div>
