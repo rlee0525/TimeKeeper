@@ -37,10 +37,12 @@ class Home extends React.Component {
           &nbsp; &nbsp; &nbsp;
           IT'S INSANELY SIMPLE.
         </div>
-        <button className="start-tracking-button"
-          onClick={this.handleClick}>
-          Start Tracking!
-        </button>
+        <div className="start-tracking-button">
+          <button
+            onClick={this.handleClick}>
+            Start Tracking!
+          </button>
+        </div>
         <div>
           {this.props.currentUser ? personalGreeting(this.props.currentUser, this.props.logout) : sessionLinks()}
         </div>
