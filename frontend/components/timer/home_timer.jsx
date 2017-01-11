@@ -86,7 +86,7 @@ class HomeTimer extends React.Component {
     return (
       <div className="home-timer">
         <div className="home-timer-text">
-          Reading Timekeeper!
+          Reading TimeKeeper!
         </div>
         <div className="home-display-timer">
           <div className="display-timer-text">
