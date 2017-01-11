@@ -1,0 +1,11 @@
+html, body, main {
+  height: 100%;
+  margin: 0;
+}
+
+.home {
+  height: 100%;
+  background-image: url("http://res.cloudinary.com/rlee0525/image/upload/c_scale,o_80,w_2663/v1484000163/splash.jpg");
+  background-size: cover;
+  background-position: center;
+}

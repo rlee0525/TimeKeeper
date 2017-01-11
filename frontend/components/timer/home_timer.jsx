@@ -1,4 +1,5 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 
 class HomeTimer extends React.Component {
   constructor(props) {
@@ -16,6 +17,10 @@ class HomeTimer extends React.Component {
 
   componentDidMount() {
     setInterval(this.tick, 100);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this);
   }
 
   tick() {
@@ -50,45 +55,47 @@ class HomeTimer extends React.Component {
     let seconds = Math.floor(time / 1000);
     let minutes;
 
-    if (seconds < 2) {
-      return `${seconds} second`;
-    } else if (seconds < 60) {
-      return `${seconds} seconds`;
+    if (seconds < 60) {
+      return `${seconds} sec`;
     } else {
       minutes = Math.floor(seconds / 60);
       seconds = seconds - (minutes * 60);
-      if (minutes < 2) {
-        return `${minutes} minute ${seconds} seconds`;
+
+      if (seconds < 10) {
+        return `${minutes}:0${seconds} min`;
       } else {
-        return `${minutes} minutes ${seconds} seconds`;
+        return `${minutes}:${seconds} min`;
       }
     }
   }
 
-  displayCurrentLocation() {
-    if (window.location.hash === "#/") {
-      return " TimeKeeper! ";
-    } else if (window.location.hash === "#/signup") {
-      return " Signup Page! ";
-    } else if (window.location.hash === "#/login") {
-      return " Login Page! ";
-    }
-  }
+// TODO: delete
+  // displayCurrentLocation() {
+  //   if (window.location.hash === "#/") {
+  //     return " TimeKeeper! ";
+  //   } else if (window.location.hash === "#/signup") {
+  //     return " Signup Page! ";
+  //   } else if (window.location.hash === "#/login") {
+  //     return " Login Page! ";
+  //   }
+  // }
 
   render() {
     let buttonName = this.state.timerStatus === true ? "Stop" : "Start";
 
     return (
-      <div className="home-timer-box">
-        <span className="home-timer-text">
-          Reading {this.displayCurrentLocation()}
-        </span>
-        <span className="home-timer">
-          {this.displayTime(this.state.elapsed)}
-        </span>
-        <button className="timer-button" onClick={this.handleTimerStatus}>
-          { buttonName }
-        </button>
+      <div className="home-timer">
+        <div className="home-timer-text">
+          Reading Timekeeper!
+        </div>
+        <div className="home-display-timer">
+          <div className="display-timer-text">
+            {this.displayTime(this.state.elapsed)}
+          </div>
+          <button className="timer-button" onClick={this.handleTimerStatus}>
+            <FontAwesome className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'} />
+          </button>
+        </div>
       </div>
     );
   }

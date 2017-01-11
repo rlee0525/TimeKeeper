@@ -13,7 +13,9 @@ class Headings extends React.Component {
   render() {
     return (
       <div className="headings">
-        <Logo />
+        <div className="headings-logo">
+          <Logo />
+        </div>
         <HomeTimer start={Date.now()} />
       </div>
     );

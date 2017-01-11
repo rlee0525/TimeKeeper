@@ -1,0 +1,101 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "base/*";
+
+button:hover {
+  opacity: 0.75;
+}
+
+// Home Headings
+
+.headings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headings-logo {
+  display: flex;
+  padding: 40px 0 20px 55px;
+}
+
+.home-timer {
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid #E91E63;
+  width: 500px;
+  height: 50px;
+  background: white;
+  opacity: 0.7;
+  margin-top: 50px;
+  font-size: 18px;
+  font-family: $sans-serif;
+  text-align: left;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.home-timer-text {
+  padding-left: 20px;
+}
+
+.home-display-timer {
+  display: flex;
+}
+
+.display-timer-text {
+  padding-top: 6px;
+}
+
+.timer-button {
+  padding: 0 20px 0 25px;
+  font-size: 30px;
+  color: #E91E63;
+}
+
+// Introduction
+
+.splash {
+  height: 100%
+}
+
+.introduction {
+  margin: auto;
+  position: relative;
+  top: 25%;
+  width: 780px;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  // text-shadow: 1px 1px black;
+  font-family: $sans-serif;
+}
+
+.start-tracking-button {
+  position: absolute;
+  background-color: #E91E63;
+  border-radius: 10px;
+  opacity: 0.85;
+  left: 40%;
+  top: 91.8%;
+  // border: 1px solid black;
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  font-family: $sans-serif;
+  padding: 17px 50px 17px 50px;
+}
