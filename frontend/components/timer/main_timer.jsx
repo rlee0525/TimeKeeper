@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
+import NavigationContainer from '../navigation/navigation_container';
 
 class MainTimer extends React.Component {
   constructor(props) {
@@ -13,10 +14,15 @@ class MainTimer extends React.Component {
   }
 
   render() {
+    const { currentUser } = this.props;
+
     return(
-      <div className="main-timer">
-        <h1>Hello!</h1>
-        <button onClick={this.handleLogout}>Logout</button>
+      <div>
+        <NavigationContainer currentUser={currentUser} />
+        <div className="main-timer">
+          <h1>Hello!</h1>
+          <button onClick={this.handleLogout}>Logout</button>
+        </div>
       </div>
     );
   }

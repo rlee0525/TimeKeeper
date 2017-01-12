@@ -11,7 +11,6 @@
 ### Users
 
 - `POST /api/users`
-- `PATCH /api/users`
 
 ### Session
 

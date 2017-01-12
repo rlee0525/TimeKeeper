@@ -18,7 +18,7 @@ const Root = ({ store }) => {
     <Provider store={ store }>
       <Router history={ hashHistory }>
         <Route path="/" component={ App } />
-        <Route path="/app" component={ TimerContainer } onEnter={_ensureLoggedIn} />
+        <Route path="/timer" component={ TimerContainer } onEnter={_ensureLoggedIn} />
         <Route path="/loading" component={ Loading } />
       </Router>
     </Provider>

@@ -31,7 +31,7 @@ class Home extends React.Component {
 
   redirectIfLoggedIn() {
     if (this.props.currentUser) {
-      this.props.router.push("/app");
+      this.props.router.push("/timer");
     }
   }
 

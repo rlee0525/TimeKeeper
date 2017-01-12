@@ -34,7 +34,7 @@ class SessionForm extends React.Component {
   }
 
   demoLogin() {
-    this.setState({loginPage: true});
+    this.setState({ loginPage: true });
     const that = this;
     let counter = 1;
     let passwordCounter = 1;
