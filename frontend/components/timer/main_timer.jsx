@@ -5,24 +5,18 @@ class MainTimer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
-  componentDidMount() {
-    this.redirectIfLoggedOut();
-  }
-
-  redirectIfLoggedOut() {
-    if (!this.props.currentUser) {
-      this.hashHistory.replace("/");
-    }
+  handleLogout() {
+    (this.props.logout()).then(hashHistory.replace("/"));
   }
 
   render() {
     return(
       <div className="main-timer">
         <h1>Hello!</h1>
-        <button onClick={this.props.logout}>Logout</button>
+        <button onClick={this.handleLogout}>Logout</button>
       </div>
     );
   }
