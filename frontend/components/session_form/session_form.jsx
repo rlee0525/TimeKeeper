@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
-// import injectTapEventPlugin from 'react-tap-event-plugin';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -31,15 +30,6 @@ class SessionForm extends React.Component {
       this.props.signup(user).then(() => this.props.router.push('/loading'));
     }
   }
-
-  // handleDemoLogin(e) {
-  //   e.preventDefault();
-  //   const user = {
-  //     username: "Guest",
-  //     password: "password"
-  //   };
-  //   this.props.login(user).then(() => this.props.router.push('/loading'));
-  // }
 
   demoLogin() {
     this.setState({loginPage: true});

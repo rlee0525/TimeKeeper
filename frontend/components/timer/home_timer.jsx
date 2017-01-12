@@ -69,17 +69,6 @@ class HomeTimer extends React.Component {
     }
   }
 
-// TODO: delete
-  // displayCurrentLocation() {
-  //   if (window.location.hash === "#/") {
-  //     return " TimeKeeper! ";
-  //   } else if (window.location.hash === "#/signup") {
-  //     return " Signup Page! ";
-  //   } else if (window.location.hash === "#/login") {
-  //     return " Login Page! ";
-  //   }
-  // }
-
   render() {
     let buttonName = this.state.timerStatus === true ? "Stop" : "Start";
 
