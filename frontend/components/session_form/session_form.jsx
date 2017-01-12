@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+// import injectTapEventPlugin from 'react-tap-event-plugin';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -11,18 +12,9 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.toggleStatus = this.toggleStatus.bind(this);
   }
-
-  // componentDidUpdate() {
-  //   this.redirectIfLoggedIn();
-  // }
-  //
-  // redirectIfLoggedIn() {
-  //   if (this.props.loggedIn) {
-  //     this.props.router.push("/");
-  //   }
-  // }
 
   update(property) {
     return e => this.setState({
@@ -30,23 +22,56 @@ class SessionForm extends React.Component {
     });
   }
 
-  // navLink() {
-  //   if (this.props.formType === "login") {
-  //     return <Link to="/signup">sign up instead</Link>;
-  //   } else {
-  //     return <Link to="/login">log in instead</Link>;
-  //   }
-  // }
-
-
-// TODO: change redirect
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
     if (this.state.loginPage) {
-      this.props.login(user).then(() => this.redirect('/'));
+      this.props.login(user).then(() => this.props.router.push('/loading'));
     } else {
-      this.props.signup(user).then(() => this.redirect('/'));
+      this.props.signup(user).then(() => this.props.router.push('/loading'));
+    }
+  }
+
+  // handleDemoLogin(e) {
+  //   e.preventDefault();
+  //   const user = {
+  //     username: "Guest",
+  //     password: "password"
+  //   };
+  //   this.props.login(user).then(() => this.props.router.push('/loading'));
+  // }
+
+  demoLogin() {
+    this.setState({loginPage: true});
+    const that = this;
+    let counter = 1;
+    let passwordCounter = 1;
+
+    const username = "WelcomeGuest";
+    const password = "password";
+    const usernameLoop = username.length;
+    const passwordLoop = password.length;
+
+    (function usernameNext() {
+      if (counter++ > usernameLoop) return passwordNext();
+      setTimeout(() => {
+        that.setState({ username: username.slice(0, counter) });
+        usernameNext();
+      }, 70);
+    })();
+
+    function passwordNext() {
+      if (passwordCounter++ > passwordLoop) {
+        return that.props.login({
+          username: that.state.username,
+          password: that.state.password
+        }).then(() => that.props.router.push('/loading'));
+      }
+
+      setTimeout(() => {
+        that.setState({ password: password.slice(0, passwordCounter) });
+        passwordNext();
+      }, 70);
     }
   }
 
@@ -74,29 +99,38 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br />
-          {this.renderErrors()}
+          <div className="error-message">
+            {this.props.errors ? this.renderErrors() : ""}
+          </div>
           <div className="login-form">
-            <label>Username:
-              <input type="text"
-                className="login-input"
-                value={this.state.username}
-                onChange={this.update('username')} />
-            </label>
+            <div className="login-input">
+              <label>
+                <input type="text"
+                  placeholder="Username"
+                  className="login-input-field"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  required />
+              </label>
 
-            <label>Password:
-              <input type="password"
-                className="login-input"
-                value={this.state.password}
-                onChange={this.update('password')} />
-            </label>
+              <label>
+                <input type="password"
+                  placeholder="Password"
+                  className="login-input-field"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  required />
+              </label>
+            </div>
 
-            <button type="submit">{buttonText}</button>
-            <button type="demo">DEMO</button>
+            <div className="login-button-field">
+              <button id="sign-up-log-in-button" type="submit">{buttonText}</button>
+              <button type="button" onClick={this.demoLogin}>DEMO</button>
+            </div>
 
             <div className="check-own-account">
-              {questionText} <br />
-              <button onClick={this.toggleStatus}>{text}</button>
+              {questionText}
+            <button id="status-toggle" onClick={this.toggleStatus}>{text}</button>
             </div>
           </div>
         </form>

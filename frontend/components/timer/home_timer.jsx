@@ -16,11 +16,11 @@ class HomeTimer extends React.Component {
   }
 
   componentDidMount() {
-    setInterval(this.tick, 100);
+    this.interval = setInterval(this.tick, 100);
   }
 
   componentWillUnmount() {
-    clearInterval(this);
+    clearInterval(this.interval);
   }
 
   tick() {

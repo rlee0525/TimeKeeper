@@ -1,3 +1,125 @@
 // Place all the styles related to the Api/Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "../base/*";
+
+
+.auth-modal {
+  position: fixed;
+  top: calc(50% - 250px);
+  left: calc(50% - 200px);
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.login-intro-text {
+  font-size: 30px;
+  padding-top: 20px;
+  color: #E91E63;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: $sans;
+}
+
+.login-form-container {
+  margin: auto;
+  height: 300px;
+}
+
+.login-form-box {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  height: 400px;
+  margin:  auto;
+  top: 100px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+}
+
+.login-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message {
+  position: absolute;
+  top: 110px;
+  width: 300px;
+  font-family: $sans-serif;
+  color: #80CBC4;
+  font-size: 12px;
+  text-align: center;
+}
+
+.login-input-field {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 15px 10px 15px 10px;
+  width: 300px;
+  border-radius: 5px;
+  font-family: $sans-serif;
+  color: #E91E63;
+  font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+  color: pink;
+  font-family: $sans-serif;
+}
+
+input:focus::-webkit-input-placeholder {
+  color:transparent;
+}
+
+.login-button-field {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sign-up-log-in-button {
+  background-color: #80CBC4;
+}
+
+.login-button-field button {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 15px 10px 15px 10px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: #E91E63;
+  color: white;
+  font-family: $sans-serif;
+}
+
+.check-own-account {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 5px;
+  padding: 10px 10px 20px 10px;
+  width: 300px;
+  color: black;
+  font-family: $sans-serif;
+}
+
+#status-toggle {
+  align-self: center;
+  padding-top: 7px;
+  text-decoration: underline;
+  text-shadow: 1px gray;
+}

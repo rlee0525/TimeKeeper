@@ -1,0 +1,47 @@
+@import "../base/*";
+
+// Home Headings
+.headings {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headings-logo {
+  display: flex;
+  padding: 40px 0 20px 55px;
+}
+
+.home-timer {
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid #E91E63;
+  width: 500px;
+  height: 50px;
+  background: white;
+  opacity: 0.7;
+  margin-top: 50px;
+  font-size: 18px;
+  font-family: $sans-serif;
+  text-align: left;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.home-timer-text {
+  padding-left: 20px;
+}
+
+.home-display-timer {
+  display: flex;
+}
+
+.display-timer-text {
+  padding-top: 6px;
+}
+
+.timer-button {
+  padding: 0 20px 0 25px;
+  font-size: 30px;
+  color: #E91E63;
+}

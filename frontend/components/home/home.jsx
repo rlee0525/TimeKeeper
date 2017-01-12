@@ -59,21 +59,6 @@ import { Link, withRouter } from 'react-router';
 import Modal from 'react-modal';
 import SessionFormContainer from '../session_form/session_form_container';
 
-// const personalGreeting = (currentUser, logout) => (
-//   <hgroup>
-//     <h1>Hello, {currentUser.username}!</h1>
-//     <button onClick={logout}>Logout</button>
-//   </hgroup>
-// );
-//
-// const sessionLinks = () => (
-//   <nav>
-//     <Link to="/signup">Sign Up!</Link>
-//     <br />
-//     <Link to="/login">Log In!</Link>
-//   </nav>
-// );
-
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -105,7 +90,6 @@ class Home extends React.Component {
   //   }
   // }
 
-
   render() {
     return (
       <div className="splash">
@@ -126,9 +110,10 @@ class Home extends React.Component {
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           contentLabel="auth-modal">
-            <SessionFormContainer />
-            <div>
+            <div className="login-intro-text">
+              Kickstart your productivity
             </div>
+            <SessionFormContainer />
         </Modal>
       </div>
     );
