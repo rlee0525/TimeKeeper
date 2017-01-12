@@ -4,6 +4,8 @@ import { Link, withRouter, hashHistory } from 'react-router';
 class MainTimer extends React.Component {
   constructor(props) {
     super(props);
+
+    this.redirectIfLoggedOut = this.redirectIfLoggedOut.bind(this);
   }
 
   componentDidMount() {
@@ -12,7 +14,7 @@ class MainTimer extends React.Component {
 
   redirectIfLoggedOut() {
     if (!this.props.currentUser) {
-      hashHistory.replace("/");
+      this.hashHistory.replace("/");
     }
   }
 
