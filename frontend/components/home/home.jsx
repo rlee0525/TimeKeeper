@@ -57,7 +57,7 @@ class Home extends React.Component {
           onRequestClose={this.closeModal}
           contentLabel="auth-modal">
 
-            <div className="login-intro-text"> //redux state loading = true or false action/reducer
+            <div className="login-intro-text">
               Kickstart your productivity
             </div>
             <SessionFormContainer />
@@ -75,3 +75,6 @@ export default withRouter(Home);
 // if (this.props.loginLoading) {
 //   <Loading />
 // } else
+
+
+//redux state loading = true or false action/reducer
