@@ -1,3 +1,5 @@
+@import '../base/fonts';
+
 .timer-page {
   display: flex;
   height: 100%;
@@ -6,22 +8,52 @@
 .navigation-bar {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   align-items: center;
   border-right: 1px solid black;
-  background: #212121;
+  background: linear-gradient(20deg, #404040, #212121);
+  // background: #212121;
   width: 180px;
   height: 100%;
   color: #E0E0E0;
 }
 
 .nav-logo {
-  margin: 30px 0 40px 0;
+  margin: 30px 0 50px 0;
   display: flex;
-  width: 150px;
+  width: 160px;
   height: 35px;
+}
+
+.nav-tabs, .logout-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-tabs > button, .logout-button, .nav-tabs > button > Link {
+  margin-bottom: 30px;
+  padding: 5px;
+  font-family: $sans;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.nav-tabs > button:hover, .logout-button:hover {
+  background-color: #E91E63;
+  border-radius: 10px;
+  opacity: 1;
+}
+
+.current-user-logout {
+  width: 180px;
+  margin-bottom: 20px;
 }
 
 .profile-picture {
   width: 50px;
   height: 50px;
+  margin-bottom: 10px;
+  margin-left: 65px;
+  color: white;
 }
