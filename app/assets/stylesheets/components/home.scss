@@ -1,29 +1,36 @@
 @import "../base/*";
 
 // Introduction
+
 .splash {
-  height: 67%
+  height: 67%;
+  // height: 100%;
+  // position: relative;
 }
 
 .introduction {
   margin: auto;
   position: relative;
   top: 40%;
+  // top: 20%;
   width: 780px;
   font-size: 60px;
   font-weight: bold;
   color: white;
-  // text-shadow: 1px 1px black;
   font-family: $sans-serif;
 }
 
 .start-tracking-button-container {
   margin: auto;
-  position: relative;
+  // display: flex;
+  position: absolute;
 
   // left: 40.2%;
+
   width: 350px;
-  top: 91.8%;
+  top: calc(100% - 80px);
+  left: calc(60% - 345px);
+  // top: 100%;
   // border: 1px solid black;
 
 }

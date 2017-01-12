@@ -25,7 +25,7 @@ class Home extends React.Component {
     this.setState({ modalOpen: false });
   }
 
-  // TODO: 
+  // TODO:
   // componentDidUpdate() {
   //   this.redirectIfLoggedIn();
   // }
@@ -56,7 +56,8 @@ class Home extends React.Component {
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           contentLabel="auth-modal">
-            <div className="login-intro-text">
+
+            <div className="login-intro-text"> //redux state loading = true or false action/reducer
               Kickstart your productivity
             </div>
             <SessionFormContainer />
@@ -70,3 +71,7 @@ export default withRouter(Home);
 
 
 // {this.props.currentUser ? personalGreeting(this.props.currentUser, this.props.logout) : sessionLinks()}
+
+// if (this.props.loginLoading) {
+//   <Loading />
+// } else
