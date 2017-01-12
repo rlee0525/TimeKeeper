@@ -8,15 +8,6 @@ username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
-## tasks
-column name | data type | details
-------------|-----------|-----------------------
-id          | integer   | not null, primary key
-title       | string    | not null
-seconds     | integer   |
-author_id   | integer   | not null, foreign key (references users), indexed
-project_id  | integer   | not null, foreign key (references notebooks), indexed
-
 ## projects
 column name | data type | details
 ------------|-----------|-----------------------
@@ -25,13 +16,22 @@ author_id   | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 seconds     | integer   |
 
-## teams
+## subscriptions
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-name        | string    | not null
-image_url   | string    | not null
-project_id  | integer   |
+user_id     | integer   | not null, foreign key (references users), indexed
+project_id  | integer   | not null
+
+## tasks
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+title       | string    | not null
+seconds     | integer   |
+date        | datetime  |
+user_id     | integer   | not null, foreign key (references users), indexed
+project_id  | integer   | not null, foreign key (references notebooks), indexed
 
 ## tags
 column name | data type | details
