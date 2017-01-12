@@ -21,7 +21,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
-project_id  | integer   | not null
+project_id  | integer   | not null, foreign_key (references projects), indexed
 
 ## tasks
 column name | data type | details
