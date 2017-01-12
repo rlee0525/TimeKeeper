@@ -17,7 +17,7 @@ class Home extends React.Component {
   }
 
   openModal() {
-    // this.redirectIfLoggedIn();
+    this.redirectIfLoggedIn();
     this.setState({ modalOpen: true });
   }
 
@@ -29,11 +29,11 @@ class Home extends React.Component {
     this.closeModal();
   }
 
-  // redirectIfLoggedIn() {
-  //   if (this.props.currentUser) {
-  //     this.props.router.push("/app");
-  //   }
-  // }
+  redirectIfLoggedIn() {
+    if (this.props.currentUser) {
+      this.props.router.push("/app");
+    }
+  }
 
   render() {
     return (

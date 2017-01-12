@@ -2,12 +2,12 @@ import MainTimer from './main_timer';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 
-const mapStateToProps = ({currentUser}) => ({
-  currentUser
+const mapStateToProps = ({ session }) => ({
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: user => dispatch(logout(user))
+  logout: () => dispatch(logout())
 });
 
 export default connect(

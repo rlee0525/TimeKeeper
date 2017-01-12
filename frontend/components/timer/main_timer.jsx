@@ -6,6 +6,16 @@ class MainTimer extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.redirectIfLoggedOut();
+  }
+
+  redirectIfLoggedOut() {
+    if (!this.props.currentUser) {
+      hashHistory.replace("/");
+    }
+  }
+
   render() {
     return(
       <div className="main-timer">
