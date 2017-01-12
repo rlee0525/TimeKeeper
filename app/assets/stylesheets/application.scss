@@ -14,7 +14,11 @@
  *= require_self
  */
 
-@import "base/*";
+@import "base/reset";
+@import "base/colors";
+@import "base/fonts";
+@import "base/layout";
+
 @import "components/*";
 @import "api/*";
 

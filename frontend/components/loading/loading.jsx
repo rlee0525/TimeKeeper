@@ -3,12 +3,12 @@ import { hashHistory } from 'react-router';
 
 class Loading extends React.Component {
   componentDidMount() {
-    setTimeout(() => hashHistory.replace('/app'), 3000);
+    setTimeout(() => hashHistory.replace('/app'), 3500);
   }
 
   render() {
     return (
-      <div>
+      <div className="loading-screen">
         <svg id="svg-sprite">
           <symbol id="paw" viewBox="0 0 249 209.32">
             <ellipse cx="27.917" cy="106.333" strokeWidth="0" rx="27.917" ry="35.833"/>

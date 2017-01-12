@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import Loading from '../loading/loading';
 
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loadingPage: false,
       loginPage: false,
       username: "",
       password: ""
@@ -25,9 +27,9 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     if (this.state.loginPage) {
-      this.props.login(user).then(() => this.props.router.push('/loading'));
+      this.props.login(user).then(() => this.setState({ loadingPage: true }));
     } else {
-      this.props.signup(user).then(() => this.props.router.push('/loading'));
+      this.props.signup(user).then(() => this.setState({ loadingPage: true }));
     }
   }
 
@@ -55,7 +57,7 @@ class SessionForm extends React.Component {
         return that.props.login({
           username: that.state.username,
           password: that.state.password
-        }).then(() => that.props.router.push('/loading'));
+        }).then(() => that.setState({ loadingPage: true }));
       }
 
       setTimeout(() => {
@@ -85,6 +87,12 @@ class SessionForm extends React.Component {
     let buttonText = this.state.loginPage ? "LOGIN" : "SIGNUP";
     let questionText = this.state.loginPage ? "Don't have an account?" : "Already have an account?";
     let text = this.state.loginPage ? "Sign Up" : "Login";
+
+    if (this.state.loadingPage) {
+      return (
+        <Loading />
+      );
+    }
 
     return (
       <div className="login-form-container">

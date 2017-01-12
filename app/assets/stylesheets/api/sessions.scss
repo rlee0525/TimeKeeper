@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "../base/*";
 
-
 .auth-modal {
   position: fixed;
   top: calc(50% - 250px);
@@ -13,13 +12,16 @@
   border: 1px solid black;
   border-radius: 15px;
   background-color: white;
+  box-shadow: 5px 5px gray;
 }
 
 .login-intro-text {
+  // text-shadow: 1px 1px $teal;
   font-size: 30px;
   padding-top: 20px;
   color: #E91E63;
   font-weight: bolder;
+  text-overflow: clip;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
