@@ -25,19 +25,29 @@ class ProjectForm extends React.Component {
       }));
   }
 
+  renderErrors() {
+    return (
+      <ul className="errors">
+        {this.props.errors.map((err, i) => (
+          <li key={i}>{err}</li>
+        ))}
+      </ul>
+    );
+  }
+
   render() {
     return (
       <form className="create-project-form" onSubmit={ this.handleSubmit }>
+        <div className="project-error-message">
+          {this.props.errors ? this.renderErrors() : ""}
+        </div>
         <div className="create-project-title">
-          <label>Title:
-            <input
-              className="create-project-input"
+          <input className="create-project-input"
               ref="title"
               value={ this.state.title }
               placeholder="Project name"
               onChange={ this.update('title') }
               required />
-          </label>
         </div>
         <div>
           <button className="create-project-button">Create Project!</button>

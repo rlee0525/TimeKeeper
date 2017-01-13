@@ -20,9 +20,9 @@ export const removeProject = project => ({
   project
 });
 
-export const projectError = error => ({
+export const projectError = errors => ({
   type: PROJECT_ERROR,
-  error
+  errors
 });
 
 export const requestProjects = () => dispatch => (

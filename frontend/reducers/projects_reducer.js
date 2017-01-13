@@ -25,7 +25,9 @@ const ProjectsReducer = (state = _defaultState, action) => {
       delete nextState[action.project.id];
       return nextState;
     case PROJECT_ERROR:
-      return action.errors;
+      return merge({}, _defaultState, {
+        errors: action.errors
+      });
     default:
       return state;
   }
