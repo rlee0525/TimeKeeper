@@ -1,6 +1,3 @@
-@import "../base/*";
-
-// Home Headings
 .headings {
   display: flex;
   justify-content: space-between;
@@ -14,7 +11,7 @@
 .home-timer {
   display: flex;
   justify-content: space-between;
-  // border: 1px solid #E91E63;
+  // border: 1px solid $dark-pink;
   width: 500px;
   height: 50px;
   background: white;
@@ -43,5 +40,9 @@
 .timer-button {
   padding: 0 20px 0 25px;
   font-size: 30px;
-  color: #E91E63;
+  color: $dark-pink;
+}
+
+.timer-button > .fa-play-circle {
+  color: #009688;
 }

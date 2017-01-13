@@ -60,16 +60,18 @@ class ProjectTimer extends React.Component {
     let buttonName = this.state.timerStatus === true ? "Stop" : "Start";
 
     return (
-      <div className="home-timer">
-        <div className="home-timer-text">
+      <div className="main-timer">
+        <div className="main-timer-text">
           Create a task!
         </div>
-        <div className="home-display-timer">
-          <div className="display-timer-text">
+        <div className="main-display-timer">
+          <div className="display-main-timer-text">
             {this.displayTime(this.state.elapsed)}
           </div>
-          <button className="timer-button" onClick={this.handleTimerStatus}>
-            <FontAwesome className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'}
+          <button className="main-timer-button" onClick={this.handleTimerStatus}>
+            <FontAwesome
+              className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'}
+              size='2x'
               name='playbutton'/>
           </button>
         </div>

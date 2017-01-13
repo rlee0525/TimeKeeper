@@ -1,8 +1,7 @@
-@import '../base/fonts';
-
 .timer-page {
   display: flex;
   height: 100%;
+  width: 100%;
 }
 
 .navigation-bar {
@@ -13,14 +12,13 @@
   align-items: center;
   border-right: 1px solid black;
   background: linear-gradient(20deg, #404040, #212121);
-  // background: #212121;
   width: 180px;
   height: 100%;
   color: #E0E0E0;
 }
 
 .nav-logo {
-  margin: 30px 0 50px 0;
+  margin: 30px 0 45px 0;
   display: flex;
   width: 160px;
   height: 35px;
@@ -29,6 +27,8 @@
 .nav-tabs, .logout-button {
   display: flex;
   flex-direction: column;
+  text-align: left;
+  align-items: left;
 }
 
 .nav-tabs > button, .logout-button, .nav-tabs > button > Link {
@@ -40,7 +40,7 @@
 }
 
 .nav-tabs > button:hover, .logout-button:hover {
-  background-color: #E91E63;
+  background-color: $dark-pink;
   border-radius: 10px;
   opacity: 1;
 }
@@ -52,8 +52,11 @@
 
 .profile-picture {
   width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-  margin-left: 65px;
+  height: 37px;
+  margin-left: 67px;
   color: white;
+}
+
+#awesome-icon {
+  padding-right: 10px;
 }

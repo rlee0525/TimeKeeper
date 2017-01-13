@@ -22,17 +22,17 @@ class Navigation extends React.Component {
           </div>
 
           <div className="nav-tabs">
-            <button><Link to="/timer">Timer</Link></button>
-            <button>Projects</button>
-            <button>Coworkers</button>
-            <button>Tags</button>
-            <button>Help</button>
+            <button><Link to="/timer"><FontAwesome className='fa-clock-o' name='timericon' id='awesome-icon' /> Timer</Link></button>
+            <button><FontAwesome className='fa-bar-chart' name='graphicon' id='awesome-icon' />Projects</button>
+            <button><FontAwesome className='fa-users' name='coworkersicon' id='awesome-icon' />Coworkers</button>
+            <button><FontAwesome className='fa-tags' name='tagsicon' id='awesome-icon' />Tags</button>
+            <button><FontAwesome className='fa-question-circle' name='helpicon' id='awesome-icon' />Help</button>
           </div>
         </div>
 
         <div className="current-user-logout">
           <div className="profile-picture">
-            <FontAwesome className='fa-user' size='3x' />
+            <FontAwesome className='fa-user' size='2x' name='usericon' />
           </div>
           <div className="logout-button">
             <button onClick={this.handleLogout}>Logout</button>
@@ -44,5 +44,3 @@ class Navigation extends React.Component {
 }
 
 export default Navigation;
-
-// <img src="http://res.cloudinary.com/rlee0525/image/upload/c_scale,w_75/v1484258090/userIcon_i3rk1y.png" />

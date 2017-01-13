@@ -15,7 +15,7 @@ class MainTimer extends React.Component {
         <div>
           <NavigationContainer currentUser={currentUser} />
         </div>
-        <div className="main-timer">
+        <div className="project-timer">
           <ProjectTimer />
         </div>
       </div>
