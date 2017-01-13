@@ -22,7 +22,7 @@ class Navigation extends React.Component {
           </div>
 
           <div className="nav-tabs">
-            <button><Link to="/timer"><FontAwesome className='fa-clock-o' name='timericon' id='awesome-icon' /> Timer</Link></button>
+            <button><Link to="/timer"><FontAwesome className='fa-clock-o' name='timericon' id='awesome-icon' />Timer</Link></button>
             <button><FontAwesome className='fa-bar-chart' name='graphicon' id='awesome-icon' />Projects</button>
             <button><FontAwesome className='fa-users' name='coworkersicon' id='awesome-icon' />Coworkers</button>
             <button><FontAwesome className='fa-tags' name='tagsicon' id='awesome-icon' />Tags</button>
