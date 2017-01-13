@@ -1,7 +1,7 @@
 import { RECEIVE_PROJECTS,
          RECEIVE_PROJECT,
          REMOVE_PROJECT,
-         PROJECT_ERROR } from '../actions/projects_action';
+         PROJECT_ERROR } from '../actions/projects_actions';
 import merge from 'lodash/merge';
 
 const _defaultState = Object.freeze({
