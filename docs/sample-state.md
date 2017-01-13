@@ -22,7 +22,8 @@
           id: 1
           name: "Redux"
         }
-      }
+      },
+      errors: []
     }
   },
 
