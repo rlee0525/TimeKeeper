@@ -1,5 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
+import ProjectFormContainer from '../project/project_form_container';
+import Modal from 'react-modal';
 
 class ProjectTimer extends React.Component {
   constructor(props) {
@@ -9,11 +11,22 @@ class ProjectTimer extends React.Component {
       elapsed: 0,
       timerStatus: false,
       startTime: null,
-      seconds: 0
+      seconds: 0,
+      modalOpen: false
     };
 
     this.tick = this.tick.bind(this);
     this.handleTimerStatus = this.handleTimerStatus.bind(this);
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({ modalOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalOpen: false });
   }
 
   tick() {
@@ -38,22 +51,28 @@ class ProjectTimer extends React.Component {
     }
   }
 
+  padding(num) {
+    let paddedNum = num < 10 ? `0${num}` : `${num}`;
+    return paddedNum;
+  }
+
   displayTime(time) {
     let seconds = Math.floor(time / 1000);
-    let minutes;
+    let minutes = 0;
+    let hours = 0;
 
-    if (seconds < 60) {
-      return `${seconds} sec`;
-    } else {
+    if (seconds >= 60) {
       minutes = Math.floor(seconds / 60);
-      seconds = seconds - (minutes * 60);
-
-      if (seconds < 10) {
-        return `${minutes}:0${seconds} min`;
-      } else {
-        return `${minutes}:${seconds} min`;
-      }
+      seconds -= minutes * 60;
     }
+
+    if (minutes >= 60) {
+      hours = Math.floor(minutes / 60);
+      minutes -= hours * 60;
+    }
+
+    let paddedTime = [this.padding(hours), this.padding(minutes), this.padding(seconds)].join(":");
+    return paddedTime;
   }
 
   render() {
@@ -64,10 +83,30 @@ class ProjectTimer extends React.Component {
         <div className="main-timer-text">
           Create a task!
         </div>
+
         <div className="main-display-timer">
+          <div className="project-form">
+            <button className="new-project-button"
+                onClick={this.openModal}>
+                <FontAwesome
+                  className='fa-plus'
+                  name='plusbuttwon'
+                  id='fa-plus' /> Project
+            </button>
+
+            <Modal
+              className="project-modal"
+              isOpen={this.state.modalOpen}
+              onRequestClose={this.closeModal}
+              contentLabel="project-modal">
+              <ProjectFormContainer />
+            </Modal>
+          </div>
+
           <div className="display-main-timer-text">
             {this.displayTime(this.state.elapsed)}
           </div>
+
           <button className="main-timer-button" onClick={this.handleTimerStatus}>
             <FontAwesome
               className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'}

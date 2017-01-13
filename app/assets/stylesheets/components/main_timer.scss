@@ -14,7 +14,7 @@
   text-align: left;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px #888888;
+  box-shadow: 3px 3px 3px #888888;
 }
 
 .main-timer-text {
@@ -23,18 +23,48 @@
 
 .main-display-timer {
   display: flex;
+  width: 30%;
+  justify-content: space-between;
 }
 
 .display-main-timer-text {
-  padding-top: 6px;
+  padding: 15px 8px 0 20px;
+  font-size: 24px;
+  font-family: $sans;
+  opacity: 0.8;
 }
 
 .main-timer-button {
-  padding: 0 40px 0 25px;
-  font-size: 30px;
+  margin: 0 40px 0 1px;
+  padding: 5px;
+  font-size: 27px;
   color: $dark-pink;
 }
 
 .main-timer-button > .fa-play-circle {
   color: #009688;
+}
+
+.project-form {
+  align-items: center;
+  line-height: 37px;
+}
+
+.new-project-button {
+  padding: 13px;
+  font-size: 18px;
+  font-family: $sans;
+  color: black;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.fa-plus {
+  margin-right: 10px;
+  color: $dark-pink;
+  opacity: 1;
+}
+
+.new-project-button:hover {
+  color: $dark-pink;
 }

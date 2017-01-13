@@ -43,5 +43,12 @@ name        | string    | not null
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-project_id  | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
+task_id     | integer   | not null, foreign key (references notes), indexed, unique [tag_id]
 tag_id      | integer   | not null, foreign key (references tags), indexed
+
+## coworkers
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references notes), indexed, unique [coworker_id]
+coworker_id | integer   | not null, foreign key (references tags), indexed

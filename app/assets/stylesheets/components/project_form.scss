@@ -1,0 +1,76 @@
+.project-modal {
+  position: fixed;
+  top: calc(30% - 200px);
+  left: calc(87% - 200px);
+  width: 300px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 15px;
+  background-color: white;
+  box-shadow: 5px 5px gray;
+}
+
+.create-project-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 250px;
+  margin:  auto;
+}
+
+.create-project-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message {
+  position: absolute;
+  top: 110px;
+  width: 300px;
+  font-family: $sans-serif;
+  color: #80CBC4;
+  font-size: 12px;
+  text-align: center;
+}
+
+.create-project-input {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 15px 10px 15px 10px;
+  width: 200px;
+  border-radius: 5px;
+  font-family: $sans-serif;
+  color: $dark-pink;
+  font-size: 20px;
+}
+
+::-webkit-input-placeholder {
+  color: pink;
+  font-family: $sans-serif;
+}
+
+input:focus::-webkit-input-placeholder {
+  color:transparent;
+}
+
+.login-button-field {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-project-button {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 5px;
+  padding: 15px 10px 15px 10px;
+  width: 300px;
+  border-radius: 5px;
+  background-color: $teal;
+  color: white;
+  font-family: $sans-serif;
+}
