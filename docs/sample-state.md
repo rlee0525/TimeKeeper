@@ -30,7 +30,7 @@
   tasks: {
     1: {
       title: "Front-end Authentication",
-      date:
+      date: "110816", // 11/08/16
       seconds: 1700,
       author_id: 1,
       project_id: 1
