@@ -22,10 +22,10 @@ class MainProjects extends React.Component {
         </div>
 
         <div className="main-page-body">
-          <div className="project-page-headings">
+          <div className="projects-page-headings">
             <h1>Hello</h1>
           </div>
-          <div className="project-page-body">
+          <div className="projects-page-body">
             <ul className="projects-ul">
               {Object.keys(this.props.projects).map(key => (
                 <li className="projects-li"
