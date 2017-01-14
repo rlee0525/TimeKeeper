@@ -6,6 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import Loading from './loading/loading';
 import TimerContainer from './timer/main_timer_container';
 import ProjectsContainer from './project/main_projects_container';
+import CoworkersContainer from './coworkers/main_coworkers_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -21,6 +22,7 @@ const Root = ({ store }) => {
         <Route path="/" component={ App } />
         <Route path="/timer" component={ TimerContainer } onEnter={_ensureLoggedIn} />
         <Route path="/projects" component={ ProjectsContainer } onEnter={_ensureLoggedIn} />
+        <Route path="/coworkers" component={ CoworkersContainer } onEnter={_ensureLoggedIn} />
         <Route path="/loading" component={ Loading } />
       </Router>
     </Provider>

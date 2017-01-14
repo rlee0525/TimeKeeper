@@ -4,15 +4,7 @@ import { RECEIVE_PROJECTS,
          PROJECT_ERROR } from '../actions/projects_actions';
 import merge from 'lodash/merge';
 
-const _defaultState = Object.freeze({
-  title: "",
-  seconds: 0,
-  author_id: null,
-  tags: {},
-  errors: []
-});
-
-const ProjectsReducer = (state = _defaultState, action) => {
+const ProjectsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -25,7 +17,7 @@ const ProjectsReducer = (state = _defaultState, action) => {
       delete nextState[action.project.id];
       return nextState;
     case PROJECT_ERROR:
-      return merge({}, _defaultState, {
+      return merge({}, state, {
         errors: action.errors
       });
     default:

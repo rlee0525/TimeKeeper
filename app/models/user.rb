@@ -3,9 +3,10 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: true
   validates :password, length: { minimum: 8, allow_nil: true }
 
+  has_many :projects, foreign_key: :author_id
   has_many :tasks
   has_many :subscriptions
-  has_many :projects, through: :subscriptions, source: :project
+  # has_many :projects_subscribed, through: :subscriptions, source: :project
 
   attr_reader :password
 
