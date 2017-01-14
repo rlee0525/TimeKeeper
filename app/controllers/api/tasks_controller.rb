@@ -1,6 +1,10 @@
 class Api::TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = current_user.tasks
+  end
+
+  def show
+    @task = Task.find(params[:id])
   end
 
   def create
@@ -8,6 +12,16 @@ class Api::TasksController < ApplicationController
     @task.user_id = current_user.id
 
     if @task.save
+      render "api/tasks/show"
+    else
+      render json: @task.errors.full_messages, status: 422
+    end
+  end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if @task.update(task_params)
       render "api/tasks/show"
     else
       render json: @task.errors.full_messages, status: 422
@@ -24,6 +38,8 @@ class Api::TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :date, :user_id, :project_id)
+    params
+      .require(:task)
+      .permit(:title, :date, :user_id, :task_id)
   end
 end

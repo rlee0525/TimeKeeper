@@ -2,6 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import ProjectFormContainer from '../project/project_form_container';
 import Modal from 'react-modal';
+import TaskFormContainer from '../tasks/task_form_container';
 
 class ProjectTimer extends React.Component {
   constructor(props) {
@@ -81,7 +82,7 @@ class ProjectTimer extends React.Component {
     return (
       <div className="main-timer">
         <div className="main-timer-text">
-          Create a task!
+          <TaskFormContainer />
         </div>
 
         <div className="main-display-timer">

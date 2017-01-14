@@ -22,7 +22,7 @@ class MainProjects extends React.Component {
 
         <div className="main-page-body">
           <div className="projects-page-headings">
-            <h1>Hello</h1>
+            <h1>Projects</h1>
           </div>
           <div className="projects-page-body">
             <ul className="projects-ul">

@@ -45,6 +45,6 @@ class Api::ProjectsController < ApplicationController
   def project_params
     params
       .require(:project)
-      .permit(:title, :seconds, :author_id, tasks: [])
+      .permit(:title, :seconds, :author_id)
   end
 end
