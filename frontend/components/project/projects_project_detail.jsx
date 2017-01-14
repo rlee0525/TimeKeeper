@@ -6,9 +6,9 @@ class ProjectsProjectDetail extends React.Component {
   render() {
     return (
       <div className="projects-project">
-        <ul className="projects-project-title">
-          <li>{this.props.project.title}</li>
-          <li>Total Time: {this.props.project.seconds}</li>
+        <ul>
+          <li className="projects-project-title">{this.props.project.title}</li>
+          <li className="projects-project-time">Total Time: {this.props.project.seconds}</li>
         </ul>
 
         <ul className="projects-project-tasks">

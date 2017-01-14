@@ -22,18 +22,16 @@ class MainProjects extends React.Component {
 
         <div className="main-page-body">
           <div className="projects-page-headings">
-            <h1>Projects</h1>
+            <div className="projects-headings">Projects</div>
           </div>
           <div className="projects-page-body">
-            <ul className="projects-ul">
-              {Object.keys(projects).map(projectId => (
-                <li className="projects-li"
-                  key={projectId}>
-                  <ProjectsProjectDetailContainer
-                    project={ projects[projectId] } />
-                </li>
-              ))}
-            </ul>
+            {Object.keys(projects).map(projectId => (
+              <li className="projects-li"
+                key={projectId}>
+                <ProjectsProjectDetailContainer
+                  project={ projects[projectId] } />
+              </li>
+            ))}
           </div>
         </div>
       </div>
@@ -42,3 +40,7 @@ class MainProjects extends React.Component {
 }
 
 export default MainProjects;
+
+// <ul className="projects-ul">
+//
+// </ul>
