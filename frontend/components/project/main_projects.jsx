@@ -40,7 +40,3 @@ class MainProjects extends React.Component {
 }
 
 export default MainProjects;
-
-// <ul className="projects-ul">
-//
-// </ul>
