@@ -2,5 +2,5 @@ class Tag < ActiveRecord::Base
   validates :name, presence: true
 
   has_many :taggings
-  has_many :projects, through: :taggings, source: :project
+  has_many :tasks, through: :taggings, source: :task
 end

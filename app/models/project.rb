@@ -7,6 +7,4 @@ class Project < ActiveRecord::Base
   has_many :tasks
   has_many :subscriptions
   has_many :users, through: :subscriptions, source: :user
-  has_many :taggings
-  has_many :tags, through: :taggings, source: :tag
 end

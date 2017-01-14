@@ -5,6 +5,7 @@ class Api::TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.user_id = current_user.id
 
     if @task.save
       render "api/tasks/show"
@@ -12,7 +13,7 @@ class Api::TasksController < ApplicationController
       render json: @task.errors.full_messages, status: 422
     end
   end
-  
+
   def destroy
     @task = Task.find(params[:id])
     @task.destroy

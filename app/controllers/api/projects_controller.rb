@@ -16,6 +16,7 @@ class Api::ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @tasks = @project.tasks
   end
 
   def edit
@@ -42,6 +43,8 @@ class Api::ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :seconds, :author_id)
+    params
+      .require(:project)
+      .permit(:title, :seconds, :author_id, tasks: [])
   end
 end

@@ -1,13 +1,10 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
+import ProjectsProjectDetailContainer from './projects_project_detail_container';
 
 class MainProjects extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      loading: true
-    };
   }
 
   componentDidMount() {
@@ -15,6 +12,8 @@ class MainProjects extends React.Component {
   }
 
   render() {
+    let projects = this.props.projects;
+
     return(
       <div className="main-page">
         <div className="main-page-navbar">
@@ -27,14 +26,11 @@ class MainProjects extends React.Component {
           </div>
           <div className="projects-page-body">
             <ul className="projects-ul">
-              {Object.keys(this.props.projects).map(key => (
+              {Object.keys(projects).map(projectId => (
                 <li className="projects-li"
-                  key={key}>
-                  <ul>
-                    <li>{this.props.projects[key].title}</li>
-                    <li>Total Time: {this.props.projects[key].seconds}</li>
-                    <li>{this.props.projects[key].tasks}</li>
-                  </ul>
+                  key={projectId}>
+                  <ProjectsProjectDetailContainer
+                    project={ projects[projectId] } />
                 </li>
               ))}
             </ul>
