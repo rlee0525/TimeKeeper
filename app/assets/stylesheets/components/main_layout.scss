@@ -1,0 +1,12 @@
+.main-page {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.main-page-body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
