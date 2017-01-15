@@ -19,7 +19,7 @@ class MainCoworkers extends React.Component {
           </div>
           <div className="coworkers-page-body">
             <div>
-              <img src='http://res.cloudinary.com/rlee0525/image/upload/v1484258093/Logomakr_45C5ad_nvlk7e.png' />
+              
             </div>
           </div>
         </div>

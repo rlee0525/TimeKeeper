@@ -28,7 +28,9 @@ class MainProjects extends React.Component {
 
         <div className="main-page-body">
           <div className="projects-page-headings">
-            <div className="projects-headings">Projects</div>
+            <div className="projects-headings">
+              <div>Projects</div>
+            </div>
           </div>
           <div className="projects-page-body">
             {Object.keys(projects).map(projectId => (

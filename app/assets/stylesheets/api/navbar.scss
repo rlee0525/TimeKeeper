@@ -49,6 +49,10 @@
   height: 40px
 }
 
+.nav-tabs > .active {
+  border-bottom: 3px solid $dark-pink;
+}
+
 .nav-tabs > button:hover, .logout-button:hover, .logout-button > button:hover {
   background-color: $dark-pink;
   border-radius: 10px;

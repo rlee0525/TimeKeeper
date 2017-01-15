@@ -47,11 +47,11 @@ class Navigation extends React.Component {
           </div>
 
           <div className="nav-tabs">
-            <button onClick={this.handleTimerLink}><FontAwesome className='fa-clock-o' name='timericon' id='awesome-icon' />Timer</button>
-            <button onClick={this.handleProjectsLink}><FontAwesome className='fa-bar-chart' name='graphicon' id='awesome-icon' />Projects</button>
-            <button onClick={this.handleCoworkersLink}><FontAwesome className='fa-users' name='coworkersicon' id='awesome-icon' />Coworkers</button>
-            <button onClick={this.handleTagsLink}><FontAwesome className='fa-tags' name='tagsicon' id='awesome-icon' />Tags</button>
-            <button onClick={this.handleHelpLink}><FontAwesome className='fa-question-circle' name='helpicon' id='awesome-icon' />Help</button>
+            <button onClick={this.handleTimerLink} className={this.props.location.pathname==="/timer" ? "active" : ""}><FontAwesome className='fa-clock-o' name='timericon' id='awesome-icon' />Timer</button>
+            <button onClick={this.handleProjectsLink} className={this.props.location.pathname.includes("/projects") ? "active" : ""}><FontAwesome className='fa-bar-chart' name='graphicon' id='awesome-icon' />Projects</button>
+            <button onClick={this.handleCoworkersLink} className={this.props.location.pathname.includes("/coworkers") ? "active" : ""}><FontAwesome className='fa-users' name='coworkersicon' id='awesome-icon' />Coworkers</button>
+            <button onClick={this.handleTagsLink} className={this.props.location.pathname.includes("/tags") ? "active" : ""}><FontAwesome className='fa-tags' name='tagsicon' id='awesome-icon' />Tags</button>
+            <button onClick={this.handleHelpLink} className={this.props.location.pathname==="/help" ? "active" : ""}><FontAwesome className='fa-question-circle' name='helpicon' id='awesome-icon' />Help</button>
           </div>
         </div>
 
