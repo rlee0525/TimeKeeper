@@ -8,6 +8,8 @@ import TimerContainer from './timer/main_timer_container';
 import ProjectsContainer from './project/main_projects_container';
 import CoworkersContainer from './coworkers/main_coworkers_container';
 import ProjectDetailContainer from './project/project_detail_container';
+import TagsContainer from './tags/main_tags_container';
+import HelpContainer from './help/main_help_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -25,6 +27,8 @@ const Root = ({ store }) => {
         <Route path="/projects" component={ ProjectsContainer } onEnter={_ensureLoggedIn} />
         <Route path="/projects/:id" component= { ProjectDetailContainer } onEnter={_ensureLoggedIn} />
         <Route path="/coworkers" component={ CoworkersContainer } onEnter={_ensureLoggedIn} />
+        <Route path="/tags" component={ TagsContainer } onEnter={_ensureLoggedIn} />
+        <Route path="/help" component={ HelpContainer } onEnter={_ensureLoggedIn} />
         <Route path="/loading" component={ Loading } />
       </Router>
     </Provider>

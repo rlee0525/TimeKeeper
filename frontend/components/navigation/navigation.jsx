@@ -10,6 +10,8 @@ class Navigation extends React.Component {
     this.handleTimerLink = this.handleTimerLink.bind(this);
     this.handleProjectsLink = this.handleProjectsLink.bind(this);
     this.handleCoworkersLink = this.handleCoworkersLink.bind(this);
+    this.handleTagsLink = this.handleTagsLink.bind(this);
+    this.handleHelpLink = this.handleHelpLink.bind(this);
   }
 
   handleLogout() {
@@ -28,6 +30,14 @@ class Navigation extends React.Component {
     this.props.router.push("/coworkers");
   }
 
+  handleTagsLink() {
+    this.props.router.push("/tags");
+  }
+
+  handleHelpLink() {
+    this.props.router.push("/help");
+  }
+
   render() {
     return (
       <div className="navigation-bar">
@@ -40,8 +50,8 @@ class Navigation extends React.Component {
             <button onClick={this.handleTimerLink}><FontAwesome className='fa-clock-o' name='timericon' id='awesome-icon' />Timer</button>
             <button onClick={this.handleProjectsLink}><FontAwesome className='fa-bar-chart' name='graphicon' id='awesome-icon' />Projects</button>
             <button onClick={this.handleCoworkersLink}><FontAwesome className='fa-users' name='coworkersicon' id='awesome-icon' />Coworkers</button>
-            <button><FontAwesome className='fa-tags' name='tagsicon' id='awesome-icon' />Tags</button>
-            <button><FontAwesome className='fa-question-circle' name='helpicon' id='awesome-icon' />Help</button>
+            <button onClick={this.handleTagsLink}><FontAwesome className='fa-tags' name='tagsicon' id='awesome-icon' />Tags</button>
+            <button onClick={this.handleHelpLink}><FontAwesome className='fa-question-circle' name='helpicon' id='awesome-icon' />Help</button>
           </div>
         </div>
 
