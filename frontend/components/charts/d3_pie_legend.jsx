@@ -1,5 +1,5 @@
 import React from 'react';
-import LegendElement from './legend_element';
+import LegendElement from './pie_legend_element';
 import * as d3 from 'd3';
 
 class D3Legend extends React.Component {

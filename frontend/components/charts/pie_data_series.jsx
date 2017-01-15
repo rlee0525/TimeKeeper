@@ -1,6 +1,6 @@
 import React from 'react';
 import * as d3 from 'd3';
-import Sector from './sector';
+import Sector from './pie_sector';
 
 class DataSeries extends React.Component {
   render() {
