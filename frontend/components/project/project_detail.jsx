@@ -1,6 +1,8 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
-import D3PieChart from '../charts/d3_pie_chart';
+import D3PieChart from '../charts/d3_pie_piechart';
+import D3BarChart from '../charts/d3_bar_barchart';
+import D3Chart from '../charts/d3_chart';
 
 class ProjectDetail extends React.Component {
   constructor(props) {
@@ -13,12 +15,23 @@ class ProjectDetail extends React.Component {
 
   render() {
     let project = this.props.project;
-    let data = [
-        {name: "Task 1", count: 10},
-        {name: "Task 2", count: 20},
-        {name: "Task 3", count: 5},
-        {name: "Task 4", count: 42},
-        {name: "Task 5 ", count: 29}
+    let pieData = [
+      {name: "Task 1", count: 10},
+      {name: "Task 2", count: 20},
+      {name: "Task 3", count: 5},
+      {name: "Task 4", count: 42},
+      {name: "Task 5 ", count: 29}
+    ];
+
+    let barData = [
+      {x: 'a', y: 50},
+      {x: 'b', y: 14},
+      {x: 'c', y: 12},
+      {x: 'd', y: 19},
+      {x: 'e', y: 18},
+      {x: 'f', y: 15},
+      {x: 'g', y: 10},
+      {x: 'h', y: 14}
     ];
 
     return(
@@ -32,7 +45,8 @@ class ProjectDetail extends React.Component {
             <div className="project-detail-headings">Project</div>
           </div>
           <div className="project-page-body">
-            <D3PieChart data={data} title="Project 1 Tasks" />
+            <D3BarChart data={barData} />
+            <D3PieChart data={pieData} title="Project 1 Tasks - Pie Chart" />
           </div>
         </div>
       </div>

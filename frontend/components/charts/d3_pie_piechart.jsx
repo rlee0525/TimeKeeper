@@ -1,5 +1,5 @@
 import React from 'react';
-import D3Chart from './d3_pie_chart';
+import D3Chart from './d3_chart';
 import DataSeries from './pie_data_series';
 import D3Legend from './d3_pie_legend';
 
