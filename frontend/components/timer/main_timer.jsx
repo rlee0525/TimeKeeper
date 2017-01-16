@@ -7,13 +7,15 @@ class MainTimer extends React.Component {
     super(props);
   }
 
-  render() {
-    const { currentUser } = this.props;
+  componentDidMount() {
+    this.props.requestProjects();
+  }
 
+  render() {
     return(
       <div className="main-page">
         <div className="main-page-navbar">
-          <NavigationContainer currentUser={currentUser} />
+          <NavigationContainer currentUser={this.props.currentUser} />
         </div>
 
         <div className="main-page-body">
@@ -22,7 +24,7 @@ class MainTimer extends React.Component {
           </div>
           <div className="timer-page-body">
             <div>
-              
+
             </div>
           </div>
         </div>

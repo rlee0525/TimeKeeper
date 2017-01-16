@@ -34,3 +34,11 @@ export const destroyProject = project => (
     url: `api/projects/${project.id}`
   })
 );
+
+export const searchProjects = query => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/projects/search`,
+    data: { query }
+  })
+);

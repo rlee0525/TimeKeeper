@@ -3,6 +3,7 @@ import FontAwesome from 'react-fontawesome';
 import ProjectFormContainer from '../project/project_form_container';
 import Modal from 'react-modal';
 import TaskFormContainer from '../tasks/task_form_container';
+import SearchProjectsContainer from '../project/search_projects_container';
 
 class ProjectTimer extends React.Component {
   constructor(props) {
@@ -87,6 +88,8 @@ class ProjectTimer extends React.Component {
 
         <div className="main-display-timer">
           <div className="project-form">
+            <SearchProjectsContainer />
+
             <button className="new-project-button"
                 onClick={this.openModal}>
                 <FontAwesome
@@ -121,3 +124,7 @@ class ProjectTimer extends React.Component {
 }
 
 export default ProjectTimer;
+
+
+// id => {e => this.setState({ project: id })}
+// <SearchProjects onClick

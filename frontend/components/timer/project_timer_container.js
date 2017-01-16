@@ -1,8 +1,9 @@
 import ProjectTimer from './navigation';
 import { connect } from 'react-redux';
 
-const mapStateToProps = currentUser => ({
-  currentUser
+const mapStateToProps = state => ({
+  currentUser: state.session.currentUser,
+  projects: state.projects
 });
 
 const mapDispatchToProps = dispatch => ({

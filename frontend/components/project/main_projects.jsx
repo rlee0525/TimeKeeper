@@ -19,7 +19,7 @@ class MainProjects extends React.Component {
 
   render() {
     let projects = this.props.projects;
-
+    
     return(
       <div className="main-page">
         <div className="main-page-navbar">

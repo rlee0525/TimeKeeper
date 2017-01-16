@@ -1,7 +1,8 @@
 import { RECEIVE_PROJECTS,
          RECEIVE_PROJECT,
          REMOVE_PROJECT,
-         PROJECT_ERROR } from '../actions/projects_actions';
+         PROJECT_ERROR,
+         RECEIVE_FOUND_PROJECTS } from '../actions/projects_actions';
 import merge from 'lodash/merge';
 
 const ProjectsReducer = (state = {}, action) => {
@@ -20,6 +21,10 @@ const ProjectsReducer = (state = {}, action) => {
       return merge({}, state, {
         errors: action.errors
       });
+    case RECEIVE_FOUND_PROJECTS:
+      let newState = merge({}, state);
+      newState.searchResults = action.projects;
+      return newState;
     default:
       return state;
   }

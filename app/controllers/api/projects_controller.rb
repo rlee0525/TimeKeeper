@@ -40,6 +40,16 @@ class Api::ProjectsController < ApplicationController
     render json: {}
   end
 
+  def search
+    if params[:query]
+      @projects = Project.all.where("LOWER(title) ~ LOWER(?)", params[:query])
+    else
+      @projects = Project.none
+    end
+
+    render :search
+  end
+
   private
 
   def project_params

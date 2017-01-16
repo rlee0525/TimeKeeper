@@ -4,6 +4,7 @@ export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const PROJECT_ERROR = "PROJECT_ERROR";
+export const RECEIVE_FOUND_PROJECTS = 'RECEIVE_FOUND_PROJECTS';
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,
@@ -54,3 +55,14 @@ export const destroyProject = data => dispatch => (
     .then(project => dispatch(removeProject(project)))
     .fail(err => dispatch(projectError(err.responseJSON)))
 );
+
+export const searchProjects = data => dispatch => (
+  ProjectsAPIUtil.searchProjects(data)
+    .then(projects => dispatch(receiveFoundProjects(projects)))
+    .fail(err => dispatch(projectError(err.responseJSON)))
+);
+
+export const receiveFoundProjects = projects => ({
+  type: RECEIVE_FOUND_PROJECTS,
+  projects
+});
