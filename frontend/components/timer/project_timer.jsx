@@ -1,8 +1,5 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import ProjectFormContainer from '../project/project_form_container';
-import Modal from 'react-modal';
-// import TaskFormContainer from '../tasks/task_form_container';
 import SearchProjectsContainer from '../project/search_projects_container';
 
 class ProjectTimer extends React.Component {
@@ -21,25 +18,7 @@ class ProjectTimer extends React.Component {
 
     this.tick = this.tick.bind(this);
     this.handleTimerStatus = this.handleTimerStatus.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
     this.handleSearchProject = this.handleSearchProject.bind(this);
-  }
-
-  // componentWillReceiveProps(newProps) {
-  //   this.setState({
-  //     title: "",
-  //     seconds: 0,
-  //     projectId: null
-  //   });
-  // }
-
-  openModal() {
-    this.setState({ modalOpen: true });
-  }
-
-  closeModal() {
-    this.setState({ modalOpen: false });
   }
 
   tick() {
@@ -80,16 +59,6 @@ class ProjectTimer extends React.Component {
     }
   }
 
-  renderErrors() {
-    return (
-      <ul className="errors">
-        {this.props.errors.map((err, i) => (
-          <li key={i}>{err}</li>
-        ))}
-      </ul>
-    );
-  }
-
   update(property) {
     return e => this.setState({ [property]: e.target.value });
   }
@@ -114,7 +83,12 @@ class ProjectTimer extends React.Component {
       minutes -= hours * 60;
     }
 
-    let paddedTime = [this.padding(hours), this.padding(minutes), this.padding(seconds)].join(":");
+    let paddedTime = [
+      this.padding(hours),
+      this.padding(minutes),
+      this.padding(seconds)
+    ].join(":");
+
     return paddedTime;
   }
 
@@ -138,27 +112,8 @@ class ProjectTimer extends React.Component {
         <div className="main-display-timer">
           <div className="project-form">
             <div>
-              <SearchProjectsContainer handleSearchProject={this.handleSearchProject} />
-            </div>
-
-            <div>
-              <button className="new-project-button"
-                onClick={this.openModal}>
-                <FontAwesome
-                  className='fa-plus'
-                  name='plusbuttwon'
-                  id='fa-plus' /> Project
-                </button>
-            </div>
-
-            <div>
-              <Modal
-                className="project-modal"
-                isOpen={this.state.modalOpen}
-                onRequestClose={this.closeModal}
-                contentLabel="project-modal">
-                <ProjectFormContainer />
-              </Modal>
+              <SearchProjectsContainer
+                handleSearchProject={this.handleSearchProject} />
             </div>
           </div>
 
@@ -166,9 +121,14 @@ class ProjectTimer extends React.Component {
             {this.displayTime(this.state.elapsed)}
           </div>
 
-          <button className="main-timer-button" onClick={this.handleTimerStatus} disabled={this.state.projectId && this.state.title.length !== 0 ? false : true }>
+          <button className="main-timer-button"
+                  onClick={this.handleTimerStatus}
+                  disabled={this.state.projectId &&
+                    this.state.title.length !== 0 ?
+                    false : true }>
             <FontAwesome
-              className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'}
+              className={this.state.timerStatus ?
+                'fa-stop-circle' : 'fa-play-circle'}
               size='2x'
               name='playbutton'/>
           </button>
@@ -179,7 +139,3 @@ class ProjectTimer extends React.Component {
 }
 
 export default ProjectTimer;
-
-
-// id => {e => this.setState({ project: id })}
-// <SearchProjects onClick

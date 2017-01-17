@@ -19,10 +19,7 @@ class ProjectForm extends React.Component {
     e.preventDefault();
     const project = this.state;
     this.props.createProject({ project });
-      // .then(() => this.setState({
-      //   title: "",
-      //   seconds: 0
-      // }));
+    this.props.handleProjectModal();
   }
 
   renderErrors() {
@@ -37,7 +34,7 @@ class ProjectForm extends React.Component {
 
   render() {
     return (
-      <form className="create-project-form" onSubmit={ this.handleSubmit }>
+      <form className="create-project-form" onSubmit={this.handleSubmit}>
         <div className="project-error-message">
           {this.props.errors ? this.renderErrors() : ""}
         </div>
@@ -50,7 +47,9 @@ class ProjectForm extends React.Component {
               required />
         </div>
         <div>
-          <button className="create-project-button">Create Project!</button>
+          <button className="create-project-button">
+            Create Project!
+          </button>
         </div>
       </form>
     );

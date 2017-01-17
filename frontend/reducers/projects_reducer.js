@@ -11,7 +11,9 @@ const ProjectsReducer = (state = {}, action) => {
     case RECEIVE_PROJECTS:
       return merge({}, state, action.projects);
     case RECEIVE_PROJECT:
-      return action.project;
+      return merge({}, state, {
+        [action.project.id]: action.project
+      });
     case REMOVE_PROJECT:
       const nextState = merge({}, state);
       delete nextState[action.project.id];
