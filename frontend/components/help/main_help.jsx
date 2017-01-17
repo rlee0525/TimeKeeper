@@ -21,11 +21,11 @@ class MainHelp extends React.Component {
 
     return(
       <div className="main-page">
-        <div className="main-help-navbar">
+        <div className="main-page-navbar">
           <NavigationContainer currentUser={this.props.currentUser} />
         </div>
 
-        <div className="main-help-body">
+        <div className="main-page-body">
           <div className="help-page-headings">
             <div className="help-headings">Help</div>
           </div>

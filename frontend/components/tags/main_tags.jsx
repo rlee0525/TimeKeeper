@@ -21,11 +21,11 @@ class MainTags extends React.Component {
 
     return(
       <div className="main-page">
-        <div className="main-tag-navbar">
+        <div className="main-page-navbar">
           <NavigationContainer currentUser={this.props.currentUser} />
         </div>
 
-        <div className="main-tag-body">
+        <div className="main-page-body">
           <div className="tags-page-headings">
             <div className="tags-headings">Tags</div>
           </div>

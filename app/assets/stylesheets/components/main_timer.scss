@@ -100,9 +100,10 @@
   background: white;
   opacity: 0.7;
   font-size: 18px;
-  font-family: $sans-serif;
+  font-weight: bold;
+  font-family: $sans;
   text-align: left;
   align-items: center;
-  border-radius: 10px;
+  // border-radius: 10px;
   box-shadow: 3px 3px 3px #888888;
 }
