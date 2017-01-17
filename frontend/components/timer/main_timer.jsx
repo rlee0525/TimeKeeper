@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
-import ProjectTimer from './project_timer';
+import ProjectTimerContainer from './project_timer_container';
+import TasksList from '../tasks/tasks_list_container';
 
 class MainTimer extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class MainTimer extends React.Component {
 
   componentDidMount() {
     this.props.requestProjects();
+    this.props.requestTasks();
   }
 
   render() {
@@ -20,11 +22,11 @@ class MainTimer extends React.Component {
 
         <div className="main-page-body">
           <div className="timer-page-headings">
-            <ProjectTimer />
+            <ProjectTimerContainer />
           </div>
           <div className="timer-page-body">
             <div>
-
+              <TasksList tasks={this.props.tasks}/>
             </div>
           </div>
         </div>

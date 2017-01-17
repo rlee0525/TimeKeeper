@@ -4,15 +4,7 @@ import { RECEIVE_TASKS,
          TASK_ERROR } from '../actions/tasks_actions';
 import merge from 'lodash/merge';
 
-const _defaultState = Object.freeze({
-  title: "",
-  seconds: 0,
-  author_id: null,
-  tags: {},
-  errors: []
-});
-
-const TasksReducer = (state = _defaultState, action) => {
+const TasksReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {

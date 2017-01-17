@@ -1,4 +1,4 @@
-import ProjectTimer from './navigation';
+import ProjectTimer from './project_timer';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
