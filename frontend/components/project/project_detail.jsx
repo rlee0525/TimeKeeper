@@ -9,14 +9,15 @@ class ProjectDetail extends React.Component {
     super(props);
   }
 
-  // componentDidMount() {
-  //   const id = this.props.params.id;
-  //   this.props.requestProject(id);
-  // }
+  componentDidMount() {
+    const id = parseInt(this.props.params.id);
+    this.props.requestProject(id);
+    debugger;
+  }
 
   render() {
     let project = this.props.project;
-    // debugger;
+    debugger;
 
     let pieData = [
       {name: "Task 1", count: 10},
@@ -47,7 +48,7 @@ class ProjectDetail extends React.Component {
           <div className="project-page-headings">
             <div className="project-detail-headings">
               <div className="main-project-title">
-                Project {project ? this.props.params.id : ""}
+                Project {project ? this.props.project.id : ""}
               </div>
             </div>
           </div>
