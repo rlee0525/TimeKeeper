@@ -12,9 +12,9 @@ class ProjectsProjectDetail extends React.Component {
         </ul>
 
         <ul className="projects-project-tasks">
-          {this.props.project.tasks.map((task, id) => (
+          {this.props.project.tasks ? this.props.project.tasks.map((task, id) => (
               <li key={id}>{task.title} {task.seconds}</li>
-            ))}
+            )) : ""}
         </ul>
       </div>
     );

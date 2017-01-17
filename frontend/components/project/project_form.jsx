@@ -18,11 +18,11 @@ class ProjectForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const project = this.state;
-    this.props.createProject({ project })
-      .then(() => this.setState({
-        title: "",
-        seconds: 0
-      }));
+    this.props.createProject({ project });
+      // .then(() => this.setState({
+      //   title: "",
+      //   seconds: 0
+      // }));
   }
 
   renderErrors() {

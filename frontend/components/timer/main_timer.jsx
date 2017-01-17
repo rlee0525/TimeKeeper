@@ -25,7 +25,7 @@ class MainTimer extends React.Component {
             <ProjectTimerContainer />
           </div>
           <div className="timer-page-body">
-            <div>
+            <div className="tasks-list">
               <TasksList projects={this.props.projects} tasks={this.props.tasks} />
             </div>
           </div>

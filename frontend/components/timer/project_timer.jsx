@@ -26,13 +26,13 @@ class ProjectTimer extends React.Component {
     this.handleSearchProject = this.handleSearchProject.bind(this);
   }
 
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      title: "",
-      seconds: 0,
-      projectId: null
-    });
-  }
+  // componentWillReceiveProps(newProps) {
+  //   this.setState({
+  //     title: "",
+  //     seconds: 0,
+  //     projectId: null
+  //   });
+  // }
 
   openModal() {
     this.setState({ modalOpen: true });
