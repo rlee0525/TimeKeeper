@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
   projects: state.projects,
   tasks: state.tasks,
-  searchResults: null
+  searchResults: state.searchResults
 });
 
 const mapDispatchToProps = dispatch => ({

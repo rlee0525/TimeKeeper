@@ -10,7 +10,7 @@ User.create(username: "WelcomeGuest", password: "password")
 User.create(username: "raymond", password: "password")
 
 Project.create(title: "NYTimes Clone", author_id: 1, seconds: 24000)
-Project.create(title: "Reddit Clone", author_id: 2, seconds: 5700)
+Project.create(title: "Reddit Clone", author_id: 1, seconds: 5700)
 Project.create(title: "Synthesizer Project", author_id: 1, seconds: 30000)
 Project.create(title: "Break", author_id: 1, seconds: 9000)
 Project.create(title: "Reading", author_id: 1, seconds: 3000)

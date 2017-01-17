@@ -5,6 +5,7 @@ import { updateTask,
 import { requestProjects } from '../../actions/projects_actions';
 
 const mapStateToProps = (state) => ({
+  projects: state.projects,
   tasks: state.tasks
 });
 

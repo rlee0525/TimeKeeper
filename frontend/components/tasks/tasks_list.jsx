@@ -1,19 +1,36 @@
 import React from 'react';
+import { withRouter } from 'react-router';
+import { values } from 'lodash';
 
 class TasksList extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleTask = this.handleTask.bind(this);
+  }
+
+  handleTask(task) {
+    const projectId = task.project_id;
+    this.props.router.push(`/projects/${projectId}`);
   }
 
   render() {
-    let tasks = this.props.tasks;
+    let tasks = values(this.props.tasks).sort((a, b) => { return Date.parse(a.created_at) > Date.parse(b.created_at); });
 
     return(
       <div>
-        {Object.keys(tasks).map(taskId => (
-          <button key={taskId} className="button-task-detail" >
+        {tasks.map((task, id) => (
+          <button key={id} className="button-task-detail" onClick={() => this.handleTask(task)}>
             <li className="tasks-li">
-              {this.props.tasks[taskId].title}
+              <div>
+                {task.title}
+              </div>
+              <div>
+                {this.props.projects[task.project_id] ? this.props.projects[task.project_id].title : ""}
+              </div>
+              <div>
+                {task.seconds}
+              </div>
             </li>
           </button>
         ))}
@@ -22,4 +39,4 @@ class TasksList extends React.Component {
   }
 }
 
-export default TasksList;
+export default withRouter(TasksList);
