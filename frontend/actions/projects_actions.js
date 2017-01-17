@@ -26,6 +26,11 @@ export const projectError = errors => ({
   errors
 });
 
+export const receiveFoundProjects = projects => ({
+  type: RECEIVE_FOUND_PROJECTS,
+  projects
+});
+
 export const requestProjects = () => dispatch => (
   ProjectsAPIUtil.fetchProjects()
     .then(projects => dispatch(receiveProjects(projects)))
@@ -61,8 +66,3 @@ export const searchProjects = data => dispatch => (
     .then(projects => dispatch(receiveFoundProjects(projects)))
     .fail(err => dispatch(projectError(err.responseJSON)))
 );
-
-export const receiveFoundProjects = projects => ({
-  type: RECEIVE_FOUND_PROJECTS,
-  projects
-});

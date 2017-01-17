@@ -9,7 +9,8 @@ import { requestProjects } from '../../actions/projects_actions';
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
   projects: state.projects,
-  tasks: state.tasks
+  tasks: state.tasks,
+  searchResults: null
 });
 
 const mapDispatchToProps = dispatch => ({

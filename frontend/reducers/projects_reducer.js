@@ -21,10 +21,6 @@ const ProjectsReducer = (state = {}, action) => {
       return merge({}, state, {
         errors: action.errors
       });
-    case RECEIVE_FOUND_PROJECTS:
-      let newState = merge({}, state);
-      newState.searchResults = action.projects;
-      return newState;
     default:
       return state;
   }

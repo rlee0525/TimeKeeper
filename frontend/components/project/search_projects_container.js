@@ -4,7 +4,8 @@ import { searchProjects } from '../../actions/projects_actions';
 import _ from 'lodash';
 
 const mapStateToProps = state => ({
-  projects: state.projects.searchResults
+  projects: state.projects,
+  searchResults: state.searchResults
 });
 
 const mapDispatchToProps = dispatch => ({
