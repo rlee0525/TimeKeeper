@@ -17,7 +17,9 @@ const TasksReducer = (state = {}, action) => {
       delete nextState[action.task.id];
       return nextState;
     case TASK_ERROR:
-      return action.errors;
+      return merge({}, state, {
+        errors: action.errors
+      });
     default:
       return state;
   }

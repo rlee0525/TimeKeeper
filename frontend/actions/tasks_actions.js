@@ -20,9 +20,9 @@ export const removeTask = task => ({
   task
 });
 
-export const taskError = error => ({
+export const taskError = errors => ({
   type: TASK_ERROR,
-  error
+  errors
 });
 
 export const requestTasks = () => dispatch => (

@@ -4,7 +4,7 @@ export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const PROJECT_ERROR = "PROJECT_ERROR";
-export const RECEIVE_FOUND_PROJECTS = 'RECEIVE_FOUND_PROJECTS';
+export const RECEIVE_FOUND_PROJECTS = "RECEIVE_FOUND_PROJECTS";
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,

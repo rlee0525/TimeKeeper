@@ -2,7 +2,7 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import ProjectFormContainer from '../project/project_form_container';
 import Modal from 'react-modal';
-import TaskFormContainer from '../tasks/task_form_container';
+// import TaskFormContainer from '../tasks/task_form_container';
 import SearchProjectsContainer from '../project/search_projects_container';
 
 class ProjectTimer extends React.Component {
@@ -23,6 +23,15 @@ class ProjectTimer extends React.Component {
     this.handleTimerStatus = this.handleTimerStatus.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.handleSearchProject = this.handleSearchProject.bind(this);
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      title: "",
+      seconds: 0,
+      projectId: null
+    });
   }
 
   openModal() {
@@ -42,8 +51,15 @@ class ProjectTimer extends React.Component {
     }
   }
 
+  handleSearchProject(id) {
+    this.setState({
+      projectId: id
+    });
+  }
+
   handleTimerStatus() {
     let timerStatus = !this.state.timerStatus;
+
     if (timerStatus === true) {
       this.setState({ startTime: Date.now() });
       this.interval = setInterval(this.tick, 100);
@@ -52,7 +68,30 @@ class ProjectTimer extends React.Component {
       });
     } else {
       this.setState({ timerStatus });
+
+      const task = {
+        title: this.state.title,
+        seconds: this.state.elapsed,
+        project_id: this.state.projectId,
+        user_id: this.props.currentUser.id
+      };
+
+      this.props.createTask({ task });
     }
+  }
+
+  renderErrors() {
+    return (
+      <ul className="errors">
+        {this.props.errors.map((err, i) => (
+          <li key={i}>{err}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  update(property) {
+    return e => this.setState({ [property]: e.target.value });
   }
 
   padding(num) {
@@ -85,12 +124,20 @@ class ProjectTimer extends React.Component {
     return (
       <div className="main-timer">
         <div className="main-timer-text">
-          <TaskFormContainer />
+          <form className="create-task-form">
+            <div className="create-task-title">
+              <input className="create-task-input"
+                  value={ this.state.title }
+                  placeholder="Task name"
+                  onChange={ this.update('title') }
+                  required />
+            </div>
+          </form>
         </div>
 
         <div className="main-display-timer">
           <div className="project-form">
-            <SearchProjectsContainer />
+            <SearchProjectsContainer handleSearchProject={this.handleSearchProject} />
 
             <button className="new-project-button"
                 onClick={this.openModal}>
@@ -113,7 +160,7 @@ class ProjectTimer extends React.Component {
             {this.displayTime(this.state.elapsed)}
           </div>
 
-          <button className="main-timer-button" onClick={this.handleTimerStatus}>
+          <button className="main-timer-button" onClick={this.handleTimerStatus} disabled={this.state.projectId && this.state.title.length !== 0 ? false : true }>
             <FontAwesome
               className={this.state.timerStatus ? 'fa-stop-circle' : 'fa-play-circle'}
               size='2x'

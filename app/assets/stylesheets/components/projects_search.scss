@@ -1,4 +1,8 @@
 .projects-search {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
   ul {
     background: #fff;
     border-radius: 4px;
@@ -17,13 +21,6 @@
       padding: 5px 10px;
       margin: 0 !important;
       border-bottom: 1px solid #ddd;
-
-      .has-dropdown {
-        .dropdown {
-          right: 0;
-          left: inherit;
-        }
-      }
     }
 
     li:last-child {
@@ -53,4 +50,9 @@
   ul:after {
     border-bottom-color: #fff;
   }
+}
+
+.form-group {
+  display: float;
+  z-index: 100;
 }

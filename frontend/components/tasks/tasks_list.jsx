@@ -15,7 +15,7 @@ class TasksList extends React.Component {
   }
 
   render() {
-    let tasks = values(this.props.tasks).sort((a, b) => { return Date.parse(a.created_at) > Date.parse(b.created_at); });
+    let tasks = values(this.props.tasks).sort((a, b) => { return Date.parse(b.created_at) - Date.parse(a.created_at); });
 
     return(
       <div>
