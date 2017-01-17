@@ -3,7 +3,7 @@
     json.extract! project, :title, :seconds, :author_id
     json.tasks do
       json.array! project.tasks do |task|
-        json.extract! task, :title, :seconds, :date
+        json.extract! task, :title, :seconds
       end
     end
   end

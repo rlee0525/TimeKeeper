@@ -13,8 +13,10 @@ class ProjectTimer extends React.Component {
       elapsed: 0,
       timerStatus: false,
       startTime: null,
+      modalOpen: false,
+      title: "",
       seconds: 0,
-      modalOpen: false
+      projectId: null
     };
 
     this.tick = this.tick.bind(this);

@@ -1,1 +1,1 @@
-json.extract! @task, :title, :seconds, :date
+json.extract! @task, :title, :seconds
