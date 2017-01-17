@@ -53,8 +53,11 @@ class ProjectDetail extends React.Component {
             </div>
           </div>
           <div className="project-page-body">
-            <D3BarChart data={barData} />
-            <D3PieChart data={pieData} title="Project 1 Tasks - Pie Chart" />
+            <D3BarChart data={barData}
+                        className="project-bar-chart"/>
+            <D3PieChart data={pieData}
+                        title="Project 1 Tasks - Pie Chart"
+                        className="project-pie-chart" />
           </div>
         </div>
       </div>

@@ -40,8 +40,8 @@ class Home extends React.Component {
       <div className="splash">
         <div className="introduction">
           THE ULTIMATE TIMER. <br />
-          &nbsp; &nbsp; &nbsp;
-          IT'S INSANELY SIMPLE.
+          &nbsp; &nbsp;
+          ORGANIZE YOUR WORK.
         </div>
 
         <div className="start-tracking-button-container">

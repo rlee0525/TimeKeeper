@@ -23,3 +23,16 @@
   font-size: 20px;
 
 }
+
+.project-page-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-bar-chart {
+  display: flex;
+}
+
+.project-pie-chart {
+  display: flex;
+}
