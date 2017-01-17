@@ -1,7 +1,17 @@
 .projects-search {
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: absolute;
+  right: 500px;
+  line-height: 62px;
+  z-index: 9999;
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    // position: absolute;
+    // z-index: 100;
+  }
 
   ul {
     background: #fff;
@@ -16,6 +26,7 @@
     min-width: 210px;
     max-height: 80vh;
     overflow-y: auto;
+    top: 60px;
 
     li {
       padding: 5px 10px;
@@ -50,9 +61,4 @@
   ul:after {
     border-bottom-color: #fff;
   }
-}
-
-.form-group {
-  display: float;
-  z-index: 100;
 }

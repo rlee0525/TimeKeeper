@@ -1,7 +1,8 @@
 import ProjectsProjectDetail from './projects_project_detail';
 import { connect } from 'react-redux';
 import { requestProjects,
-         requestProject } from '../../actions/projects_actions';
+         requestProject,
+         destroyProject } from '../../actions/projects_actions';
 
 const mapStateToProps = (state, { project }) => ({
   currentUser: state.session.currentUser,
@@ -9,7 +10,8 @@ const mapStateToProps = (state, { project }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestProject: id => dispatch(requestProject(id))
+  requestProject: id => dispatch(requestProject(id)),
+  destroyProject: id => dispatch(destroyProject(id))
 });
 
 export default connect(

@@ -9,7 +9,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createTask: task => dispatch(createTask(task))
+  createTask: task => dispatch(createTask(task)).then(task2 => {
+    console.log(task2);
+  })
 });
 
 export default connect(

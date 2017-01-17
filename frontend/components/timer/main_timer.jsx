@@ -13,6 +13,11 @@ class MainTimer extends React.Component {
     this.props.requestTasks();
   }
 
+  // componentWillReceiveProps(newProps) {
+  //   newProps.requestProjects();
+  //   newProps.requestTasks();
+  // }
+
   render() {
     return(
       <div className="main-page">

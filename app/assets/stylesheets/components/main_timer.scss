@@ -57,7 +57,7 @@
 }
 
 .new-project-button {
-  padding: 13px;
+  padding: 6px 12px 12px 12px;
   font-size: 18px;
   font-family: $sans;
   color: black;
@@ -73,6 +73,11 @@
 
 .new-project-button:hover {
   color: $dark-pink;
+}
+
+.project-form {
+  display: flex;
+  justify-content: space-between;
 }
 
 .tasks-list {

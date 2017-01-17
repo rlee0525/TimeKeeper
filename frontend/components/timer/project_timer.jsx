@@ -137,23 +137,29 @@ class ProjectTimer extends React.Component {
 
         <div className="main-display-timer">
           <div className="project-form">
-            <SearchProjectsContainer handleSearchProject={this.handleSearchProject} />
+            <div>
+              <SearchProjectsContainer handleSearchProject={this.handleSearchProject} />
+            </div>
 
-            <button className="new-project-button"
+            <div>
+              <button className="new-project-button"
                 onClick={this.openModal}>
                 <FontAwesome
                   className='fa-plus'
                   name='plusbuttwon'
                   id='fa-plus' /> Project
-            </button>
+                </button>
+            </div>
 
-            <Modal
-              className="project-modal"
-              isOpen={this.state.modalOpen}
-              onRequestClose={this.closeModal}
-              contentLabel="project-modal">
-              <ProjectFormContainer />
-            </Modal>
+            <div>
+              <Modal
+                className="project-modal"
+                isOpen={this.state.modalOpen}
+                onRequestClose={this.closeModal}
+                contentLabel="project-modal">
+                <ProjectFormContainer />
+              </Modal>
+            </div>
           </div>
 
           <div className="display-main-timer-text">
