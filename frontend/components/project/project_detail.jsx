@@ -17,25 +17,36 @@ class ProjectDetail extends React.Component {
   render() {
     let project = this.props.project;
     let tasks = project.tasks;
+    let pieData = [];
+    let barData = [];
 
-    let pieData = [
-      {name: "Task 1", count: 10},
-      {name: "Task 2", count: 20},
-      {name: "Task 3", count: 5},
-      {name: "Task 4", count: 42},
-      {name: "Task 5 ", count: 29}
-    ];
+    if (tasks && tasks.length !== 0) {
+      tasks.map((task, i) => (
+        pieData.push({
+          name: task.title,
+          count: task.seconds
+        })
+      ));
+    } else {
+      pieData.push({
+        name: "no tasks",
+        count: 1
+      });
+    }
 
-    let barData = [
-      {x: 'a', y: 50},
-      {x: 'b', y: 14},
-      {x: 'c', y: 12},
-      {x: 'd', y: 19},
-      {x: 'e', y: 18},
-      {x: 'f', y: 15},
-      {x: 'g', y: 10},
-      {x: 'h', y: 14}
-    ];
+    if (tasks && tasks.length !== 0) {
+      tasks.map((task, i) => (
+        barData.push({
+          x: task.title,
+          y: task.seconds
+        })
+      ));
+    } else {
+      barData.push({
+        x: "no tasks",
+        y: 1
+      });
+    }
 
     return(
       <div className="main-page">
