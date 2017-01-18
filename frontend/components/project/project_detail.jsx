@@ -12,12 +12,11 @@ class ProjectDetail extends React.Component {
   componentDidMount() {
     const id = parseInt(this.props.params.id);
     this.props.requestProject(id);
-    // debugger;
   }
 
   render() {
-    let project = this.props.projects;
-    // debugger;
+    let project = this.props.project;
+    let tasks = project.tasks;
 
     let pieData = [
       {name: "Task 1", count: 10},
