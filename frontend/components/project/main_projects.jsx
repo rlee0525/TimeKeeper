@@ -4,6 +4,7 @@ import ProjectsProjectDetailContainer from './projects_project_detail_container'
 import Modal from 'react-modal';
 import ProjectFormContainer from '../project/project_form_container';
 import FontAwesome from 'react-fontawesome';
+import { values } from 'lodash';
 
 class MainProjects extends React.Component {
   constructor(props) {
@@ -42,7 +43,9 @@ class MainProjects extends React.Component {
   }
 
   render() {
-    let projects = this.props.projects;
+    let projects = values(this.props.projects).sort((a, b) => {
+      return Date.parse(b.created_at) - Date.parse(a.created_at);
+    });
 
     return(
       <div className="main-page">
