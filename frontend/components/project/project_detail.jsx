@@ -65,7 +65,7 @@ class ProjectDetail extends React.Component {
           <div className="project-page-body">
             <D3BarChart data={barData} />
             <D3PieChart data={pieData}
-                        title="Project 1 Tasks - Pie Chart" />
+                        title="Tasks" />
           </div>
         </div>
       </div>

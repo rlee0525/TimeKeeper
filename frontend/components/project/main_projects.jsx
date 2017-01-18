@@ -82,13 +82,13 @@ class MainProjects extends React.Component {
             </div>
           </div>
           <div className="projects-page-body">
-            {Object.keys(projects).map(projectId => (
-              <button key={projectId}
+            {projects.map(project => (
+              <button key={project.id}
                       className="button-project-detail"
-                      onClick={this.handleProject(projectId)}>
+                      onClick={this.handleProject(project.id)}>
                 <li className="projects-li">
                   <ProjectsProjectDetailContainer
-                    project={ projects[projectId] } />
+                    project={ project } />
                 </li>
               </button>
             ))}

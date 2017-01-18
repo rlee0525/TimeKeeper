@@ -58,9 +58,8 @@ class ProjectTimer extends React.Component {
       const project = this.props.projects[this.state.projectId];
       project.seconds += this.state.elapsed;
 
-      // debugger;
       this.props.createTask({ task });
-      this.props.updateProject({ project });
+      this.props.updateProject(project);
     }
   }
 
