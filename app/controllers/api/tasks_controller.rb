@@ -35,6 +35,17 @@ class Api::TasksController < ApplicationController
     render json: {}
   end
 
+  def tags
+    @task = Task.find(params[:id])
+
+    if @task
+      @tags = @task.tags
+      render json: @tags
+    else
+      render json: @task.errors.full_messages, status: 422
+    end
+  end
+
   private
 
   def task_params

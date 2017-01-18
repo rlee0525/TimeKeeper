@@ -7,5 +7,9 @@ Rails.application.routes.draw do
     get '/projects/search', to: 'projects#search'
     resources :projects
     resources :tasks, except: [:edit]
+    resources :tags, only: [:index, :create, :show, :destroy]
   end
+
+  get 'api/tasks/:id/tags', to: 'api/tasks#tags'
+  delete 'api/tagging/:id', to: 'api/tags#destroy_tagging'
 end

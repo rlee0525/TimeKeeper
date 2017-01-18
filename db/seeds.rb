@@ -1,10 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+User.destroy_all
+Project.destroy_all
+Task.destroy_all
+Tag.destroy_all
+Tagging.destroy_all
 
 User.create(username: "WelcomeGuest", password: "password")
 User.create(username: "raymond", password: "password")
@@ -33,3 +31,23 @@ Task.create(title: "Reading", seconds: 3040, user_id: 1, project_id: 5)
 Task.create(title: "Recording", seconds: 2000, user_id: 1, project_id: 3)
 Task.create(title: "CSS Styling", seconds: 1000, user_id: 1, project_id: 3)
 Task.create(title: "CSS Styling", seconds: 23000, user_id: 1, project_id: 2)
+
+Tag.create!(name: "Exercise")
+Tag.create!(name: "Rest")
+Tag.create!(name: "Social")
+Tag.create!(name: "Work")
+Tag.create!(name: "School")
+Tag.create!(name: "Family")
+Tag.create!(name: "Travel")
+Tag.create!(name: "Entertainment")
+
+Tagging.create!(task_id: 1, tag_id: 2)
+Tagging.create!(task_id: 2, tag_id: 1)
+Tagging.create!(task_id: 1, tag_id: 1)
+Tagging.create!(task_id: 3, tag_id: 3)
+Tagging.create!(task_id: 5, tag_id: 4)
+Tagging.create!(task_id: 1, tag_id: 3)
+Tagging.create!(task_id: 2, tag_id: 7)
+Tagging.create!(task_id: 4, tag_id: 1)
+Tagging.create!(task_id: 6, tag_id: 5)
+Tagging.create!(task_id: 1, tag_id: 6)
