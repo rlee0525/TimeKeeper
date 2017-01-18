@@ -47,13 +47,13 @@ class TasksList extends React.Component {
         {tasks.map((task, id) => (
           <button key={id} className="button-task-detail" onClick={() => this.handleTask(task)}>
             <li className="tasks-li">
-              <div>
+              <div className="task-li-title">
                 {task.title}
               </div>
-              <div>
+              <div className="task-li-project">
                 {this.props.projects[task.project_id] ? this.props.projects[task.project_id].title : ""}
               </div>
-              <div>
+              <div className="task-li-time">
                 {this.displayTime(task.seconds)}
               </div>
             </li>

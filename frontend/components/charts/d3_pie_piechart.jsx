@@ -12,13 +12,18 @@ class D3PieChart extends React.Component {
   render() {
     const colors = ['#FD9827', '#DA3B21', '#3669C9', '#1D9524', '#971497'];
     return (
-      <div>
+      <div className="project-pie-chart">
         <h4> { this.props.title } </h4>
         <D3Chart width={this.props.width} height={this.props.height}>
-          <DataSeries data={this.props.data} colors={colors} width=
-            {this.props.width} height={this.props.height}/>
+          <DataSeries data={this.props.data}
+                      colors={colors}
+                      width={this.props.width}
+                      height={this.props.height}/>
         </D3Chart>
-        <D3Legend data={this.props.data} colors={colors} width={this.props.width - 100} height={this.props.height} />
+        <D3Legend data={this.props.data}
+                  colors={colors}
+                  width={this.props.width - 100}
+                  height={this.props.height} />
       </div>
     );
   }

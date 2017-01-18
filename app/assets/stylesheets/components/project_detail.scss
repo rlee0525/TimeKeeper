@@ -25,14 +25,13 @@
 }
 
 .project-page-body {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 .project-bar-chart {
-  display: flex;
+  float: left;
 }
 
 .project-pie-chart {
-  display: flex;
+  float: right;
 }

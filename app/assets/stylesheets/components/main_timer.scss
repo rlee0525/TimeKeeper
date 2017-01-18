@@ -47,7 +47,11 @@
 }
 
 .main-timer-button > .fa-play-circle {
-  color: #009688;
+  color: $teal;
+}
+
+:disabled > .fa-play-circle {
+  color: gray;
 }
 
 .project-form {
@@ -106,4 +110,23 @@
   align-items: center;
   // border-radius: 10px;
   box-shadow: 3px 3px 3px #888888;
+  margin-bottom: 5px;
+}
+
+.create-task-input {
+  width: 700px;
+}
+
+.task-li-title {
+  padding-left: 15px;
+  font-family: $sans;
+  font-weight: bolder;
+}
+
+.task-li-project {
+
+}
+
+.task-li-time {
+
 }

@@ -12,12 +12,12 @@ class ProjectDetail extends React.Component {
   componentDidMount() {
     const id = parseInt(this.props.params.id);
     this.props.requestProject(id);
-    debugger;
+    // debugger;
   }
 
   render() {
-    let project = this.props.project;
-    debugger;
+    let project = this.props.projects;
+    // debugger;
 
     let pieData = [
       {name: "Task 1", count: 10},
@@ -53,11 +53,9 @@ class ProjectDetail extends React.Component {
             </div>
           </div>
           <div className="project-page-body">
-            <D3BarChart data={barData}
-                        className="project-bar-chart"/>
+            <D3BarChart data={barData} />
             <D3PieChart data={pieData}
-                        title="Project 1 Tasks - Pie Chart"
-                        className="project-pie-chart" />
+                        title="Project 1 Tasks - Pie Chart" />
           </div>
         </div>
       </div>
