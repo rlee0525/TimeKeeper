@@ -17,12 +17,6 @@
       title: "Full Stack Project",
       seconds: 1700,
       author_id: 1,
-      tags: {
-        1: {
-          id: 1
-          name: "Redux"
-        }
-      },
       errors: []
     }
   },
@@ -33,7 +27,13 @@
       date: "110816", // 11/08/16
       seconds: 1700,
       author_id: 1,
-      project_id: 1
+      project_id: 1,
+      tags: {
+        1: {
+          id: 1
+          name: "Redux"
+        }
+      }
     }
   },
 
