@@ -18,10 +18,10 @@ class ProjectsProjectDetail extends React.Component {
       <div className="projects-project">
         <ul>
           <li className="projects-project-title">{this.props.project.title}</li>
-            <button className="delete-project-button"
+            <div className="delete-project-button"
               onClick={() => this.handleDelete(this.props.project.id)} >
               Delete
-            </button>
+            </div>
           <li className="projects-project-time">Total Time: {this.props.project.seconds}</li>
         </ul>
 

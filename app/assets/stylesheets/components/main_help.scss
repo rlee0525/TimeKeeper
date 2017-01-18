@@ -1,4 +1,4 @@
-.project-detail-headings {
+.help-headings {
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -12,15 +12,7 @@
   box-shadow: 3px 3px 3px #888888;
 }
 
-.main-project-title {
-  margin-left: 30px;
-  font-family: $sans-serif;
-  color: $dark-pink;
-  font-size: 20px;
-
-}
-
-.project-page-body {
+.help-page-body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -28,13 +20,11 @@
   margin: 25px 6px 6px 6px;
   background-color: $lightest-gray;
   border-radius: 10px;
-  height: 100%;
 }
 
-.project-bar-chart {
-  float: left;
-}
-
-.project-pie-chart {
-  float: right;
+.main-help-title {
+  margin-left: 30px;
+  font-family: $sans-serif;
+  color: $dark-pink;
+  font-size: 20px;
 }

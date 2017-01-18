@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 
-class MainCoworkers extends React.Component {
+class MainTags extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -15,12 +15,14 @@ class MainCoworkers extends React.Component {
 
         <div className="main-page-body">
           <div className="coworkers-page-headings">
-            <h1> Coworkers </h1>
+            <div className="coworkers-headings">
+              <div className="main-coworkers-title">
+                Coworkers
+              </div>
+            </div>
           </div>
           <div className="coworkers-page-body">
-            <div>
-              
-            </div>
+
           </div>
         </div>
       </div>
@@ -28,4 +30,4 @@ class MainCoworkers extends React.Component {
   }
 }
 
-export default MainCoworkers;
+export default MainTags;

@@ -15,15 +15,17 @@
     background: linear-gradient(20deg, #B2DFDB, $teal);
     border-radius: 4px;
     border: 1px solid #ddd;
-    box-shadow: 2px 2px 1px black;
+    box-shadow: 1px 1px 1px black;
     position: absolute;
-    // right: 0;
     list-style: none;
     margin-top: 12px;
     min-width: 180px;
-    max-height: 28vh;
+    max-height: 21vh;
     overflow: auto;
     top: 60px;
+    font-size: 14px;
+    font-family: $sans;
+    font-weight: bold;
 
     li {
       padding-left: 10px;
