@@ -3,7 +3,7 @@ import { hashHistory } from 'react-router';
 
 class Loading extends React.Component {
   componentDidMount() {
-    setTimeout(() => hashHistory.replace('/timer'), 3500);
+    setTimeout(() => hashHistory.replace('/timer'), 1600);
   }
 
   render() {

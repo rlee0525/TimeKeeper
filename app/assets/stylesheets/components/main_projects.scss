@@ -26,7 +26,10 @@
   flex-wrap: wrap;
   justify-content: center;
   overflow: auto;
-  // background-color: #FFD600;
+  // border: 1px solid black;
+  margin-top: 25px;
+  background-color: $lightest-gray;
+  border-radius: 10px;
 }
 
 .projects-li {
@@ -34,9 +37,9 @@
   flex-direction: column;
   border: 1px solid #888888;
   background: white;
-  width: 300px;
-  height: 300px;
-  margin: 70px 40px 0 40px;
+  width: 250px;
+  height: 250px;
+  margin: 40px 20px 0 20px;
   border-radius: 20px;
   padding: 30px;
   font-family: $sans;
@@ -67,7 +70,7 @@
   // border: 0.5px solid $dark-pink;
   position: absolute;
   overflow: auto;
-  height: 43.8%;
+  height: 35%;
   width: 80%;
   overflow-wrap: break-word;
 }

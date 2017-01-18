@@ -5,6 +5,9 @@
 
 .timer-page-body {
   overflow: auto;
+  // border: 1px solid black;
+  border-radius: 10px;
+  margin: 25px 6px 6px 6px;
 }
 
 .main-timer {
@@ -29,11 +32,12 @@
 .main-display-timer {
   display: flex;
   width: 30%;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .display-main-timer-text {
-  padding: 15px 8px 0 20px;
+  padding: 15px 8px 8px 20px;
+  margin-right: 70px;
   font-size: 24px;
   font-family: $sans;
   opacity: 0.8;
@@ -87,7 +91,8 @@
 }
 
 .tasks-list {
-  margin-top: 5%;
+  background: $lightest-gray;
+  opacity: .9;
 }
 
 .button-task-detail {
@@ -98,7 +103,8 @@
 
 .tasks-li {
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  // justify-content: space-between;
   width: 100%;
   height: 80px;
   background: white;
@@ -118,15 +124,28 @@
 }
 
 .task-li-title {
-  padding-left: 15px;
+  display: flex;
+  position: absolute;
+  text-align: left;
+  padding-left: 30px;
   font-family: $sans;
   font-weight: bolder;
+  color: $dark-pink;
 }
 
 .task-li-project {
-
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
 }
 
 .task-li-time {
-
+  position: absolute;
+  top: 45%;
+  left: 93%;
+  transform: translate(-30%, -30%);
+  padding-right: 30px;
 }

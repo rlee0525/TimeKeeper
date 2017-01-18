@@ -12,7 +12,7 @@
   }
 
   ul {
-    background: linear-gradient(20deg, #B2DFDB, $light-teal);
+    background: linear-gradient(20deg, #B2DFDB, $teal);
     border-radius: 4px;
     border: 1px solid #ddd;
     box-shadow: 2px 2px 1px black;
@@ -21,7 +21,7 @@
     list-style: none;
     margin-top: 12px;
     min-width: 180px;
-    max-height: 39vh;
+    max-height: 28vh;
     overflow: auto;
     top: 60px;
 

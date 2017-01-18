@@ -35,23 +35,32 @@ class TasksList extends React.Component {
       minutes -= hours * 60;
     }
 
-    let paddedTime = [this.padding(hours), this.padding(minutes), this.padding(seconds)].join(":");
+    let paddedTime = [
+      this.padding(hours),
+      this.padding(minutes),
+      this.padding(seconds)
+    ].join(":");
+
     return paddedTime;
   }
 
   render() {
-    let tasks = values(this.props.tasks).sort((a, b) => { return Date.parse(b.created_at) - Date.parse(a.created_at); });
+    let tasks = values(this.props.tasks).sort((a, b) => {
+      return Date.parse(b.created_at) - Date.parse(a.created_at);
+    });
 
     return(
       <div>
         {tasks.map((task, id) => (
-          <button key={id} className="button-task-detail" onClick={() => this.handleTask(task)}>
+          <button key={id} className="button-task-detail"
+                  onClick={() => this.handleTask(task)}>
             <li className="tasks-li">
               <div className="task-li-title">
                 {task.title}
               </div>
               <div className="task-li-project">
-                {this.props.projects[task.project_id] ? this.props.projects[task.project_id].title : ""}
+                {this.props.projects[task.project_id] ?
+                  this.props.projects[task.project_id].title : ""}
               </div>
               <div className="task-li-time">
                 {this.displayTime(task.seconds)}
