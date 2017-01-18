@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
-import ProjectsProjectDetailContainer from './projects_project_detail_container';
+import ProjectsProjectDetailContainer
+  from './projects_project_detail_container';
 import Modal from 'react-modal';
 import ProjectFormContainer from '../project/project_form_container';
 import FontAwesome from 'react-fontawesome';
@@ -25,7 +26,7 @@ class MainProjects extends React.Component {
   }
 
   handleProject(id) {
-    return e => this.props.router.push(`/projects/${id}`);
+    this.props.router.push(`/projects/${id}`);
   }
 
   openModal() {
@@ -63,7 +64,7 @@ class MainProjects extends React.Component {
                   onClick={this.openModal}>
                   <FontAwesome
                     className='fa-plus'
-                    name='plusbuttwon'
+                    name='plusbutton'
                     id='fa-plus' /> Project
                 </button>
               </div>
@@ -83,14 +84,13 @@ class MainProjects extends React.Component {
           </div>
           <div className="projects-page-body">
             {projects.map(project => (
-              <button key={project.id}
-                      className="button-project-detail"
-                      onClick={this.handleProject(project.id)}>
+              <div key={project.id}
+                   className="button-project-detail">
                 <li className="projects-li">
                   <ProjectsProjectDetailContainer
-                    project={ project } />
+                    project={ project } handleProject={this.handleProject} />
                 </li>
-              </button>
+              </div>
             ))}
           </div>
         </div>

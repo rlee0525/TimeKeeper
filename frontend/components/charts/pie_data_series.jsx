@@ -15,8 +15,14 @@ class DataSeries extends React.Component {
     const position = "translate(" + (width)/2 + "," + (height)/2 + ")";
     const bars = (pie(result)).map((point, i) => {
       return (
-        <Sector data={point} key={i} ikey={i} name={names[i]} colors={color} total=
-        {sum} width={width} height={height}/>
+        <Sector data={point}
+                key={i}
+                ikey={i}
+                name={names[i]}
+                colors={color}
+                total={sum}
+                width={width}
+                height={height}/>
       );
     });
 

@@ -45,7 +45,8 @@
   font-weight: bold;
   color: $teal;
   margin-bottom: 20px;
-  overflow-wrap: break-word;
+  overflow-x: auto;
+  cursor: pointer;
 }
 
 .projects-project-time {
@@ -68,4 +69,9 @@
   font-family: $sans-serif;
   color: $dark-pink;
   font-size: 20px;
+}
+
+.delete-project-button {
+  border: 1px solid black;
+  z-index: 100;
 }
