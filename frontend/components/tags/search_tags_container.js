@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import SearchProjects from './search_projects';
-import { searchProjects } from '../../actions/projects_actions';
+import SearchTags from './search_tags';
+import { searchTags } from '../../actions/tag_actions';
 import _ from 'lodash';
 
 const mapStateToProps = state => ({
-  projects: state.projects,
+  tags: state.tags,
   searchResults: state.searchResults
 });
 
 const mapDispatchToProps = dispatch => ({
-  searchProjects: _.debounce(search => dispatch(searchProjects(search)), 150)
+  searchTags: _.debounce(search => dispatch(searchTags(search)), 150)
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(SearchProjects);
+)(SearchTags);

@@ -11,6 +11,7 @@ class MainTimer extends React.Component {
   componentDidMount() {
     this.props.requestProjects();
     this.props.requestTasks();
+    this.props.requestTags();
   }
 
   render() {
@@ -26,7 +27,8 @@ class MainTimer extends React.Component {
           </div>
           <div className="timer-page-body">
             <div className="tasks-list">
-              <TasksList projects={this.props.projects} tasks={this.props.tasks} />
+              <TasksList projects={this.props.projects}
+                         tasks={this.props.tasks} />
             </div>
           </div>
         </div>

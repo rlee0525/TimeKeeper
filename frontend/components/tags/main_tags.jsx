@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 
+
 class MainTags extends React.Component {
   constructor(props) {
     super(props);

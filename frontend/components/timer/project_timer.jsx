@@ -1,6 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import SearchProjectsContainer from '../project/search_projects_container';
+import SearchTagsContainer from '../tags/search_tags_container';
 
 class ProjectTimer extends React.Component {
   constructor(props) {
@@ -13,12 +14,15 @@ class ProjectTimer extends React.Component {
       modalOpen: false,
       title: "",
       seconds: 0,
-      projectId: null
+      tag_names: [],
+      projectId: null,
+      tagId: null
     };
 
     this.tick = this.tick.bind(this);
     this.handleTimerStatus = this.handleTimerStatus.bind(this);
     this.handleSearchProject = this.handleSearchProject.bind(this);
+    this.handleSearchTag = this.handleSearchTag.bind(this);
   }
 
   tick() {
@@ -33,6 +37,17 @@ class ProjectTimer extends React.Component {
   handleSearchProject(id) {
     this.setState({
       projectId: id
+    });
+  }
+
+  handleSearchTag(tag) {
+    // const tagName = this.props.tags[id];
+    // const tag_names = this.state.tag_names.concat(tagName);
+    // debugger;
+
+    this.setState({
+      // tagId: tag.id,
+      tag_names: [...this.state.tag_names, tag.name]
     });
   }
 
@@ -52,8 +67,11 @@ class ProjectTimer extends React.Component {
         title: this.state.title,
         seconds: this.state.elapsed,
         project_id: this.state.projectId,
-        user_id: this.props.currentUser.id
+        user_id: this.props.currentUser.id,
+        tag_names: this.state.tag_names
       };
+
+      console.log(task);
 
       const project = this.props.projects[this.state.projectId];
       project.seconds += this.state.elapsed;
@@ -97,6 +115,7 @@ class ProjectTimer extends React.Component {
   }
 
   render() {
+    // debugger;
     let buttonName = this.state.timerStatus === true ? "Stop" : "Start";
 
     return (
@@ -114,6 +133,13 @@ class ProjectTimer extends React.Component {
         </div>
 
         <div className="main-display-timer">
+          <div className="tag-form">
+            <div>
+              <SearchTagsContainer
+                handleSearchTag={this.handleSearchTag} />
+            </div>
+          </div>
+
           <div className="project-form">
             <div>
               <SearchProjectsContainer

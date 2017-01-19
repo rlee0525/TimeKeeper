@@ -4,6 +4,7 @@ import { requestTasks,
          requestTask,
          createTask,
          updateTask } from '../../actions/tasks_actions';
+import { requestTags } from '../../actions/tag_actions';
 import { requestProjects } from '../../actions/projects_actions';
 
 const mapStateToProps = (state) => ({
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
   requestTasks: () => dispatch(requestTasks()),
   requestTask: id => dispatch(requestTask(id)),
   createTask: task => dispatch(createTask(task)),
-  updateTask: task => dispatch(updateTask(task))
+  updateTask: task => dispatch(updateTask(task)),
+  requestTags: () => dispatch(requestTags())
 });
 
 export default connect(
