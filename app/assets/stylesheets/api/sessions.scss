@@ -74,7 +74,8 @@
 
 ::-webkit-input-placeholder {
   color: pink;
-  font-family: $sans-serif;
+  font-family: $sans;
+  font-weight: bold;
 }
 
 input:focus::-webkit-input-placeholder {

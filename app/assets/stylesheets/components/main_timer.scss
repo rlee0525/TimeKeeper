@@ -32,6 +32,9 @@
   overflow-x: auto;
   width: 500px;
   z-index: 2;
+  font-family: $sans;
+  font-weight: bold;
+  color: $dark-pink;
 }
 
 .main-display-timer {
@@ -175,4 +178,8 @@
   font-family: $sans;
   color: $light-teal;
   z-index: 0;
+}
+
+.form-group > input {
+  color: $dark-pink;
 }
