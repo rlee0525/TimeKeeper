@@ -58,7 +58,7 @@ class TasksList extends React.Component {
               <div className="task-li-title">
                 {task.title}
               </div>
-              <div>
+              <div className="main-timer-tag-names">
                 <ul>
                   {values(task.tags).map((tag, i) => (
                     <li className="main-timer-tag-name" key={i}>{tag.name}</li>

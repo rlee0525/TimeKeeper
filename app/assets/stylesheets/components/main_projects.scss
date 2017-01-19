@@ -39,9 +39,12 @@
   font-family: $sans;
   box-shadow: 6px 6px 6px #888888;
   position: relative;
+  background: linear-gradient(20deg, #404040, #212121);
+  opacity: 0.9;
   // background: linear-gradient(20deg, $lightest-gray, white);
   // background: $dark-gray;
-  background: linear-gradient(20deg, #616161, $dark-gray);
+  // background: $lightest-gray;
+  // background: linear-gradient(20deg, #616161, $dark-gray);
   // background: #616161;
   border: 1px solid $light-gray;
 }

@@ -56,6 +56,8 @@ class TaskList extends React.Component {
   }
 
   render() {
+    // debugger;
+
     let tasks = values(this.props.tasks).sort((a, b) => {
       return Date.parse(b.created_at) - Date.parse(a.created_at);
     });
@@ -69,9 +71,12 @@ class TaskList extends React.Component {
             </div>
             <div>
               <ul>
-                {values(task.tags).map((tag, i) => (
-                  <li className="main-project-tag-name" key={i}>{tag.name}</li>
-                ))}
+                { values(task.tags).map((tag, i) => (
+                  <li className="main-project-tag-name"
+                      key={i}>
+                      {tag.name}
+                  </li>
+                )) }
               </ul>
             </div>
             <div className="project-task-li-time">

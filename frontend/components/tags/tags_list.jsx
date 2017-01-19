@@ -7,38 +7,30 @@ import Modal from 'react-modal';
 class TagsList extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      modalOpen: false
-    };
+    //
+    // this.state = {
+    //   modalOpen: false
+    // };
 
     this.handleDelete = this.handleDelete.bind(this);
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
-    this.handleTagModal = this.handleTagModal.bind(this);
+    // this.openModal = this.openModal.bind(this);
+    // this.closeModal = this.closeModal.bind(this);
+    // this.handleTagModal = this.handleTagModal.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   console.log("Hi");
-  //
-  //   if (values(this.props.tags).length !== values(nextProps.tags).length) {
-  //     this.forceUpdate();
-  //   }
+  // openModal() {
+  //   this.setState({ modalOpen: true });
   // }
-
-  openModal() {
-    this.setState({ modalOpen: true });
-  }
-
-  closeModal() {
-    this.setState({ modalOpen: false });
-  }
-
-  handleTagModal() {
-    this.setState({
-      modalOpen: false
-    });
-  }
+  //
+  // closeModal() {
+  //   this.setState({ modalOpen: false });
+  // }
+  //
+  // handleTagModal() {
+  //   this.setState({
+  //     modalOpen: false
+  //   });
+  // }
 
   handleDelete(id) {
     this.props.destroyTag(id);
@@ -49,11 +41,12 @@ class TagsList extends React.Component {
       return Date.parse(b.created_at) - Date.parse(a.created_at);
     });
 
+    // debugger;
     return (
       <div className="tags-list">
         <ul className="tags-list-names">
           {tags.map((tag, id) => (
-              <li key={id}>
+              <li key={id} className="tag-list-item">
                 <div className="tag-item-name" onClick={this.openModal}>
                   {tag.name}
                 </div>
@@ -64,16 +57,6 @@ class TagsList extends React.Component {
                     name='trashbutton'
                     id='fa-trash-o' />
                 </button>
-                <Modal
-                  className="tag-modal"
-                  isOpen={this.state.modalOpen}
-                  onRequestClose={this.closeModal}
-                  contentLabel="tag-modal"
-                  onClick={this.closeModal}>
-                  {tag.tasks ? tag.tasks.map((task, i) => (
-                    <li key={i}>{task.name}</li>
-                  )) : ""}
-                </Modal>
               </li>
             ))}
         </ul>
@@ -83,3 +66,14 @@ class TagsList extends React.Component {
 }
 
 export default TagsList;
+
+// <Modal
+//   className="tag-modal"
+//   isOpen={this.state.modalOpen}
+//   onRequestClose={this.closeModal}
+//   contentLabel="tag-modal"
+//   onClick={this.closeModal}>
+//   {tag.tasks ? tag.tasks.map((task, i) => (
+//     <li key={i}>{task.name}</li>
+//   )) : ""}
+// </Modal>

@@ -15,16 +15,17 @@
 
 .start-tracking-button-container {
   margin: auto;
-  position: relative;
+  position: absolute;
   width: 350px;
-  top: calc(100% - 53px);
+  top: calc(100% - 80px);
+  left: calc(50% - 172px);
   margin: 0 auto;
 }
 
 .start-tracking-button {
   background-color: $dark-pink;
   border-radius: 10px;
-  opacity: 0.9;
+  opacity: 1;
   font-size: 35px;
   color: white;
   font-weight: bold;

@@ -50,6 +50,7 @@ class ProjectTimer extends React.Component {
       });
     } else {
       this.setState({ timerStatus });
+      clearInterval(this.interval);
 
       const task = {
         title: this.state.title,
@@ -71,8 +72,7 @@ class ProjectTimer extends React.Component {
         title: "",
         seconds: 0,
         tag_names: [],
-        projectId: null,
-        tags: []
+        projectId: null
       });
     }
   }
@@ -166,5 +166,3 @@ class ProjectTimer extends React.Component {
 }
 
 export default ProjectTimer;
-
-// <button className="placeholder-tags">Add Tags</button>

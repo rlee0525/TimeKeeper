@@ -35,23 +35,25 @@ class TagForm extends React.Component {
   render() {
     return (
       <form className="create-tag-form" onSubmit={this.handleSubmit}>
-        <div className="tag-error-message">
-          {this.props.errors ? this.renderErrors() : ""}
-        </div>
 
-        <div className="create-tag-name">
-          <input className="create-tag-input"
+          <div className="tag-error-message">
+            {this.props.errors ? this.renderErrors() : ""}
+          </div>
+
+          <div className="create-tag-name">
+            <input className="create-tag-input"
               ref="name"
               value={ this.state.name }
               placeholder="Tag name"
               onChange={ this.update('name') }
               required />
-        </div>
-        <div>
-          <button className="create-tag-button">
-            Create Tag!
-          </button>
-        </div>
+          </div>
+          <div className="create-tag-button-div">
+            <button className="create-tag-button">
+              Create Tag
+            </button>
+          </div>
+        
       </form>
     );
   }
