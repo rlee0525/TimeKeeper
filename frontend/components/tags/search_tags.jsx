@@ -31,8 +31,6 @@ class SearchTags extends React.Component {
   }
 
   render() {
-    // let icon = <FontAwesome className='fa-tags' size='1x' name='tagbutton'/>;
-    // debugger;
     return (
       <form className="tags-search">
         <div className="form-group">
@@ -66,3 +64,6 @@ class SearchTags extends React.Component {
 }
 
 export default SearchTags;
+
+// let icon = <FontAwesome className='fa-tags' size='1x' name='tagbutton'/>;
+// debugger;

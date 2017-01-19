@@ -2,6 +2,8 @@ import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import SearchProjectsContainer from '../project/search_projects_container';
 import SearchTagsContainer from '../tags/search_tags_container';
+// import TagFormContainer from '../tags/tag_form_container';
+import TagForm from '../tags/tag_form';
 
 class ProjectTimer extends React.Component {
   constructor(props) {
@@ -41,12 +43,7 @@ class ProjectTimer extends React.Component {
   }
 
   handleSearchTag(tag) {
-    // const tagName = this.props.tags[id];
-    // const tag_names = this.state.tag_names.concat(tagName);
-    // debugger;
-
     this.setState({
-      // tagId: tag.id,
       tag_names: [...this.state.tag_names, tag.name]
     });
   }
@@ -115,7 +112,6 @@ class ProjectTimer extends React.Component {
   }
 
   render() {
-    // debugger;
     let buttonName = this.state.timerStatus === true ? "Stop" : "Start";
 
     return (
@@ -128,6 +124,7 @@ class ProjectTimer extends React.Component {
                   placeholder="Task name"
                   onChange={ this.update('title') }
                   required />
+
             </div>
           </form>
         </div>
@@ -169,3 +166,10 @@ class ProjectTimer extends React.Component {
 }
 
 export default ProjectTimer;
+
+
+          // <div className="tag-form">
+          //   <div>
+          //     <TagForm />
+          //   </div>
+          // </div>

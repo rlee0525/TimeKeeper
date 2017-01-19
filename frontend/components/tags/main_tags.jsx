@@ -7,7 +7,12 @@ class MainTags extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.requestTags();
+  }
+
   render() {
+    debugger;
     return(
       <div className="main-page">
         <div className="main-page-navbar">
