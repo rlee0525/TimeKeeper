@@ -21,7 +21,7 @@ class Api::TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     @tag.destroy
 
-    render json: {}
+    render json: @tag
   end
 
   def search

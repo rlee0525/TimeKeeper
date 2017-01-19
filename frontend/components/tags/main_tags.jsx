@@ -2,14 +2,11 @@ import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 import TagFormContainer from './tag_form_container';
 import TagsListContainer from './tags_list_container';
+import { values } from 'lodash';
 
 class MainTags extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      tags: this.props.tags
-    };
   }
 
   componentDidMount() {

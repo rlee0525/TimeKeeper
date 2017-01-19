@@ -18,6 +18,14 @@ class TagsList extends React.Component {
     this.handleTagModal = this.handleTagModal.bind(this);
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   console.log("Hi");
+  //
+  //   if (values(this.props.tags).length !== values(nextProps.tags).length) {
+  //     this.forceUpdate();
+  //   }
+  // }
+
   openModal() {
     this.setState({ modalOpen: true });
   }

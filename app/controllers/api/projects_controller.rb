@@ -37,7 +37,7 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
 
-    render json: {}
+    render json: @project
   end
 
   def search
