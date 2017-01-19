@@ -64,6 +64,16 @@ class ProjectTimer extends React.Component {
 
       this.props.createTask({ task });
       this.props.updateProject(project);
+      this.setState({
+        elapsed: 0,
+        timerStatus: false,
+        startTime: null,
+        title: "",
+        seconds: 0,
+        tag_names: [],
+        projectId: null,
+        tags: []
+      });
     }
   }
 
