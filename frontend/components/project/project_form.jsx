@@ -18,8 +18,15 @@ class ProjectForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const project = this.state;
-    this.props.createProject({ project });
-    this.props.handleProjectModal();
+    const titles = this.props.projects.map(projectTitle => projectTitle.title);
+
+    if (!titles.includes(project.title)) {
+      this.props.createProject({ project })
+      .then(this.props.handleProjectModal())
+      .then(this.props.clearError());
+    } else {
+      this.props.createProject({ project });
+    }
   }
 
   renderErrors() {

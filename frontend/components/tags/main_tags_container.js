@@ -11,6 +11,6 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(
-  null,
-  null
+  mapStateToProps,
+  mapDispatchToProps
 )(MainTags);

@@ -6,6 +6,7 @@ export const REMOVE_TAG = "REMOVE_TAG";
 export const REMOVE_TAGGING = "REMOVE_TAGGING";
 export const RECEIVE_FOUND_TAGS = "RECEIVE_FOUND_TAGS";
 export const TAG_ERROR = "TAG_ERROR";
+export const CLEAR_ERROR = "CLEAR_ERROR";
 
 export const receiveTags = tags => ({
   type: RECEIVE_TAGS,
@@ -30,6 +31,10 @@ export const receiveFoundTags = tags => ({
 export const tagError = errors => ({
   type: TAG_ERROR,
   errors
+});
+
+export const clearError = () => ({
+  type: CLEAR_ERROR
 });
 
 export const requestTags = () => dispatch => (

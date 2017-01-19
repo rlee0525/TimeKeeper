@@ -1,8 +1,9 @@
 import { RECEIVE_TAGS,
          RECEIVE_TAG,
          REMOVE_TAG,
-         TAG_ERROR } from '../actions/tag_actions';
-import merge from 'lodash/merge';
+         TAG_ERROR,
+         CLEAR_ERROR } from '../actions/tag_actions';
+import { merge, extend } from 'lodash';
 
 const TagsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -21,6 +22,10 @@ const TagsReducer = (state = {}, action) => {
     case TAG_ERROR:
       return merge({}, state, {
         errors: action.errors
+      });
+    case CLEAR_ERROR:
+      return extend({}, state, {
+        errors: []
       });
     default:
       return state;

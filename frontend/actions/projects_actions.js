@@ -5,6 +5,7 @@ export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
 export const PROJECT_ERROR = "PROJECT_ERROR";
 export const RECEIVE_FOUND_PROJECTS = "RECEIVE_FOUND_PROJECTS";
+export const CLEAR_ERROR = "CLEAR_ERROR";
 
 export const receiveProjects = projects => ({
   type: RECEIVE_PROJECTS,
@@ -24,6 +25,10 @@ export const removeProject = project => ({
 export const projectError = errors => ({
   type: PROJECT_ERROR,
   errors
+});
+
+export const clearError = () => ({
+  type: CLEAR_ERROR
 });
 
 export const receiveFoundProjects = projects => ({

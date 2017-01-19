@@ -1,114 +1,60 @@
 import React from 'react';
-import { WithContext as ReactTags } from 'react-tag-input';
 
 class TagForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      tags: []
+      name: ""
     };
 
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleAddition = this.handleAddition.bind(this);
-    this.handleDrag = this.handleDrag.bind(this);
-    this.refreshTags = this.refreshTags.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextProps){
-    if( nextProps.task ){
-      this.setState({ tags: nextProps.tags });
-    }
+  update(property) {
+    return e => this.setState({ [property]: e.target.value });
   }
 
-  refreshTags() {
-    // this.props.requestNotesTags(this.props.note);
-    this.props.requestTags();
+  handleSubmit(e) {
+    e.preventDefault();
+    const tag = this.state;
+    this.props.createTag(tag)
+      .then(this.setState({ name: "" }));
+    this.props.clearError();
   }
 
-  handleDelete(idx) {
-    let tags = this.state.tags;
-    tags.splice(idx, 1);
-    this.setState({
-      tags
-    });
-  }
-
-  // handleDelete(idx){
-  //   this.props.destroyTagging(this.props.tags[idx], this.props.note.id);
-  //   this.refreshTags();
-  //   this.props.alert("error", "Tag Removed");
-  //   if (this.props.selectedTag){
-  //     if (this.props.selectedTag.name === this.props.tags[idx].name){
-  //       this.props.requestTaggedNotes(this.props.selectedTag);
-  //     }
-  //   }
-  // }
-
-  handleAddition(tag) {
-    let tags = this.state.tags;
-    tags.push({
-      id: tags.length + 1,
-      name: tag
-    });
-
-    this.setState({
-      tags
-    });
-  }
-
-  handleDrag(tag, currPos, newPos) {
-    let tags = this.state.tags;
-
-    tags.splice(currPos, 1);
-    tags.splice(newPos, 0, tag);
-
-    this.setState({
-      tags
-    });
+  renderErrors() {
+    return (
+      <ul className="errors">
+        {this.props.errors.map((err, i) => (
+          <li key={i}>{err}</li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
-    let tags = this.state.tags;
-
     return (
-      <div>
-        <ReactTags tags={tags}
-                   handleDelete={this.handleDelete}
-                   handleAddition={this.handleAddition}
-                   handleDrag={this.handleDrag} />
-      </div>
+      <form className="create-tag-form" onSubmit={this.handleSubmit}>
+        <div className="tag-error-message">
+          {this.props.errors ? this.renderErrors() : ""}
+        </div>
+
+        <div className="create-tag-name">
+          <input className="create-tag-input"
+              ref="name"
+              value={ this.state.name }
+              placeholder="Tag name"
+              onChange={ this.update('name') }
+              required />
+        </div>
+        <div>
+          <button className="create-tag-button">
+            Create Tag!
+          </button>
+        </div>
+      </form>
     );
   }
 }
 
 export default TagForm;
-
-
-//
-
-//
-//   handleAddition(tag){
-//     this.props.createTag(tag, this.props.note.id);
-//     this.refreshTags();
-//     this.props.alert("success", "Tag Added");
-//     if (this.props.selectedTag){
-//       if (this.props.selectedTag.name === tag){
-//         this.props.requestTaggedNotes(this.props.selectedTag);
-//       }
-//     }
-//   }
-//
-//   render(){
-//     return(
-//       <div className="note-form-tags">
-//         <ReactTags
-//             tags={ this.state.currentTags }
-//             labelField={'name'}
-//             handleDelete={ this.handleDelete }
-//             handleAddition={ this.handleAddition }
-//             allowDeleteFromEmptyInput={false}/>
-//       </div>
-//     );
-//   }
-// }

@@ -1,8 +1,9 @@
 import { RECEIVE_PROJECTS,
          RECEIVE_PROJECT,
          REMOVE_PROJECT,
-         PROJECT_ERROR } from '../actions/projects_actions';
-import merge from 'lodash/merge';
+         PROJECT_ERROR,
+         CLEAR_ERROR } from '../actions/projects_actions';
+import { merge, extend } from 'lodash';
 
 const ProjectsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -21,6 +22,10 @@ const ProjectsReducer = (state = {}, action) => {
     case PROJECT_ERROR:
       return merge({}, state, {
         errors: action.errors
+      });
+    case CLEAR_ERROR:
+      return extend({}, state, {
+        errors: []
       });
     default:
       return state;

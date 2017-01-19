@@ -1,6 +1,6 @@
 import ProjectForm from './project_form';
 import { connect } from 'react-redux';
-import { createProject } from '../../actions/projects_actions';
+import { createProject, clearError } from '../../actions/projects_actions';
 
 const mapStateToProps = ({ session, projects }) => ({
   currentUser: session.currentUser,
@@ -8,7 +8,8 @@ const mapStateToProps = ({ session, projects }) => ({
 });
 
 const mapDispatchToProps = (dispatch, { location }) => ({
-  createProject: project => dispatch(createProject(project))
+  createProject: project => dispatch(createProject(project)),
+  clearError: () => dispatch(clearError())
 });
 
 export default connect(

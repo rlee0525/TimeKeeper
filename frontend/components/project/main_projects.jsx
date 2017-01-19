@@ -77,6 +77,7 @@ class MainProjects extends React.Component {
                   contentLabel="project-modal"
                   onClick={this.closeModal}>
                   <ProjectFormContainer
+                    projects={projects}
                     handleProjectModal={this.handleProjectModal} />
                 </Modal>
               </div>
@@ -86,7 +87,7 @@ class MainProjects extends React.Component {
             {projects.map(project => (
               <div key={project.id}
                    className="button-project-detail">
-                <li className="projects-li">
+                <li key={project.id} className="projects-li">
                   <ProjectsProjectDetailContainer
                     project={ project } handleProject={this.handleProject} />
                 </li>
