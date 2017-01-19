@@ -8,7 +8,7 @@ class DataSeries extends React.Component {
     const data = this.props.data;
     const width  = this.props.width;
     const height = this.props.height;
-    const pie = d3.layout.pie();
+    const pie = d3.layout.pie().padAngle(.02);
     const result = data.map(item => item.count);
     const names = data.map(item => item.name);
     const sum = result.reduce(((memo, num) => memo + num), 0);

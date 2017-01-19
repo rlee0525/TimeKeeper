@@ -10,13 +10,6 @@ class D3PieChart extends React.Component {
   }
 
   render() {
-    // const colors = [
-    //   '#FD9827', '#DA3B21', '#3669C9', '#1D9524',
-    //   '#971497', '#E91E63', '#03A9F4', '#E040FB',
-    //   '#76FF03', '#2196F3', '#64FFDA', '#8BC34A',
-    //   '#EEFF41', '#607D8B', '#FF3D00', '#F44336'
-    // ];
-    //
     const colors = [
       '#FAA43A', '#60BD68', '#F17CB0', '#B2912F',
       '#B276B2', '#DECF3F', '#F15854', '#4D4D4D',

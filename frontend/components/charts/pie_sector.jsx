@@ -42,7 +42,7 @@ class Sector extends React.Component {
 
   render() {
     const outerRadius = this.props.width / 2.2;
-    const innerRadius = this.props.width / 4;
+    const innerRadius = this.props.width / 3.5;
     const arc = d3.svg.arc()
         .outerRadius(outerRadius)
         .innerRadius(innerRadius);
@@ -50,7 +50,6 @@ class Sector extends React.Component {
     const center = "translate(" + arc.centroid(data) + ")";
     const percentCenter = "translate(0,3)";
     const color = this.props.colors;
-
     return (
       <g onMouseOver={this.onMouseOver}
          onMouseOut={this.onMouseOut}
