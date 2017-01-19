@@ -1,9 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 import SearchProjectsContainer from '../project/search_projects_container';
-import SearchTagsContainer from '../tags/search_tags_container';
-// import TagFormContainer from '../tags/tag_form_container';
-import TagForm from '../tags/tag_form';
+import TagsInput from 'react-tags-input';
 
 class ProjectTimer extends React.Component {
   constructor(props) {
@@ -13,18 +11,17 @@ class ProjectTimer extends React.Component {
       elapsed: 0,
       timerStatus: false,
       startTime: null,
-      modalOpen: false,
       title: "",
       seconds: 0,
       tag_names: [],
       projectId: null,
-      tagId: null
+      tags: []
     };
 
     this.tick = this.tick.bind(this);
     this.handleTimerStatus = this.handleTimerStatus.bind(this);
     this.handleSearchProject = this.handleSearchProject.bind(this);
-    this.handleSearchTag = this.handleSearchTag.bind(this);
+    this._onChange = this._onChange.bind(this);
   }
 
   tick() {
@@ -39,12 +36,6 @@ class ProjectTimer extends React.Component {
   handleSearchProject(id) {
     this.setState({
       projectId: id
-    });
-  }
-
-  handleSearchTag(tag) {
-    this.setState({
-      tag_names: [...this.state.tag_names, tag.name]
     });
   }
 
@@ -67,8 +58,6 @@ class ProjectTimer extends React.Component {
         user_id: this.props.currentUser.id,
         tag_names: this.state.tag_names
       };
-
-      console.log(task);
 
       const project = this.props.projects[this.state.projectId];
       project.seconds += this.state.elapsed;
@@ -111,6 +100,10 @@ class ProjectTimer extends React.Component {
     return paddedTime;
   }
 
+  _onChange(tag_names) {
+    this.setState({ tag_names });
+  }
+
   render() {
     let buttonName = this.state.timerStatus === true ? "Stop" : "Start";
 
@@ -124,41 +117,38 @@ class ProjectTimer extends React.Component {
                   placeholder="Task name"
                   onChange={ this.update('title') }
                   required />
-
             </div>
           </form>
         </div>
 
         <div className="main-display-timer">
-          <div className="tag-form">
-            <div>
-              <SearchTagsContainer
-                handleSearchTag={this.handleSearchTag} />
-            </div>
+          <div className="tags-input">
+            <FontAwesome className='fa-tags' name='tagsbutton'/>
+            <TagsInput onChange={this._onChange} value={this.state.tag_names} />
           </div>
 
-          <div className="project-form">
-            <div>
-              <SearchProjectsContainer
-                handleSearchProject={this.handleSearchProject} />
-            </div>
+          <div className="search-project-container">
+            <SearchProjectsContainer
+              handleSearchProject={this.handleSearchProject} />
           </div>
 
           <div className="display-main-timer-text">
             {this.displayTime(this.state.elapsed)}
           </div>
 
-          <button className="main-timer-button"
-                  onClick={this.handleTimerStatus}
-                  disabled={this.state.projectId &&
-                    this.state.title.length !== 0 ?
-                    false : true }>
-            <FontAwesome
-              className={this.state.timerStatus ?
-                'fa-stop-circle' : 'fa-play-circle'}
-              size='2x'
-              name='playbutton'/>
-          </button>
+          <div className="display-main-timer-button">
+            <button className="main-timer-button"
+              onClick={this.handleTimerStatus}
+              disabled={this.state.projectId &&
+                this.state.title.length !== 0 ?
+                false : true }>
+                <FontAwesome
+                  className={this.state.timerStatus ?
+                    'fa-stop-circle' : 'fa-play-circle'}
+                    size='2x'
+                    name='playbutton'/>
+                </button>
+          </div>
         </div>
       </div>
     );
@@ -167,9 +157,4 @@ class ProjectTimer extends React.Component {
 
 export default ProjectTimer;
 
-
-          // <div className="tag-form">
-          //   <div>
-          //     <TagForm />
-          //   </div>
-          // </div>
+// <button className="placeholder-tags">Add Tags</button>

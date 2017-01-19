@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 
-class MainTags extends React.Component {
+class MainCoworkers extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -30,4 +30,4 @@ class MainTags extends React.Component {
   }
 }
 
-export default MainTags;
+export default MainCoworkers;
