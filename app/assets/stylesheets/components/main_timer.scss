@@ -114,7 +114,7 @@
   width: 100%;
   height: 80px;
   background: white;
-  opacity: 0.7;
+  opacity: 1;
   font-size: 18px;
   font-weight: bold;
   font-family: $sans;
@@ -131,16 +131,20 @@
   padding-left: 30px;
   font-family: $sans;
   font-weight: bolder;
-  color: $dark-pink;
+  color: $dark-gray;
 }
 
 .task-li-project {
   position: absolute;
-  text-align: left;
-  top: 50%;
+  top: 22%;
   left: 52%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
+  // transform: translate(-50%, -50%);
+  // font-weight: bold;
+  font-size: 16px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: $dark-pink;
+  color: white;
 }
 
 .task-li-time {
@@ -153,6 +157,7 @@
 
 .tags-input > .fa-tags {
   margin: 10px 15px 0 0;
+  color: $teal;
 }
 
 .tags-input {
@@ -182,4 +187,14 @@
 
 .form-group > input {
   color: $dark-pink;
+}
+
+.main-timer-tag-name {
+  display: flex;
+  list-style: none;
+  font-family: $sans;
+  font-size: 12px;
+  color: white;
+  background-color: $teal;
+  border-radius: 10px;
 }

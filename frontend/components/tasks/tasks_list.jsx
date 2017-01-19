@@ -58,6 +58,13 @@ class TasksList extends React.Component {
               <div className="task-li-title">
                 {task.title}
               </div>
+              <div>
+                <ul>
+                  {values(task.tags).map((tag, i) => (
+                    <li className="main-timer-tag-name" key={i}>{tag.name}</li>
+                  ))}
+                </ul>
+              </div>
               <div className="task-li-project">
                 {this.props.projects[task.project_id] ?
                   this.props.projects[task.project_id].title : ""}
