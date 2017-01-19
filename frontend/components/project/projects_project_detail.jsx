@@ -2,6 +2,7 @@ import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 import ProjectsProjectDetailContainer
   from './projects_project_detail_container';
+import FontAwesome from 'react-fontawesome';
 
 class ProjectsProjectDetail extends React.Component {
   constructor(props) {
@@ -49,28 +50,33 @@ class ProjectsProjectDetail extends React.Component {
 
     return (
       <div className="projects-project">
-        <ul>
+        <ul className='projects-project-ul'>
           <li className="projects-project-title"
-              onClick={
-                () => this.props.handleProject(this.props.project.id)
-              }>
+              onClick={() => this.props.handleProject(this.props.project.id)}>
               {this.props.project.title}
           </li>
+          <div className="projects-project-ul-div">
+            <li className="projects-project-time"
+                onClick={() => this.props.handleProject(this.props.project.id)}>
+              Total Time: {totalTime}
+            </li>
             <button className="delete-project-button"
               onClick={() => this.handleDelete(this.props.project.id)} >
-              Delete
+              <FontAwesome
+                className='fa-trash-o'
+                name='trashbutton'
+                id='fa-trash-o' />
             </button>
-          <li className="projects-project-time">
-            Total Time: {totalTime}
-          </li>
+          </div>
         </ul>
 
-        <ul className="projects-project-tasks">
+        <ul className="projects-project-tasks"
+            onClick={() => this.props.handleProject(this.props.project.id)}>
           {this.props.project.tasks ?
             this.props.project.tasks.map((task, id) => (
-              <li key={id}>
-                {task.title}
-                {task.seconds}
+              <li className="project-tasks-info" key={id}>
+                <div className="project-tasks-title">{task.title}</div>
+                <div className="project-tasks-time">{this.displayTime(task.seconds)}</div>
               </li>
             )) : ""}
         </ul>

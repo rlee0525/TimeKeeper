@@ -1,8 +1,10 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 import D3PieChart from '../charts/d3_pie_piechart';
-import D3BarChart from '../charts/d3_bar_barchart';
+// import D3BarChart from '../charts/d3_bar_barchart';
 import D3Chart from '../charts/d3_chart';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
+         Legend } from 'recharts';
 
 class ProjectDetail extends React.Component {
   constructor(props) {
@@ -37,14 +39,14 @@ class ProjectDetail extends React.Component {
     if (tasks && tasks.length !== 0) {
       tasks.map((task, i) => (
         barData.push({
-          x: task.title,
-          y: task.seconds
+          title: task.title,
+          seconds: Math.floor(task.seconds / 1000)
         })
       ));
     } else {
       barData.push({
-        x: "no tasks",
-        y: 1
+        title: "no tasks",
+        seconds: 1
       });
     }
 
@@ -63,9 +65,22 @@ class ProjectDetail extends React.Component {
             </div>
           </div>
           <div className="project-page-body">
-            <D3BarChart data={barData} />
-            <D3PieChart data={pieData}
-                        title="Tasks" />
+            <div className="charts-list">
+              <div className="bar-chart">
+                <BarChart width={700} height={350} data={barData}
+                  margin={{top: 5, right: 30, left: 20, bottom: 5}}>
+                  <XAxis dataKey="title"/>
+                  <YAxis/>
+                  <CartesianGrid strokeDasharray="3 3"/>
+                  <Tooltip/>
+                  <Legend />
+                  <Bar dataKey="seconds" fill="#82ca9d" />
+                </BarChart>
+              </div>
+              <div className="pie-chart">
+                <D3PieChart data={pieData} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -74,3 +89,5 @@ class ProjectDetail extends React.Component {
 }
 
 export default ProjectDetail;
+
+// <D3BarChart data={barData} />

@@ -22,34 +22,50 @@
   justify-content: center;
   overflow: auto;
   margin: 25px 6px 6px 6px;
-  background-color: $lightest-gray;
+  background: linear-gradient(20deg, $light-gray, $lightest-gray);
   border-radius: 10px;
 }
 
 .projects-li {
   display: flex;
   flex-direction: column;
-  background: white;
+  // background: white;
   width: 250px;
   height: 250px;
   margin: 40px 20px 0 20px;
   border-radius: 20px;
   padding: 30px;
   font-family: $sans;
-  box-shadow: 3px 3px 3px #888888;
+  box-shadow: 4px 4px 4px #888888;
   position: relative;
+  background: linear-gradient(20deg, $lightest-gray, white);
+  border: 1px solid $light-gray;
+}
+
+.projects-project-ul {
+  display: flex;
+  flex-direction: column;
 }
 
 .projects-project-title {
   font-size: 24px;
   font-weight: bold;
   color: $teal;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   overflow-x: auto;
   cursor: pointer;
 }
 
+.projects-project-ul-div {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
 .projects-project-time {
+  display: flex;
+  flex-direction: column;
+  width: 190px;
   font-size: 20px;
   font-weight: bold;
   color: $light-teal;
@@ -59,9 +75,22 @@
 .projects-project-tasks {
   position: absolute;
   overflow: auto;
-  height: 35%;
+  height: 48%;
   width: 80%;
   overflow-wrap: break-word;
+}
+
+.project-tasks-info {
+  display: flex;
+  justify-content: space-between;
+  color: $medium-pink;
+  padding: 0 20px 0 8px;
+}
+
+.project-tasks-title {
+}
+
+.project-tasks-time {
 }
 
 .main-projects-title {
@@ -72,6 +101,16 @@
 }
 
 .delete-project-button {
-  border: 1px solid black;
-  z-index: 100;
+  display: flex;
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  left: 90%;
+  bottom: 55%;
+  font-size: 20px;
+  z-index: 10;
+}
+
+.projects-project:hover {
+  cursor: pointer;
 }

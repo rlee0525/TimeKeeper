@@ -8,8 +8,8 @@ class D3Legend extends React.Component {
     const data = this.props.data;
     const elements = data.map((item, i) => (
       <LegendElement color={color}
-                     xpos="10"
-                     ypos={45+i*20}
+                     xpos="30"
+                     ypos={80+i*25}
                      data={item.name}
                      key={i}
                      ikey={i}/>

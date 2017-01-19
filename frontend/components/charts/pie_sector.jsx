@@ -64,7 +64,7 @@ class Sector extends React.Component {
         </text>
         <text fill={color[this.props.ikey]}
               stroke={color}
-              fontSize="20px"
+              fontSize="25px"
               transform={percentCenter}
               textAnchor="middle">
               {this.state.text}
