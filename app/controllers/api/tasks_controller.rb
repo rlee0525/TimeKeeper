@@ -32,7 +32,7 @@ class Api::TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
 
-    render json: {}
+    render json: @task
   end
 
   # def tags

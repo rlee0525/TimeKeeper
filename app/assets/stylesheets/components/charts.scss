@@ -1,0 +1,26 @@
+.bar-chart {
+	position: relative;
+}
+
+.pie-chart {
+	position: absolute;
+}
+
+.arc {
+	opacity: 1.0;
+}
+
+.arc-hover {
+	opacity: 0.7;
+}
+
+.project-pie-chart {
+	.pie-chart-g {
+		position: relative;
+	}
+
+	.legend {
+		position: absolute;
+		left: 96%;
+	}
+}

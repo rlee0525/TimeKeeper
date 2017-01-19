@@ -53,7 +53,8 @@ class Sector extends React.Component {
     return (
       <g onMouseOver={this.onMouseOver}
          onMouseOut={this.onMouseOut}
-         onClick={this.onClick}>
+         onClick={this.onClick}
+         className="pie-chart-g">
         <path className={this.state.opacity}
               fill={color[this.props.ikey]}
               d={arc(this.props.data)}></path>
@@ -64,7 +65,7 @@ class Sector extends React.Component {
         </text>
         <text fill={color[this.props.ikey]}
               stroke={color}
-              fontSize="25px"
+              fontSize="32px"
               transform={percentCenter}
               textAnchor="middle">
               {this.state.text}

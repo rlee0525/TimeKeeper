@@ -17,13 +17,13 @@
   font-family: $sans-serif;
   color: $dark-pink;
   font-size: 20px;
-
 }
 
 .project-page-body {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;;
+  // flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
   position: relative;
   overflow: auto;
   margin: 25px 6px 6px 6px;
@@ -31,16 +31,6 @@
   border-radius: 10px;
   height: 100%;
 }
-
-// .project-bar-chart {
-//   float: left;
-// }
-//
-// .project-pie-chart {
-//   float: right;
-// }
-
-
 
 .bar-chart {
   display: flex;
@@ -53,4 +43,61 @@
   display: flex;
   position: absolute;
   left: 55%;
+}
+
+.task-list-container {
+  list-style: none;
+  display: inline-block;
+  display: columns;
+  position: absolute;
+  top: 57%;
+  width: 100%;
+}
+
+.project-task-li {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  background: white;
+  opacity: 1;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: $sans;
+  text-align: left;
+  align-items: center;
+  box-shadow: 3px 3px 3px #888888;
+  margin-bottom: 5px;
+}
+
+.project-task-li-title {
+  display: flex;
+  position: absolute;
+  text-align: left;
+  padding-left: 30px;
+  font-family: $sans;
+  font-weight: bolder;
+  color: $dark-gray;
+}
+
+
+.project-task-li-time {
+  position: absolute;
+  top: 45%;
+  left: 90%;
+  transform: translate(-30%, -30%);
+  padding-right: 30px;
+}
+
+.delete-task-button {
+  display: flex;
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  left: 97%;
+  bottom: 31%;
+  font-size: 20px;
+  z-index: 10;
+  color: $light-gray;
 }

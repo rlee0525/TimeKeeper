@@ -1,7 +1,7 @@
 import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 import D3PieChart from '../charts/d3_pie_piechart';
-// import D3BarChart from '../charts/d3_bar_barchart';
+import TaskListContainer from '../tasks/task_list_container';
 import D3Chart from '../charts/d3_chart';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
          Legend } from 'recharts';
@@ -67,7 +67,7 @@ class ProjectDetail extends React.Component {
           <div className="project-page-body">
             <div className="charts-list">
               <div className="bar-chart">
-                <BarChart width={700} height={350} data={barData}
+                <BarChart width={600} height={350} data={barData}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                   <XAxis dataKey="title"/>
                   <YAxis/>
@@ -80,6 +80,10 @@ class ProjectDetail extends React.Component {
               <div className="pie-chart">
                 <D3PieChart data={pieData} />
               </div>
+            </div>
+
+            <div className="task-list-container">
+              <TaskListContainer project={this.props.project}/>
             </div>
           </div>
         </div>

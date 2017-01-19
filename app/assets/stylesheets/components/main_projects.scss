@@ -23,6 +23,7 @@
   overflow: auto;
   margin: 25px 6px 6px 6px;
   background: linear-gradient(20deg, $light-gray, $lightest-gray);
+  border: 1px solid white;
   border-radius: 10px;
 }
 
@@ -36,9 +37,12 @@
   border-radius: 20px;
   padding: 30px;
   font-family: $sans;
-  box-shadow: 4px 4px 4px #888888;
+  box-shadow: 6px 6px 6px #888888;
   position: relative;
-  background: linear-gradient(20deg, $lightest-gray, white);
+  // background: linear-gradient(20deg, $lightest-gray, white);
+  // background: $dark-gray;
+  background: linear-gradient(20deg, #616161, $dark-gray);
+  // background: #616161;
   border: 1px solid $light-gray;
 }
 
@@ -109,6 +113,7 @@
   bottom: 55%;
   font-size: 20px;
   z-index: 10;
+  color: $light-gray;
 }
 
 .projects-project:hover {

@@ -37,8 +37,8 @@ class D3PieChart extends React.Component {
 }
 
 D3PieChart.defaultProps = {
-  width: 370,
-  height: 420,
+  width: 390,
+  height: 440,
   title: '',
   Legend: true
 };
