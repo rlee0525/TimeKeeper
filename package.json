@@ -34,6 +34,7 @@
     "react-select": "^1.0.0-rc.2",
     "react-tag-input": "^4.6.2",
     "react-tagsinput": "^3.14.0",
+    "recharts": "^0.20.5",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0",
     "webpack": "^1.14.0"

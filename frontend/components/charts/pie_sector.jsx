@@ -50,6 +50,7 @@ class Sector extends React.Component {
     const center = "translate(" + arc.centroid(data) + ")";
     const percentCenter = "translate(0,3)";
     const color = this.props.colors;
+
     return (
       <g onMouseOver={this.onMouseOver}
          onMouseOut={this.onMouseOut}
