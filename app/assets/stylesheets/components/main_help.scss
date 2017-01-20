@@ -29,3 +29,48 @@
   color: $dark-pink;
   font-size: 20px;
 }
+
+.about-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100%;
+  height: 600px;
+  padding: 50px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid black;
+
+  h3, ul, a {
+    width: 50%;
+    color: black;
+  }
+
+  h1 {
+    font-size: 35px;
+    margin-top: 75px;
+    margin-bottom: 40px;
+    color: $dark-pink;
+  }
+
+  h1:hover {
+    text-decoration: underline;
+  }
+
+  h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    list-style: square;
+    margin-left: 100px;
+  }
+
+  li {
+    font-size: 15px;
+    color: $teal;
+  }
+}
