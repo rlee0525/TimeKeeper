@@ -4,6 +4,8 @@ Task.destroy_all
 Tag.destroy_all
 Tagging.destroy_all
 
+# hello
+
 User.create(username: "WelcomeGuest", password: "password")
 User.create(username: "raymond", password: "password")
 
