@@ -789,32 +789,891 @@ tid476 = Task.create(title: "Production", seconds: rand(100000..50000000), user:
 pid68.seconds = tid470.seconds + tid471.seconds + tid472.seconds + tid473.seconds + tid474.seconds + tid475.seconds + tid476.seconds
 pid68.save
 
+gid1 = Tag.create(name: "People")
+gid2 = Tag.create(name: "History")
+gid3 = Tag.create(name: "Way")
+gid4 = Tag.create(name: "Art")
+gid5 = Tag.create(name: "World")
+gid6 = Tag.create(name: "Information")
+gid7 = Tag.create(name: "Map")
+gid8 = Tag.create(name: "Two")
+gid9 = Tag.create(name: "Government")
+gid10 = Tag.create(name: "Health")
+gid11 = Tag.create(name: "System")
+gid12 = Tag.create(name: "Computer")
+gid13 = Tag.create(name: "Meat")
+gid14 = Tag.create(name: "Year")
+gid15 = Tag.create(name: "Thanks")
+gid16 = Tag.create(name: "Music")
+gid17 = Tag.create(name: "Person")
+gid18 = Tag.create(name: "Data")
+gid19 = Tag.create(name: "Method")
+gid20 = Tag.create(name: "Theory")
+gid21 = Tag.create(name: "Communication")
+gid22 = Tag.create(name: "Growth")
+gid23 = Tag.create(name: "Marriage")
+gid24 = Tag.create(name: "Income")
+gid25 = Tag.create(name: "Fishing")
+gid26 = Tag.create(name: "News")
+gid27 = Tag.create(name: "Goal")
+gid28 = Tag.create(name: "Department")
+gid28 = Tag.create(name: "Article")
+gid29 = Tag.create(name: "Freedom")
+gid30 = Tag.create(name: "University")
+gid31 = Tag.create(name: "Camera")
+gid32 = Tag.create(name: "Army")
+gid33 = Tag.create(name: "Series")
+gid34 = Tag.create(name: "Policy")
+gid35 = Tag.create(name: "Analysis")
+gid37 = Tag.create(name: "Physics")
+gid38 = Tag.create(name: "Equipment")
+gid39 = Tag.create(name: "Organization")
+gid40 = Tag.create(name: "Exam")
+gid41 = Tag.create(name: "Country")
+gid42 = Tag.create(name: "Security")
+gid43 = Tag.create(name: "Week")
+gid44 = Tag.create(name: "Variety")
+gid45 = Tag.create(name: "Safety")
+gid46 = Tag.create(name: "Quality")
+gid47 = Tag.create(name: "Community")
+gid48 = Tag.create(name: "Media")
+gid49 = Tag.create(name: "Idea")
+gid50 = Tag.create(name: "Fact")
+gid51 = Tag.create(name: "Nature")
+gid52 = Tag.create(name: "Economics")
+gid53 = Tag.create(name: "Love")
+gid54 = Tag.create(name: "Control")
+gid55 = Tag.create(name: "Software")
+gid56 = Tag.create(name: "Literature")
+gid57 = Tag.create(name: "Bird")
+gid58 = Tag.create(name: "Sign")
+gid59 = Tag.create(name: "Search")
+gid60 = Tag.create(name: "Talk")
+gid61 = Tag.create(name: "Stop")
+gid62 = Tag.create(name: "Trip")
+gid63 = Tag.create(name: "Ski")
+gid64 = Tag.create(name: "Sail")
+gid65 = Tag.create(name: "Ride")
+gid66 = Tag.create(name: "Question")
+gid67 = Tag.create(name: "Observe")
+gid68 = Tag.create(name: "Move")
+gid69 = Tag.create(name: "Meet")
+gid70 = Tag.create(name: "Manage")
+gid71 = Tag.create(name: "Mail")
+gid72 = Tag.create(name: "Mark")
+gid73 = Tag.create(name: "Jump")
+gid74 = Tag.create(name: "Jest")
+gid75 = Tag.create(name: "Jam")
+gid76 = Tag.create(name: "Identify")
+gid77 = Tag.create(name: "Guard")
+gid78 = Tag.create(name: "Garden")
+gid79 = Tag.create(name: "Law")
+gid80 = Tag.create(name: "Food")
+gid81 = Tag.create(name: "Educate")
+gid82 = Tag.create(name: "Comment")
+gid83 = Tag.create(name: "Cook")
+gid84 = Tag.create(name: "Crawl")
+gid85 = Tag.create(name: "Dream")
+gid86 = Tag.create(name: "Enjoy")
+gid87 = Tag.create(name: "Eat")
+gid88 = Tag.create(name: "Debate")
+gid89 = Tag.create(name: "Dance")
+gid90 = Tag.create(name: "Read")
+gid91 = Tag.create(name: "Break")
+gid92 = Tag.create(name: "TV")
+gid93 = Tag.create(name: "Movie")
+gid94 = Tag.create(name: "Travel")
+gid95 = Tag.create(name: "Family")
+gid96 = Tag.create(name: "School")
+gid97 = Tag.create(name: "Work")
+gid98 = Tag.create(name: "Social")
+gid99 = Tag.create(name: "Rest")
+gid100 = Tag.create(name: "Jump")
+gid101 = Tag.create(name: "Exercise")
+gid102 = Tag.create(name: "Newspaper")
+gid103 = Tag.create(name: "Driver")
+gid104 = Tag.create(name: "Flight")
+gid105 = Tag.create(name: "Cell")
+gid106 = Tag.create(name: "Lake")
+gid107 = Tag.create(name: "Opportunity")
+gid108 = Tag.create(name: "Introduction")
+gid109 = Tag.create(name: "Flight")
+gid110 = Tag.create(name: "Length")
+gid111 = Tag.create(name: "Magazine")
+gid112 = Tag.create(name: "Relationship")
+gid113 = Tag.create(name: "Member")
+gid114 = Tag.create(name: "Phone")
+gid115 = Tag.create(name: "Message")
+gid116 = Tag.create(name: "Scene")
+gid117 = Tag.create(name: "Appearance")
+gid118 = Tag.create(name: "Customer")
+gid119 = Tag.create(name: "Discussion")
+gid120 = Tag.create(name: "Housing")
+gid121 = Tag.create(name: "Inflation")
+gid122 = Tag.create(name: "Insurance")
+gid123 = Tag.create(name: "Opinion")
+gid124 = Tag.create(name: "Responsibility")
+gid125 = Tag.create(name: "Situation")
+gid126 = Tag.create(name: "Skill")
+gid127 = Tag.create(name: "Statement")
+gid128 = Tag.create(name: "Wealth")
+gid129 = Tag.create(name: "Application")
+gid130 = Tag.create(name: "City")
+gid131 = Tag.create(name: "County")
+gid132 = Tag.create(name: "Estate")
+gid133 = Tag.create(name: "Foundation")
+gid134 = Tag.create(name: "Perspective")
+gid135 = Tag.create(name: "Photo")
+gid136 = Tag.create(name: "Recipe")
+gid137 = Tag.create(name: "Passion")
+gid138 = Tag.create(name: "Imagination")
+gid139 = Tag.create(name: "Ad")
+gid140 = Tag.create(name: "Agency")
+gid141 = Tag.create(name: "College")
+gid142 = Tag.create(name: "Connection")
+gid143 = Tag.create(name: "Debt")
+gid144 = Tag.create(name: "Memory")
+gid145 = Tag.create(name: "Solution")
+gid146 = Tag.create(name: "Attitude")
+gid147 = Tag.create(name: "Union")
+gid148 = Tag.create(name: "Agreement")
+gid149 = Tag.create(name: "Region")
+gid150 = Tag.create(name: "Tradition")
+gid151 = Tag.create(name: "Device")
+gid152 = Tag.create(name: "Difficulty")
+gid153 = Tag.create(name: "Election")
+gid154 = Tag.create(name: "Bread")
+gid155 = Tag.create(name: "Climate")
+gid156 = Tag.create(name: "Elevator")
+gid157 = Tag.create(name: "Construction")
+gid158 = Tag.create(name: "Employee")
+gid159 = Tag.create(name: "Leadership")
+gid160 = Tag.create(name: "Operation")
+gid161 = Tag.create(name: "Editor")
+gid162 = Tag.create(name: "Feedback")
+gid163 = Tag.create(name: "Resolution")
+gid164 = Tag.create(name: "Revenue")
+gid165 = Tag.create(name: "Session")
+gid166 = Tag.create(name: "Tennis")
+gid167 = Tag.create(name: "Bonus")
+gid168 = Tag.create(name: "Church")
+gid169 = Tag.create(name: "Clothes")
+gid170 = Tag.create(name: "Coffee")
+gid171 = Tag.create(name: "Dinner")
+gid172 = Tag.create(name: "Lunch")
+gid173 = Tag.create(name: "Breakfast")
+gid174 = Tag.create(name: "Lab")
+gid175 = Tag.create(name: "Orange")
+gid176 = Tag.create(name: "Pie")
+gid177 = Tag.create(name: "Warning")
+gid178 = Tag.create(name: "Worker")
+gid179 = Tag.create(name: "Writer")
+gid180 = Tag.create(name: "Chocolate")
+gid181 = Tag.create(name: "Cookie")
+gid182 = Tag.create(name: "Grocery")
+gid183 = Tag.create(name: "Honey")
+gid184 = Tag.create(name: "Menu")
+gid185 = Tag.create(name: "Beer")
+gid186 = Tag.create(name: "Apple")
+gid187 = Tag.create(name: "Negotiation")
+gid188 = Tag.create(name: "Pizza")
+gid189 = Tag.create(name: "Time")
+gid190 = Tag.create(name: "Study")
+gid191 = Tag.create(name: "Economy")
+gid192 = Tag.create(name: "Value")
+gid193 = Tag.create(name: "Company")
+gid194 = Tag.create(name: "Price")
+gid195 = Tag.create(name: "Risk")
+gid196 = Tag.create(name: "Research")
+gid197 = Tag.create(name: "Test")
+gid198 = Tag.create(name: "Stock")
+gid199 = Tag.create(name: "Design")
+gid200 = Tag.create(name: "Profit")
 
+tags = [
+  gid1,
+  gid2,
+  gid3,
+  gid4,
+  gid5,
+  gid6,
+  gid7,
+  gid8,
+  gid9,
+  gid10,
+  gid11,
+  gid12,
+  gid13,
+  gid14,
+  gid15,
+  gid16,
+  gid17,
+  gid18,
+  gid19,
+  gid20,
+  gid21,
+  gid22,
+  gid23,
+  gid24,
+  gid25,
+  gid26,
+  gid27,
+  gid28,
+  gid28,
+  gid29,
+  gid30,
+  gid31,
+  gid32,
+  gid33,
+  gid34,
+  gid35,
+  gid37,
+  gid38,
+  gid39,
+  gid40,
+  gid41,
+  gid42,
+  gid43,
+  gid44,
+  gid45,
+  gid46,
+  gid47,
+  gid48,
+  gid49,
+  gid50,
+  gid51,
+  gid52,
+  gid53,
+  gid54,
+  gid55,
+  gid56,
+  gid57,
+  gid58,
+  gid59,
+  gid60,
+  gid61,
+  gid62,
+  gid63,
+  gid64,
+  gid65,
+  gid66,
+  gid67,
+  gid68,
+  gid69,
+  gid70,
+  gid71,
+  gid72,
+  gid73,
+  gid74,
+  gid75,
+  gid76,
+  gid77,
+  gid78,
+  gid79,
+  gid80,
+  gid81,
+  gid82,
+  gid83,
+  gid84,
+  gid85,
+  gid86,
+  gid87,
+  gid88,
+  gid89,
+  gid90,
+  gid91,
+  gid92,
+  gid93,
+  gid94,
+  gid95,
+  gid96,
+  gid97,
+  gid98,
+  gid99,
+  gid100,
+  gid101,
+  gid102,
+  gid103,
+  gid104,
+  gid105,
+  gid106,
+  gid107,
+  gid108,
+  gid109,
+  gid110,
+  gid111,
+  gid112,
+  gid113,
+  gid114,
+  gid115,
+  gid116,
+  gid117,
+  gid118,
+  gid119,
+  gid120,
+  gid121,
+  gid122,
+  gid123,
+  gid124,
+  gid125,
+  gid126,
+  gid127,
+  gid128,
+  gid129,
+  gid130,
+  gid131,
+  gid132,
+  gid133,
+  gid134,
+  gid135,
+  gid136,
+  gid137,
+  gid138,
+  gid139,
+  gid140,
+  gid141,
+  gid142,
+  gid143,
+  gid144,
+  gid145,
+  gid146,
+  gid147,
+  gid148,
+  gid149,
+  gid150,
+  gid151,
+  gid152,
+  gid153,
+  gid154,
+  gid155,
+  gid156,
+  gid157,
+  gid158,
+  gid159,
+  gid160,
+  gid161,
+  gid162,
+  gid163,
+  gid164,
+  gid165,
+  gid166,
+  gid167,
+  gid168,
+  gid169,
+  gid170,
+  gid171,
+  gid172,
+  gid173,
+  gid174,
+  gid175,
+  gid176,
+  gid177,
+  gid178,
+  gid179,
+  gid180,
+  gid181,
+  gid182,
+  gid183,
+  gid184,
+  gid185,
+  gid186,
+  gid187,
+  gid188,
+  gid189,
+  gid190,
+  gid191,
+  gid192,
+  gid193,
+  gid194,
+  gid195,
+  gid196,
+  gid197,
+  gid198,
+  gid199,
+  gid200
+]
 
-# Task.create(title: "Redux Cycle", seconds: 22400, user_id: 1, project_id: 2)
-# Task.create(title: "Front-end Auth", seconds: 20341, user_id: 1, project_id: 2)
-# Task.create(title: "Break", seconds: 500, user_id: 1, project_id: 4)
-# Task.create(title: "Reading", seconds: 3040, user_id: 1, project_id: 5)
-# Task.create(title: "Recording", seconds: 2000, user_id: 1, project_id: 3)
-# Task.create(title: "CSS Styling", seconds: 1000, user_id: 1, project_id: 3)
-# Task.create(title: "CSS Styling", seconds: 23000, user_id: 1, project_id: 2)
-#
-# Tag.create!(name: "Exercise")
-# Tag.create!(name: "Rest")
-# Tag.create!(name: "Social")
-# Tag.create!(name: "Work")
-# Tag.create!(name: "School")
-# Tag.create!(name: "Family")
-# Tag.create!(name: "Travel")
-# Tag.create!(name: "Entertainment")
-#
-# Tagging.create!(task_id: 1, tag_id: 2)
-# Tagging.create!(task_id: 2, tag_id: 1)
-# Tagging.create!(task_id: 1, tag_id: 1)
-# Tagging.create!(task_id: 3, tag_id: 3)
-# Tagging.create!(task_id: 5, tag_id: 4)
-# Tagging.create!(task_id: 1, tag_id: 3)
-# Tagging.create!(task_id: 2, tag_id: 7)
-# Tagging.create!(task_id: 4, tag_id: 1)
-# Tagging.create!(task_id: 6, tag_id: 5)
-# Tagging.create!(task_id: 1, tag_id: 6)
+tasks = [
+  tid1,
+  tid2,
+  tid3,
+  tid4,
+  tid5,
+  tid6,
+  tid7,
+  tid8,
+  tid9,
+  tid10,
+  tid11,
+  tid12,
+  tid13,
+  tid14,
+  tid15,
+  tid16,
+  tid17,
+  tid18,
+  tid19,
+  tid20,
+  tid21,
+  tid22,
+  tid23,
+  tid24,
+  tid25,
+  tid26,
+  tid27,
+  tid28,
+  tid29,
+  tid30,
+  tid31,
+  tid32,
+  tid33,
+  tid34,
+  tid35,
+  tid36,
+  tid37,
+  tid38,
+  tid39,
+  tid40,
+  tid41,
+  tid42,
+  tid43,
+  tid44,
+  tid45,
+  tid46,
+  tid47,
+  tid48,
+  tid49,
+  tid50,
+  tid51,
+  tid52,
+  tid53,
+  tid54,
+  tid55,
+  tid56,
+  tid57,
+  tid58,
+  tid59,
+  tid60,
+  tid61,
+  tid62,
+  tid63,
+  tid64,
+  tid65,
+  tid66,
+  tid67,
+  tid68,
+  tid69,
+  tid70,
+  tid71,
+  tid72,
+  tid73,
+  tid74,
+  tid75,
+  tid76,
+  tid77,
+  tid78,
+  tid79,
+  tid80,
+  tid81,
+  tid82,
+  tid83,
+  tid84,
+  tid85,
+  tid86,
+  tid87,
+  tid88,
+  tid89,
+  tid90,
+  tid91,
+  tid92,
+  tid93,
+  tid94,
+  tid95,
+  tid96,
+  tid97,
+  tid98,
+  tid99,
+  tid100,
+  tid101,
+  tid102,
+  tid103,
+  tid104,
+  tid105,
+  tid106,
+  tid107,
+  tid108,
+  tid109,
+  tid110,
+  tid111,
+  tid112,
+  tid113,
+  tid114,
+  tid115,
+  tid116,
+  tid117,
+  tid118,
+  tid119,
+  tid120,
+  tid121,
+  tid122,
+  tid123,
+  tid124,
+  tid125,
+  tid126,
+  tid127,
+  tid128,
+  tid129,
+  tid130,
+  tid131,
+  tid132,
+  tid133,
+  tid134,
+  tid135,
+  tid136,
+  tid137,
+  tid138,
+  tid139,
+  tid140,
+  tid141,
+  tid142,
+  tid143,
+  tid144,
+  tid145,
+  tid146,
+  tid147,
+  tid148,
+  tid149,
+  tid150,
+  tid151,
+  tid152,
+  tid153,
+  tid154,
+  tid155,
+  tid156,
+  tid157,
+  tid158,
+  tid159,
+  tid160,
+  tid161,
+  tid162,
+  tid163,
+  tid164,
+  tid165,
+  tid166,
+  tid167,
+  tid168,
+  tid169,
+  tid170,
+  tid171,
+  tid172,
+  tid173,
+  tid174,
+  tid175,
+  tid176,
+  tid177,
+  tid178,
+  tid179,
+  tid180,
+  tid181,
+  tid182,
+  tid183,
+  tid184,
+  tid185,
+  tid186,
+  tid187,
+  tid188,
+  tid189,
+  tid190,
+  tid191,
+  tid192,
+  tid193,
+  tid194,
+  tid195,
+  tid196,
+  tid197,
+  tid198,
+  tid199,
+  tid200,
+  tid201,
+  tid202,
+  tid203,
+  tid204,
+  tid205,
+  tid206,
+  tid207,
+  tid208,
+  tid209,
+  tid210,
+  tid211,
+  tid212,
+  tid213,
+  tid214,
+  tid215,
+  tid216,
+  tid217,
+  tid218,
+  tid219,
+  tid220,
+  tid221,
+  tid222,
+  tid223,
+  tid224,
+  tid225,
+  tid226,
+  tid227,
+  tid228,
+  tid229,
+  tid230,
+  tid231,
+  tid232,
+  tid233,
+  tid234,
+  tid235,
+  tid236,
+  tid237,
+  tid238,
+  tid239,
+  tid240,
+  tid241,
+  tid242,
+  tid243,
+  tid244,
+  tid245,
+  tid246,
+  tid247,
+  tid248,
+  tid249,
+  tid250,
+  tid251,
+  tid252,
+  tid253,
+  tid254,
+  tid255,
+  tid256,
+  tid257,
+  tid258,
+  tid259,
+  tid260,
+  tid261,
+  tid262,
+  tid263,
+  tid264,
+  tid265,
+  tid266,
+  tid267,
+  tid268,
+  tid269,
+  tid270,
+  tid271,
+  tid272,
+  tid273,
+  tid274,
+  tid275,
+  tid276,
+  tid277,
+  tid278,
+  tid279,
+  tid280,
+  tid281,
+  tid282,
+  tid283,
+  tid284,
+  tid285,
+  tid286,
+  tid287,
+  tid288,
+  tid289,
+  tid290,
+  tid291,
+  tid292,
+  tid293,
+  tid294,
+  tid295,
+  tid296,
+  tid297,
+  tid298,
+  tid299,
+  tid300,
+  tid301,
+  tid302,
+  tid303,
+  tid304,
+  tid305,
+  tid306,
+  tid307,
+  tid308,
+  tid309,
+  tid310,
+  tid311,
+  tid312,
+  tid313,
+  tid314,
+  tid315,
+  tid316,
+  tid317,
+  tid318,
+  tid319,
+  tid320,
+  tid321,
+  tid322,
+  tid323,
+  tid324,
+  tid325,
+  tid326,
+  tid327,
+  tid328,
+  tid329,
+  tid330,
+  tid331,
+  tid332,
+  tid333,
+  tid334,
+  tid335,
+  tid336,
+  tid337,
+  tid338,
+  tid339,
+  tid340,
+  tid341,
+  tid342,
+  tid343,
+  tid344,
+  tid345,
+  tid346,
+  tid347,
+  tid348,
+  tid349,
+  tid350,
+  tid351,
+  tid352,
+  tid353,
+  tid354,
+  tid355,
+  tid356,
+  tid357,
+  tid358,
+  tid359,
+  tid360,
+  tid361,
+  tid362,
+  tid363,
+  tid364,
+  tid365,
+  tid366,
+  tid367,
+  tid368,
+  tid369,
+  tid370,
+  tid371,
+  tid372,
+  tid373,
+  tid374,
+  tid375,
+  tid376,
+  tid377,
+  tid378,
+  tid379,
+  tid380,
+  tid381,
+  tid382,
+  tid383,
+  tid384,
+  tid385,
+  tid386,
+  tid387,
+  tid388,
+  tid389,
+  tid390,
+  tid391,
+  tid392,
+  tid393,
+  tid394,
+  tid395,
+  tid396,
+  tid397,
+  tid398,
+  tid399,
+  tid400,
+  tid401,
+  tid402,
+  tid403,
+  tid404,
+  tid405,
+  tid406,
+  tid407,
+  tid408,
+  tid409,
+  tid410,
+  tid411,
+  tid412,
+  tid413,
+  tid414,
+  tid415,
+  tid416,
+  tid417,
+  tid418,
+  tid419,
+  tid420,
+  tid421,
+  tid422,
+  tid423,
+  tid424,
+  tid425,
+  tid426,
+  tid427,
+  tid428,
+  tid429,
+  tid430,
+  tid431,
+  tid432,
+  tid433,
+  tid434,
+  tid435,
+  tid436,
+  tid437,
+  tid438,
+  tid439,
+  tid440,
+  tid441,
+  tid442,
+  tid443,
+  tid444,
+  tid445,
+  tid446,
+  tid447,
+  tid448,
+  tid449,
+  tid450,
+  tid451,
+  tid452,
+  tid453,
+  tid454,
+  tid455,
+  tid456,
+  tid457,
+  tid458,
+  tid459,
+  tid460,
+  tid461,
+  tid462,
+  tid463,
+  tid464,
+  tid465,
+  tid466,
+  tid467,
+  tid468,
+  tid469,
+  tid470,
+  tid471,
+  tid472,
+  tid473,
+  tid474,
+  tid475,
+  tid476
+]
+
+3.times do
+  tasks.map do |task|
+    Tagging.create(task: task, tag_id: tags[rand(0..199)].id)
+  end
+end
