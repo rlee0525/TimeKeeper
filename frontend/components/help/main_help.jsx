@@ -52,10 +52,11 @@ class MainHelp extends React.Component {
                     <li>Add tasks - Gives you wiggle room for project tracking.</li>
                     <li>View the summary report - Increase productivity through visualization</li>
                   </ul>
+                  
+                  <a href='https://github.com/rlee0525/TimeKeeper' target="_blank">Github</a>
+                  <a href='https://www.linkedin.com/in/rlee0525' target="_blank">LinkedIn</a>
               </div>
             </div>
-            <a href='https://github.com/rlee0525/TimeKeeper' target="_blank">Github</a>
-            <a href='https://www.linkedin.com/in/rlee0525' target="_blank">LinkedIn</a>
           </div>
         </div>
       </div>
