@@ -5,15 +5,24 @@ import TaskListContainer from '../tasks/task_list_container';
 import D3Chart from '../charts/d3_chart';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
          Legend } from 'recharts';
+import FontAwesome from 'react-fontawesome';
+import { hashHistory } from 'react-router';
 
 class ProjectDetail extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
     const id = parseInt(this.props.params.id);
     this.props.requestProject(id);
+  }
+
+  handleDelete(id) {
+    this.props.destroyProject(this.props.project);
+    hashHistory.replace("/projects");
   }
 
   render() {
@@ -60,8 +69,16 @@ class ProjectDetail extends React.Component {
           <div className="project-page-headings">
             <div className="project-detail-headings">
               <div className="main-project-title">
-                Project {project ? this.props.project.id : ""}
+                {project ? this.props.project.title : ""}
               </div>
+
+              <button className="delete-a-project-button"
+                onClick={() => this.handleDelete(this.props.project.id)} >
+                <FontAwesome
+                  className='fa-trash-o'
+                  name='trashbutton'
+                  id='fa-trash-o' />
+              </button>
             </div>
           </div>
           <div className="project-page-body">

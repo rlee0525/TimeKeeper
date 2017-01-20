@@ -13,10 +13,24 @@
 }
 
 .main-project-title {
+  display: flex;
   margin-left: 30px;
   font-family: $sans-serif;
   color: $dark-pink;
   font-size: 20px;
+}
+
+.delete-a-project-button {
+  display: flex;
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  left: 94%;
+  top: 2.5%;
+  font-size: 25px;
+  opacity: 0.7;
+  z-index: 10;
+  color: $dark-gray;
 }
 
 .project-page-body {
@@ -53,6 +67,21 @@
   top: 57%;
   width: 100%;
 }
+
+// .task-list-container {
+//   position: absolute;
+//   display: flex;
+//   flex-direction: column;
+// }
+//
+// .project-detail-task-detail {
+//   list-style: none;
+//   display: inline-block;
+//   display: columns;
+//   position: absolute;
+//   top: 57%;
+//   width: 100%;
+// }
 
 .project-task-li {
   display: flex;

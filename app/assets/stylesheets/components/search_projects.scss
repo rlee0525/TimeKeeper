@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   position: absolute;
-  right: 10px;
+  right: 55px;
   line-height: 64px;
   opacity: 1;
 
@@ -12,25 +12,31 @@
   }
 
   ul {
-    background: linear-gradient(20deg, #B2DFDB, $teal);
-    border-radius: 4px;
+    // background: linear-gradient(20deg, #B2DFDB, $teal);
+    background: linear-gradient(20deg, #404040, #212121);
+    // background: $vanilla-cream;
+    border-radius: 7px;
     border: 1px solid #ddd;
     box-shadow: 1px 1px 1px black;
     position: absolute;
     list-style: none;
     margin-top: 12px;
-    min-width: 180px;
-    max-height: 21vh;
+    min-width: 200px;
+    max-height: 30vh;
     overflow: auto;
     top: 60px;
-    font-size: 14px;
-    font-family: $sans;
-    font-weight: bold;
 
     li {
+      border-radius: 3px;
       padding-left: 10px;
       margin: 0 !important;
       border-bottom: 1px solid #ddd;
+      font-size: 15px;
+      font-family: $sans;
+      font-weight: bolder;
+      color: white;
+      // color: $dark-pink;
+      opacity: 0.9;
     }
 
     li:last-child {
@@ -38,7 +44,9 @@
     }
 
     li:hover {
-      background: $teal;
+      background: $dark-pink;
+      // background: $dark-gray;
+      // opacity: 0.7;
       cursor: pointer;
     }
   }

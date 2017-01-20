@@ -23,7 +23,6 @@ class MainHelp extends React.Component {
             </div>
           </div>
           <div className="help-page-body">
-
           </div>
         </div>
       </div>
