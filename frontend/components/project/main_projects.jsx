@@ -87,7 +87,7 @@ class MainProjects extends React.Component {
             {projects.map(project => (
               <div key={project.id}
                    className="button-project-detail">
-                <li key={project.id} className="projects-li">
+                <li key={project.id} className="projects-li hvr-pulse">
                   <ProjectsProjectDetailContainer
                     project={ project } handleProject={this.handleProject} />
                 </li>

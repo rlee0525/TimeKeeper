@@ -7,7 +7,7 @@ import { merge, extend } from 'lodash';
 
 const TagsReducer = (state = {}, action) => {
   Object.freeze(state);
-  console.log(action);
+  
   switch(action.type) {
     case RECEIVE_TAGS:
       return merge({}, state, action.tags);
