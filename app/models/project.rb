@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  validates :author_id, :title, presence: true
+  validates :user, :title, presence: true
   validates :title, uniqueness: true
 
   belongs_to :user, foreign_key: :author_id
