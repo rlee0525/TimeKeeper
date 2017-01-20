@@ -15,6 +15,7 @@ const TasksReducer = (state = {}, action) => {
         [action.task.id]: action.task
       });
     case REMOVE_TASK:
+    console.log(action);
       const nextState = merge({}, state);
       delete nextState[action.task.id];
       return nextState;

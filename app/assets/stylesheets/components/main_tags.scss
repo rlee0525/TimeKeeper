@@ -38,7 +38,7 @@
   width: 40%;
   margin: 25px 10px 20px 10px;
   border: 1px solid $light-gray;
-  padding: 60px 90px;
+  padding: 75px 90px;
   border-radius: 10px;
   box-shadow: 3px 3px 3px #888888;
   background-color: $lightest-gray;
@@ -61,8 +61,9 @@
 
 .create-tag-input {
   display: inline-block;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   font-family: $sans;
+  z-index: 10;
   // border: 1px solid black;
   // padding: 15px 5px;
   // border-radius: 10px;
@@ -73,13 +74,14 @@
   position: absolute;
   top: 24%;
   left: 16%;
+  z-index: 2;
 }
 
 .create-tag-button-div {
   // align-self: flex-end;
   position: absolute;
   left: 29%;
-  top: 44%;
+  top: 49%;
   font-family: $sans;
 }
 
@@ -115,4 +117,20 @@
 
 .tag-item-name {
   padding-right: 10px;
+}
+
+.tags-error-message {
+  width: 300px;
+  position: absolute;
+  margin-top: -5px;
+  left: -20px;
+  font-family: $sans-serif;
+  color: #80CBC4;
+  font-size: 12px;
+  text-align: center;
+  z-index: 1;
+}
+
+.tag-error-message > ul > li {
+  height: 30px;
 }

@@ -36,7 +36,7 @@ class TagForm extends React.Component {
     return (
       <form className="create-tag-form" onSubmit={this.handleSubmit}>
 
-          <div className="tag-error-message">
+          <div className="tags-error-message">
             {this.props.errors ? this.renderErrors() : ""}
           </div>
 
@@ -53,7 +53,7 @@ class TagForm extends React.Component {
               Create Tag
             </button>
           </div>
-        
+
       </form>
     );
   }
