@@ -101,3 +101,24 @@
   z-index: 10;
   color: $light-gray;
 }
+
+
+.main-project-tag-names > ul {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 36%;
+  left: 20%;
+}
+
+.main-project-tag-name {
+  display: flex;
+  list-style: none;
+  font-family: $sans;
+  font-size: 12px;
+  color: white;
+  background-color: $teal;
+  border-radius: 10px;
+  margin-left: 10px;
+  padding: 3px 7px 3px 7px;
+}
