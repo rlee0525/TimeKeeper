@@ -12,7 +12,6 @@ class Sector extends React.Component {
 
     this.onMouseOver = this.onMouseOver.bind(this);
     this.onMouseOut = this.onMouseOut.bind(this);
-    this.onClick = this.onClick.bind(this);
   }
 
   onMouseOver() {
@@ -36,10 +35,6 @@ class Sector extends React.Component {
     });
   }
 
-  onClick() {
-    alert("You clicked "+this.props.name);
-  }
-
   render() {
     const outerRadius = this.props.width / 2.2;
     const innerRadius = this.props.width / 3.5;
@@ -53,7 +48,6 @@ class Sector extends React.Component {
     return (
       <g onMouseOver={this.onMouseOver}
          onMouseOut={this.onMouseOut}
-         onClick={this.onClick}
          className="pie-chart-g">
         <path className={this.state.opacity}
               fill={color[this.props.ikey]}
