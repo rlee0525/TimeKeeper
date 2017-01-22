@@ -6,7 +6,7 @@ class Loading extends React.Component {
     return(
       <div>
         <div className="loading">
-          <FontAwesome className="fa-spinner" size="3x"
+          <FontAwesome className="fa fa-spinner fa-spin" size="3x"
                        aria-hidden="true" name="loading"/>
           <br /><br />
           <h3>Loading...</h3>
