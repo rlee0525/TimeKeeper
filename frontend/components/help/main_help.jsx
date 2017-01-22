@@ -25,7 +25,7 @@ class MainHelp extends React.Component {
           </div>
           <div className="help-page-body">
             <div className='profile-pic'>
-              <img src="http://res.cloudinary.com/rlee0525/image/upload/v1484948855/Raymond_Lee_blorht.jpg" />
+              <img src="http://res.cloudinary.com/rlee0525/image/upload/v1485064493/RaymondLee_fwkvgw.jpg" />
             </div>
             <div className='profile-links'>
               <a href='https://github.com/rlee0525/TimeKeeper' target="_blank"><FontAwesome
