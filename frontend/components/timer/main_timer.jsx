@@ -2,16 +2,25 @@ import React from 'react';
 import NavigationContainer from '../navigation/navigation_container';
 import ProjectTimerContainer from './project_timer_container';
 import TasksList from '../tasks/tasks_list_container';
+import Loading from './loading';
 
 class MainTimer extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      loading: true
+    };
   }
 
   componentDidMount() {
     this.props.requestProjects();
     this.props.requestTasks();
-    this.props.requestTags();
+    this.props.requestTags().then(() => {
+      this.setState({
+        loading: false
+      });
+    });
   }
 
   render() {
@@ -26,10 +35,12 @@ class MainTimer extends React.Component {
             <ProjectTimerContainer />
           </div>
           <div className="timer-page-body">
-            <div className="tasks-list">
-              <TasksList projects={this.props.projects}
-                         tasks={this.props.tasks} />
-            </div>
+            {this.state.loading ? <Loading /> :
+              <div className="tasks-list">
+                <TasksList projects={this.props.projects}
+                           tasks={this.props.tasks} />
+              </div>
+            }
           </div>
         </div>
       </div>
