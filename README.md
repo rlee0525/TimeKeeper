@@ -42,6 +42,36 @@ track time of each tasks, and data visualization of these tasks.
   });
   ```
 
+  ```javascript
+  <form className="projects-search">
+    <div className="form-group">
+      <input type="text"
+             onChange={this.updateSearchTerm}
+             onClick={this.updateProjectTitle}
+             placeholder="Search Project"
+             value={this.state.searchTerm} />
+
+      <ul style={{ display: this.state.searchTerm.length && !this.state.projectTitle ? 'block' : 'none' }}>
+        <li style={{ display: (!this.props.searchResults && this.state.searchTerm) || this.props.searchResults.length === 0 ? 'list-item' : 'none' }}>
+          No search results
+        </li>
+
+        { this.props.searchResults ?
+           Object.keys(this.props.searchResults).map( (id) =>
+           <li key={id}
+             onClick={() => {
+               this.props.handleSearchProject(this.props.searchResults[id].id);
+               this.updateProjectTitle();
+               this.setState({searchTerm: this.props.searchResults[id].title});
+             }}>
+               {this.props.searchResults[id].title}
+           </li> ) : ""
+         }
+      </ul>
+    </div>
+  </form>
+  ```
+
 ### View projects listed in order by creation date
 
   Users can create and view projects.
@@ -54,9 +84,41 @@ track time of each tasks, and data visualization of these tasks.
 
   ![TimeKeeper project](./docs/images/timekeeper-project.png)
 
-  D3 was used to develop live piechart with legends, hover effects.
+  D3 was used to develop live piechart with legends and hover effects.
 
   ![TimeKeeper piechart](./docs/images/timekeeper-piechart.png)
+
+  ```javascript
+  class DataSeries extends React.Component {
+  render() {
+    const color = this.props.colors;
+    const data = this.props.data;
+    const width  = this.props.width;
+    const height = this.props.height;
+    const pie = d3.layout.pie().padAngle(.02);
+    const result = data.map(item => item.count);
+    const names = data.map(item => item.name);
+    const sum = result.reduce(((memo, num) => memo + num), 0);
+    const position = "translate(" + (width)/2 + "," + (height)/2 + ")";
+    const bars = (pie(result)).map((point, i) => {
+      return (
+        <Sector data={point}
+                key={i}
+                ikey={i}
+                name={names[i]}
+                colors={color}
+                total={sum}
+                width={width}
+                height={height}/>
+      );
+    });
+
+    return (
+      <g transform={position}>{bars}</g>
+    );
+  }
+}
+  ```
 
   Recharts was used to create barchart with animation.
 
@@ -81,7 +143,7 @@ The following is a list of some of the technologies used to create the TimeKeepe
 * **Sass** is used to better organize the CSS.
 * **jQuery** is used for ajax calls.
 * **webpack** is used to bundle and minify javascript files.
-* **Babel** is used to trnaslate jsx into javascript.
+* **Babel** is used to translate jsx into javascript.
 
 ### Back end
 TimeKeeper makes asynchronous http requests to the back end to create, fetch, update, and delete data.
@@ -91,7 +153,7 @@ The following is a list of some of the technologies used to create the TimeKeepe
 * **Ruby on Rails** is the framework used for the back end, creating models that interact with the database, controllers that contain methods to respond to http requests, a router that maps routes to those controller methods, and jbuilder views to respond to requests with JSON data.
 * **Heroku** hosts TimeKeeper.
 * **BCrypt** is used to securely hash and salt passwords before storing them in the database so that raw passwords are never stored.
-* **Cloudinary** is where images are stored.
+* **Cloudinary** is where the images are stored.
 
 ## Future Implementation
 
