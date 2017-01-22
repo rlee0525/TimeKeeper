@@ -43,7 +43,9 @@ class Navigation extends React.Component {
       <div className="navigation-bar">
         <div className="nav-menu">
           <div className="nav-logo">
-            <img src="http://res.cloudinary.com/rlee0525/image/upload/c_scale,w_400/v1484258095/Logomakr_6yUYIl_hmu0oi.png" />
+            <Link to="/timer">
+              <img src="http://res.cloudinary.com/rlee0525/image/upload/c_scale,w_400/v1484258095/Logomakr_6yUYIl_hmu0oi.png" />
+            </Link>
           </div>
 
           <div className="nav-tabs">
