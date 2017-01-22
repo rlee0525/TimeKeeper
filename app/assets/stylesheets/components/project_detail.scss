@@ -56,7 +56,7 @@
 .pie-chart {
   display: flex;
   position: absolute;
-  left: 55%;
+  right: calc(74% - 800px);
 }
 
 .task-list-container {
