@@ -8,7 +8,7 @@ track time of each tasks, and data visualization of these tasks.
 
 [TimeKeeper][live] is a personal project of Raymond Lee.
 
-[live]: http://www.raymondlee.io/
+[live]: http://www.timekeeper.raymondlee.io/
 [development]: ./docs/
 
 ![TimeKeeper home](./docs/images/timekeeper-home.png)
