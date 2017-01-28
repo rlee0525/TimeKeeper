@@ -126,7 +126,7 @@ track time of each tasks, and data visualization of these tasks.
 
 ## Product Design
 
-TimeKeeper was built in two weeks including the creating the [development plan][development].  The [development plan][development] includes the estimated timeline, planned database schema, along with the original wireframes and other planning documents.
+TimeKeeper was built in two weeks including creating the [development plan][development].  The [development plan][development] includes the estimated timeline, planned database schema, along with the original wireframes and other planning documents.
 
 ## Technology
 
