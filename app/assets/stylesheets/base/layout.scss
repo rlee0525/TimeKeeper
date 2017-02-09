@@ -4,14 +4,14 @@ html, body, main {
 }
 
 .home {
-  height: 100%;
+  height: calc(100%);
   background-image: url("http://res.cloudinary.com/rlee0525/image/upload/v1486604995/splash-bg-min-min_vqqz5a.jpg");
   background-size: cover;
   background-position: center;
 }
 
 .home-overlay {
-  height: 100%;
+  height: calc(100%);
   background-color: rgba(0, 0, 0, 0.8);
 }
 
