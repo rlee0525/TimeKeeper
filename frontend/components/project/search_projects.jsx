@@ -36,7 +36,7 @@ class SearchProjects extends React.Component {
           <input type="text"
                  onChange={this.updateSearchTerm}
                  onClick={this.updateProjectTitle}
-                 placeholder="Search Project"
+                 placeholder="Click to search project"
                  value={this.state.searchTerm} />
 
           <ul style={{ display: this.state.searchTerm.length && !this.state.projectTitle ? 'block' : 'none' }}>

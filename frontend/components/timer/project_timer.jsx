@@ -124,7 +124,7 @@ class ProjectTimer extends React.Component {
             <div className="create-task-title">
               <input className="create-task-input"
                   value={ this.state.title }
-                  placeholder="Task name"
+                  placeholder="Enter a task name..."
                   onChange={ this.update('title') }
                   required />
             </div>
