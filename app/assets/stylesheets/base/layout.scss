@@ -5,13 +5,23 @@ html, body, main {
 
 .home {
   height: 100%;
-  background-image: url("http://res.cloudinary.com/rlee0525/image/upload/v1484000163/splash.jpg");
+  background-image: url("http://res.cloudinary.com/rlee0525/image/upload/v1486604995/splash-bg-min-min_vqqz5a.jpg");
   background-size: cover;
   background-position: center;
 }
 
+.home-overlay {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 button:hover {
   opacity: 0.7;
+}
+
+#button-start:hover {
+  opacity: 1;
+  background-color: $dark-pink;
 }
 
 * {

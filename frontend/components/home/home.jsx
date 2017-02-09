@@ -39,15 +39,13 @@ class Home extends React.Component {
     return (
       <div className="splash">
         <div className="introduction">
-          THE ULTIMATE TIMER. <br />
-          &nbsp; &nbsp;
-          ORGANIZE YOUR WORK.
+          THE ULTIMATE TIMER
         </div>
 
         <div className="start-tracking-button-container">
-          <button className="start-tracking-button"
+          <button className="start-tracking-button" id="button-start"
             onClick={this.openModal}>
-            Start Tracking!
+            Start Tracking
           </button>
         </div>
         <Modal

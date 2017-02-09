@@ -1,14 +1,16 @@
 .splash {
-  height: 67%;
+  height: 100%;
+  position: relative;
 }
 
 .introduction {
-  margin: auto;
-  position: relative;
-  top: 40%;
-  width: 800px;
+  margin: 0 auto;
+  position: absolute;
+  top: calc(40% - 80px);
+  left: calc(50% - 314px);
+  // width: 800px;
   font-size: 60px;
-  font-weight: bold;
+  // font-weight: bold;
   color: white;
   font-family: $sans-serif;
 }
@@ -17,18 +19,20 @@
   margin: auto;
   position: absolute;
   width: 350px;
-  top: calc(100% - 80px);
-  left: calc(50% - 172px);
+  top: calc(53% - 80px);
+  left: calc(50% - 140px);
+  // top: calc(100% - 80px);
+  // left: calc(50% - 172px);
   margin: 0 auto;
 }
 
 .start-tracking-button {
-  background-color: $dark-pink;
-  border-radius: 10px;
-  opacity: 1;
-  font-size: 35px;
+  // background-color: $dark-pink;
+  border: 3px solid $dark-pink;
+  // border-radius: 10px;
+  font-size: 30px;
   color: white;
-  font-weight: bold;
+  // font-weight: bold;
   font-family: $sans-serif;
-  padding: 20px 50px 20px 50px;
+  padding: 20px 40px 20px 40px;
 }
