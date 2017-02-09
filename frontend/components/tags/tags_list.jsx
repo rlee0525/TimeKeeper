@@ -7,30 +7,9 @@ import Modal from 'react-modal';
 class TagsList extends React.Component {
   constructor(props) {
     super(props);
-    //
-    // this.state = {
-    //   modalOpen: false
-    // };
 
     this.handleDelete = this.handleDelete.bind(this);
-    // this.openModal = this.openModal.bind(this);
-    // this.closeModal = this.closeModal.bind(this);
-    // this.handleTagModal = this.handleTagModal.bind(this);
   }
-
-  // openModal() {
-  //   this.setState({ modalOpen: true });
-  // }
-  //
-  // closeModal() {
-  //   this.setState({ modalOpen: false });
-  // }
-  //
-  // handleTagModal() {
-  //   this.setState({
-  //     modalOpen: false
-  //   });
-  // }
 
   handleDelete(id) {
     this.props.destroyTag(id);
@@ -41,7 +20,6 @@ class TagsList extends React.Component {
       return Date.parse(b.created_at) - Date.parse(a.created_at);
     });
 
-    // debugger;
     return (
       <div className="tags-list">
         <ul className="tags-list-names">
@@ -66,14 +44,3 @@ class TagsList extends React.Component {
 }
 
 export default TagsList;
-
-// <Modal
-//   className="tag-modal"
-//   isOpen={this.state.modalOpen}
-//   onRequestClose={this.closeModal}
-//   contentLabel="tag-modal"
-//   onClick={this.closeModal}>
-//   {tag.tasks ? tag.tasks.map((task, i) => (
-//     <li key={i}>{task.name}</li>
-//   )) : ""}
-// </Modal>

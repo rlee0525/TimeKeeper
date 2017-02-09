@@ -30,7 +30,6 @@
 .projects-li {
   display: flex;
   flex-direction: column;
-  // background: white;
   width: 250px;
   height: 250px;
   margin: 40px 20px 0 20px;
@@ -41,11 +40,6 @@
   position: relative;
   background: linear-gradient(20deg, #404040, #212121);
   opacity: 0.9;
-  // background: linear-gradient(20deg, $lightest-gray, white);
-  // background: $dark-gray;
-  // background: $lightest-gray;
-  // background: linear-gradient(20deg, #616161, $dark-gray);
-  // background: #616161;
   border: 1px solid $light-gray;
 }
 
@@ -92,12 +86,6 @@
   justify-content: space-between;
   color: $medium-pink;
   padding: 0 20px 0 8px;
-}
-
-.project-tasks-title {
-}
-
-.project-tasks-time {
 }
 
 .main-projects-title {

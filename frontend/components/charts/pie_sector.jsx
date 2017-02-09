@@ -70,5 +70,3 @@ class Sector extends React.Component {
 }
 
 export default Sector;
-
-// {Math.floor(data.value / 1000)}

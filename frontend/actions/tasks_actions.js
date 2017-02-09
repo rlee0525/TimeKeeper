@@ -48,14 +48,3 @@ export const destroyTask = id => dispatch => (
     .then(task => dispatch(removeTask(task)))
     .fail(err => dispatch(taskError(err.responseJSON)))
 );
-
-
-// export const requestTaggedNotes = tag => ({
-//   type: REQUEST_TAGGED_NOTES,
-//   tag
-// });
-//
-// export const receiveTaggedNotes = notes => ({
-//   type: RECEIVE_TAGGED_NOTES,
-//   notes
-// });

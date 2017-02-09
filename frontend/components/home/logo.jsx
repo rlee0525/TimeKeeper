@@ -6,5 +6,3 @@ export default () => (
     <img src="http://res.cloudinary.com/rlee0525/image/upload/c_scale,w_300/v1486607816/Logomakr_0ezcq5_zn4i8n.png" />
   </Link>
 );
-
-// <img src="http://res.cloudinary.com/rlee0525/image/upload/c_scale,q_100,w_400/v1484713754/Logomakr_4wauI6_m6qddn.png" />;

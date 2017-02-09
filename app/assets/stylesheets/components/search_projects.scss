@@ -12,9 +12,7 @@
   }
 
   ul {
-    // background: linear-gradient(20deg, #B2DFDB, $teal);
     background: linear-gradient(20deg, #404040, #212121);
-    // background: $vanilla-cream;
     border-radius: 7px;
     border: 1px solid #ddd;
     box-shadow: 1px 1px 1px black;
@@ -35,7 +33,6 @@
       font-family: $sans;
       font-weight: bolder;
       color: white;
-      // color: $dark-pink;
       opacity: 0.9;
     }
 
@@ -45,8 +42,6 @@
 
     li:hover {
       background: $dark-pink;
-      // background: $dark-gray;
-      // opacity: 0.7;
       cursor: pointer;
     }
   }

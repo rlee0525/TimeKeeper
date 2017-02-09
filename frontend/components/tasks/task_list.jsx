@@ -1,5 +1,4 @@
 import React from 'react';
-// import { withRouter } from 'react-router';
 import { values } from 'lodash';
 import FontAwesome from 'react-fontawesome';
 

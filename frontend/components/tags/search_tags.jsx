@@ -64,6 +64,3 @@ class SearchTags extends React.Component {
 }
 
 export default SearchTags;
-
-// let icon = <FontAwesome className='fa-tags' size='1x' name='tagbutton'/>;
-// debugger;

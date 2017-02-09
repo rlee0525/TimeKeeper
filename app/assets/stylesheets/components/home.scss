@@ -8,9 +8,7 @@
   position: absolute;
   top: calc(40% - 80px);
   left: calc(50% - 314px);
-  // width: 800px;
   font-size: 60px;
-  // font-weight: bold;
   color: white;
   font-family: $sans-serif;
 }
@@ -21,18 +19,13 @@
   width: 350px;
   top: calc(53% - 80px);
   left: calc(50% - 140px);
-  // top: calc(100% - 80px);
-  // left: calc(50% - 172px);
   margin: 0 auto;
 }
 
 .start-tracking-button {
-  // background-color: $dark-pink;
   border: 3px solid $dark-pink;
-  // border-radius: 10px;
   font-size: 30px;
   color: white;
-  // font-weight: bold;
   font-family: $sans-serif;
   padding: 20px 40px 20px 40px;
 }

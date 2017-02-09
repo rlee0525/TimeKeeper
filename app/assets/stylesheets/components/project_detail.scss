@@ -35,7 +35,6 @@
 
 .project-page-body {
   display: flex;
-  // flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
   position: relative;
@@ -67,21 +66,6 @@
   top: 468px;
   width: 100%;
 }
-
-// .task-list-container {
-//   position: absolute;
-//   display: flex;
-//   flex-direction: column;
-// }
-//
-// .project-detail-task-detail {
-//   list-style: none;
-//   display: inline-block;
-//   display: columns;
-//   position: absolute;
-//   top: 57%;
-//   width: 100%;
-// }
 
 .project-task-li {
   display: flex;

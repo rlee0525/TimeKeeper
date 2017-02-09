@@ -70,6 +70,3 @@ class Navigation extends React.Component {
 }
 
 export default withRouter(Navigation);
-
-
-// <button onClick={this.handleCoworkersLink} className={this.props.location.pathname.includes("/coworkers") ? "active" : ""}><FontAwesome className='fa-users' name='coworkersicon' id='awesome-icon' />Coworkers</button>

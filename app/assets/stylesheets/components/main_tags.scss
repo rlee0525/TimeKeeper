@@ -14,9 +14,7 @@
 
 .tags-page-body {
   display: flex;
-  // flex-wrap: wrap;
   flex-direction: column;
-  // justify-content: center;
   overflow: auto;
   margin: 25px 6px 6px 6px;
   background: linear-gradient(30deg, $lightest-gray, $light-gray);
@@ -45,15 +43,6 @@
   opacity: 0.9;
   left: calc(40% - 131px);
 }
-//
-// .tag-form {
-//   display: flex;
-//   // position: absolute;
-//   flex-direction: column;
-//   border: 1px solid black;
-//   padding: 20px 0;
-//   width: 300px;
-// }
 
 .tag-form {
   align-self: center;
@@ -64,9 +53,6 @@
   padding-bottom: 20px;
   font-family: $sans;
   z-index: 10;
-  // border: 1px solid black;
-  // padding: 15px 5px;
-  // border-radius: 10px;
 }
 
 .create-tag-name {
@@ -78,7 +64,6 @@
 }
 
 .create-tag-button-div {
-  // align-self: flex-end;
   position: absolute;
   left: 29%;
   top: 49%;
@@ -87,7 +72,6 @@
 
 .create-tag-button {
   display: flex;
-  // position: absolute;
   align-items: center;
   left: 30%;
   border-radius: 10px;

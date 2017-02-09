@@ -110,5 +110,3 @@ class ProjectDetail extends React.Component {
 }
 
 export default ProjectDetail;
-
-// <D3BarChart data={barData} />

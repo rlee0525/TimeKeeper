@@ -37,9 +37,7 @@
     position: absolute;
     top: 15%;
     left: 20%;
-    // width: 267px;
     width: 18%;
-    // height: 400px;
     height: 50%;
     border: 2px solid $dark-gray;
     box-shadow: 5px 5px 5px #888888;
@@ -50,6 +48,7 @@
     position: absolute;
     top: 70%;
     left: calc(30% - 80px);
+
     a {
       padding-right: 50px;
     }
@@ -71,7 +70,6 @@
       display: flex;
       position: relative;
       width: 100%;
-      // height: 60px;
       margin-bottom: 60px;
       margin-top: 15px;
     }
