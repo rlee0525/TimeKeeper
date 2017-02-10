@@ -1,7 +1,6 @@
 import ProjectsProjectDetail from './projects_project_detail';
 import { connect } from 'react-redux';
-import { requestProjects,
-         requestProject,
+import { requestProject,
          destroyProject } from '../../actions/projects_actions';
 
 const mapStateToProps = (state, { project }) => ({
