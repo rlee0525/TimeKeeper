@@ -1,6 +1,6 @@
 import TaskList from './task_list';
 import { connect } from 'react-redux';
-import { destroyTask } from '../../actions/tasks_actions';
+import { destroyTask, updateTask } from '../../actions/tasks_actions';
 import { updateProject } from '../../actions/projects_actions';
 
 const mapStateToProps = (state) => ({
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
   updateProject: project => dispatch(updateProject(project)),
-  destroyTask: id => dispatch(destroyTask(id))
+  destroyTask: id => dispatch(destroyTask(id)),
+  updateTask: task => dispatch(updateTask(task))
 });
 
 export default connect(

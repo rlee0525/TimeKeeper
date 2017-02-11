@@ -3,7 +3,7 @@ import FontAwesome from 'react-fontawesome';
 import { withRouter } from 'react-router';
 import { values } from 'lodash';
 
-class TasksListItem extends React.Component {
+class TaskListItem extends React.Component {
   constructor(props) {
     super(props);
 
@@ -16,11 +16,22 @@ class TasksListItem extends React.Component {
     this.handleTask = this.handleTask.bind(this);
     this.tick = this.tick.bind(this);
     this.handleTimerTask = this.handleTimerTask.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(task) {
+    const project = this.props.project;
+    project.seconds -= task.seconds;
+    this.props.updateProject(project)
+      .then(this.props.destroyTask(task.id))
+      .then(this.props.requestProject(this.props.params.id));
   }
 
   tick(task) {
     if (this.state.timerStatus === true) {
-      this.setState({ elapsed: Date.now() - this.state.startTime + task.seconds });
+      this.setState({
+        elapsed: Date.now() - this.state.startTime + task.seconds
+      });
     }
   }
 
@@ -47,16 +58,17 @@ class TasksListItem extends React.Component {
         tag_names: task.tags
       };
 
-      const project = this.props.projects[newTask.project_id];
+      const project = this.props.project;
       project.seconds += (this.state.elapsed - task.seconds);
 
       this.props.updateProject(project)
       .then(this.props.updateTask(newTask))
       .then(this.setState({
-          elapsed: 0,
-          timerStatus: false,
-          startTime: null
-        }));
+        elapsed: 0,
+        timerStatus: false,
+        startTime: null
+      }))
+      .then(this.props.requestProject(this.props.params.id));
     }
   }
 
@@ -96,7 +108,6 @@ class TasksListItem extends React.Component {
 
   render() {
     let task = this.props.task;
-
     return(
       <div key={this.props.id}>
         <li className="tasks-li">
@@ -113,8 +124,8 @@ class TasksListItem extends React.Component {
           <button className="button-task-detail"
             onClick={() => this.handleTask(task)}>
             <div className="task-li-project">
-              {this.props.projects[task.project_id] ?
-                this.props.projects[task.project_id].title : ""}
+              {this.props.project ?
+                this.props.project.title : ""}
             </div>
           </button>
           <div className="task-li-time">
@@ -131,10 +142,17 @@ class TasksListItem extends React.Component {
                   name='playbutton'/>
             </button>
           </div>
+          <button className="delete-task-button"
+            onClick={() => this.handleDelete(task)} >
+            <FontAwesome
+              className='fa-trash-o'
+              name='trashbutton'
+              id='fa-trash-o' />
+          </button>
         </li>
       </div>
     );
   }
 }
 
-export default withRouter(TasksListItem);
+export default withRouter(TaskListItem);

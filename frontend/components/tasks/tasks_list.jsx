@@ -16,7 +16,6 @@ class TasksList extends React.Component {
     this.props.router.push(`/projects/${projectId}`);
   }
 
-
   padding(num) {
     let paddedNum = num < 10 ? `0${num}` : `${num}`;
     return paddedNum;

@@ -98,7 +98,7 @@
 .project-task-li-time {
   position: absolute;
   top: 45%;
-  left: 90%;
+  left: 85%;
   transform: translate(-30%, -30%);
   padding-right: 30px;
 }
@@ -108,7 +108,7 @@
   position: absolute;
   width: 40px;
   height: 30px;
-  left: 97%;
+  left: 98%;
   bottom: 31%;
   font-size: 20px;
   z-index: 10;
@@ -134,4 +134,29 @@
   border-radius: 10px;
   margin-left: 10px;
   padding: 3px 7px 3px 7px;
+}
+
+.project-task-li-time-button {
+  position: absolute;
+  top: 41%;
+  left: 95%;
+  transform: translate(-30%, -30%);
+  padding-right: 30px;
+}
+
+.project-task-timer-button {
+  font-size: 20px;
+  color: $dark-pink;
+}
+
+.project-task-timer-button > .fa-play-circle {
+  color: $teal;
+}
+
+.project-task-timer-button > .fa-play-circle:hover {
+  opacity: 0.7;
+}
+
+.project-task-timer-button > .fa-stop-circle:hover {
+  opacity: 0.7;
 }

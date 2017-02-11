@@ -1,6 +1,7 @@
 import React from 'react';
 import { values } from 'lodash';
 import FontAwesome from 'react-fontawesome';
+import TaskListItemContainer from './task_list_item_container';
 
 class TaskList extends React.Component {
   constructor(props) {
@@ -9,20 +10,6 @@ class TaskList extends React.Component {
     this.state = {
       seconds: 0
     };
-
-    this.handleUpdate = this.handleUpdate.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
-  }
-
-  handleUpdate(task) {
-    const seconds = this.props.project.seconds - task.seconds;
-    this.setState({
-      seconds
-    });
-  }
-
-  handleDelete(id) {
-    this.props.destroyTask(id);
   }
 
   padding(num) {
@@ -62,33 +49,8 @@ class TaskList extends React.Component {
     return(
       <div className='project-detail-task-detail'>
         {tasks.map((task, id) => (
-          <li className="project-task-li" key={id}>
-            <div className="project-task-li-title">
-              {task.title}
-            </div>
-            <div className="main-project-tag-names">
-              <ul>
-                { values(task.tags).map((tag, i) => (
-                  <li className="main-project-tag-name"
-                      key={i}>
-                      {tag.name}
-                  </li>
-                )) }
-              </ul>
-            </div>
-            <div className="project-task-li-time">
-              {this.displayTime(task.seconds)}
-            </div>
-            <button className="delete-task-button"
-              onClick={() => {
-                this.handleUpdate(task);
-                this.handleDelete(task.id); }} >
-              <FontAwesome
-                className='fa-trash-o'
-                name='trashbutton'
-                id='fa-trash-o' />
-            </button>
-          </li>
+          <TaskListItemContainer task={task}
+            project={this.props.project} key={id}/>
         ))}
       </div>
     );
