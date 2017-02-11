@@ -49,7 +49,7 @@ class ProjectDetail extends React.Component {
       tasks.map((task, i) => (
         barData.push({
           title: task.title,
-          seconds: Math.floor(task.seconds / 1000)
+          minutes: Math.floor(task.seconds / 60000)
         })
       ));
     } else {
@@ -91,7 +91,7 @@ class ProjectDetail extends React.Component {
                   <CartesianGrid strokeDasharray="3 3"/>
                   <Tooltip/>
                   <Legend />
-                  <Bar dataKey="seconds" fill="#82ca9d" />
+                  <Bar dataKey="minutes" fill="#82ca9d" />
                 </BarChart>
               </div>
               <div className="pie-chart">
