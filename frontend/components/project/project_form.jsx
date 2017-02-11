@@ -23,7 +23,7 @@ class ProjectForm extends React.Component {
     if (!titles.includes(project.title)) {
       this.props.createProject({ project })
       .then(this.props.handleProjectModal())
-      .then(this.props.clearError());
+      .then(this.props.clearErrors());
     } else {
       this.props.createProject({ project });
     }

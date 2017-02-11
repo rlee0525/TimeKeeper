@@ -18,10 +18,10 @@ const TasksReducer = (state = {}, action) => {
       const nextState = merge({}, state);
       delete nextState[action.task.id];
       return nextState;
-    case TASK_ERROR:
-      return merge({}, state, {
-        errors: action.errors
-      });
+    // case TASK_ERROR:
+    //   return merge({}, state, {
+    //     errors: action.errors
+    //   });
     default:
       return state;
   }

@@ -19,14 +19,14 @@ const TagsReducer = (state = {}, action) => {
       const nextState = merge({}, state);
       delete nextState[action.tag.id];
       return nextState;
-    case TAG_ERROR:
-      return merge({}, state, {
-        errors: action.errors
-      });
-    case CLEAR_ERROR:
-      return extend({}, state, {
-        errors: []
-      });
+    // case TAG_ERROR:
+    //   return merge({}, state, {
+    //     errors: action.errors
+    //   });
+    // case CLEAR_ERROR:
+    //   return extend({}, state, {
+    //     errors: []
+    //   });
     default:
       return state;
   }

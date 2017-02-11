@@ -22,7 +22,10 @@ class MainProjects extends React.Component {
   }
 
   componentDidMount() {
+    window.request = this.props.requestProjects();
+    window.props = this.props;
     this.props.requestProjects();
+    this.props.clearErrors();
   }
 
   handleProject(id) {
@@ -59,7 +62,7 @@ class MainProjects extends React.Component {
             <div className="projects-headings">
               <div className="main-projects-title">Projects</div>
 
-              <div>
+              <div className="new-project-div">
                 <button className="new-project-button"
                   onClick={this.openModal}>
                   <FontAwesome
@@ -67,20 +70,20 @@ class MainProjects extends React.Component {
                     name='plusbutton'
                     id='fa-plus' /> Project
                 </button>
+                <div>
+                  <Modal
+                    className="project-modal"
+                    isOpen={this.state.modalOpen}
+                    onRequestClose={this.closeModal}
+                    contentLabel="project-modal"
+                    onClick={this.closeModal}>
+                    <ProjectFormContainer
+                      projects={projects}
+                      handleProjectModal={this.handleProjectModal} />
+                  </Modal>
+                </div>
               </div>
 
-              <div>
-                <Modal
-                  className="project-modal"
-                  isOpen={this.state.modalOpen}
-                  onRequestClose={this.closeModal}
-                  contentLabel="project-modal"
-                  onClick={this.closeModal}>
-                  <ProjectFormContainer
-                    projects={projects}
-                    handleProjectModal={this.handleProjectModal} />
-                </Modal>
-              </div>
             </div>
           </div>
           <div className="projects-page-body">

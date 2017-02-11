@@ -1,16 +1,17 @@
 import TagForm from './tag_form';
 import { connect } from 'react-redux';
-import { createTag,
-         clearError } from '../../actions/tag_actions';
+import { createTag } from '../../actions/tag_actions';
+import { receiveErrors, clearErrors } from '../../actions/errors_actions';
 
-const mapStateToProps = ({ session, tags }) => ({
+const mapStateToProps = ({ session, tags, errors }) => ({
   currentUser: session.currentUser,
-  errors: tags.errors
+  errors
 });
 
 const mapDispatchToProps = (dispatch => ({
   createTag: (data) => dispatch(createTag(data)),
-  clearError: () => dispatch(clearError())
+  clearErrors: () => dispatch(clearErrors()),
+  receiveErrors: () => dispatch(receiveErrors())
 }));
 
 export default connect(

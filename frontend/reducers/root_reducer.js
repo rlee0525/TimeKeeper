@@ -6,6 +6,7 @@ import SearchReducer from './search_reducer';
 import ProjectReducer from './project_reducer';
 import TagsReducer from './tags_reducer';
 import TaggingsReducer from './taggings_reducer';
+import ErrorsReducer from './errors_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -14,7 +15,8 @@ const RootReducer = combineReducers({
   tasks: TasksReducer,
   tags: TagsReducer,
   taggings: TaggingsReducer,
-  searchResults: SearchReducer
+  searchResults: SearchReducer,
+  errors: ErrorsReducer
 });
 
 export default RootReducer;

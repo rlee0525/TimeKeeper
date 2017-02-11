@@ -1,5 +1,7 @@
 import * as ProjectsAPIUtil from '../util/projects_api_util';
 
+import { receiveErrors, clearErrors } from './errors_actions';
+
 export const RECEIVE_PROJECTS = "RECEIVE_PROJECTS";
 export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
 export const REMOVE_PROJECT = "REMOVE_PROJECT";
@@ -22,15 +24,6 @@ export const removeProject = project => ({
   project
 });
 
-export const projectError = errors => ({
-  type: PROJECT_ERROR,
-  errors
-});
-
-export const clearError = () => ({
-  type: CLEAR_ERROR
-});
-
 export const receiveFoundProjects = projects => ({
   type: RECEIVE_FOUND_PROJECTS,
   projects
@@ -39,35 +32,35 @@ export const receiveFoundProjects = projects => ({
 export const requestProjects = () => dispatch => (
   ProjectsAPIUtil.fetchProjects()
     .then(projects => dispatch(receiveProjects(projects)))
-    .fail(err => dispatch(projectError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const requestProject = id => dispatch => (
   ProjectsAPIUtil.fetchProject(id)
     .then(project => dispatch(receiveProject(project)))
-    .fail(err => dispatch(projectError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const createProject = data => dispatch => (
   ProjectsAPIUtil.createProject(data)
     .then(project => dispatch(receiveProject(project)))
-    .fail(err => dispatch(projectError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const updateProject = data => dispatch => (
   ProjectsAPIUtil.updateProject(data)
     .then(project => dispatch(receiveProject(project)))
-    .fail(err => dispatch(projectError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const destroyProject = data => dispatch => (
   ProjectsAPIUtil.destroyProject(data)
     .then(project => dispatch(removeProject(project)))
-    .fail(err => dispatch(projectError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const searchProjects = data => dispatch => (
   ProjectsAPIUtil.searchProjects(data)
     .then(projects => dispatch(receiveFoundProjects(projects)))
-    .fail(err => dispatch(projectError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );

@@ -1,5 +1,7 @@
 import * as TagsAPIUtil from '../util/tag_api_util';
 
+import { receiveErrors, clearErrors } from './errors_actions';
+
 export const RECEIVE_TAGS = "RECEIVE_TAGS";
 export const RECEIVE_TAG = "RECEIVE_TAG";
 export const REMOVE_TAG = "REMOVE_TAG";
@@ -28,41 +30,41 @@ export const receiveFoundTags = tags => ({
   tags
 });
 
-export const tagError = errors => ({
-  type: TAG_ERROR,
-  errors
-});
-
-export const clearError = () => ({
-  type: CLEAR_ERROR
-});
+// export const tagError = errors => ({
+//   type: TAG_ERROR,
+//   errors
+// });
+//
+// export const clearError = () => ({
+//   type: CLEAR_ERROR
+// });
 
 export const requestTags = () => dispatch => (
   TagsAPIUtil.fetchTags()
     .then(tags => dispatch(receiveTags(tags)))
-    .fail(err => dispatch(tagError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const requestTag = id => dispatch => (
   TagsAPIUtil.fetchTag(id)
     .then(tag => dispatch(receiveTag(tag)))
-    .fail(err => dispatch(tagError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const createTag = data => dispatch => (
   TagsAPIUtil.createTag(data)
     .then(tag => dispatch(receiveTag(tag)))
-    .fail(err => dispatch(tagError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const destroyTag = id => dispatch => (
   TagsAPIUtil.destroyTag(id)
     .then(tag => dispatch(removeTag(tag)))
-    .fail(err => dispatch(tagError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );
 
 export const searchTags = data => dispatch => (
   TagsAPIUtil.searchTags(data)
     .then(tags => dispatch(receiveFoundTags(tags)))
-    .fail(err => dispatch(tagError(err.responseJSON)))
+    .fail(err => dispatch(receiveErrors(err.responseJSON)))
 );

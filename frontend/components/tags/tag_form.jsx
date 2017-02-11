@@ -19,7 +19,7 @@ class TagForm extends React.Component {
     const tag = this.state;
     this.props.createTag(tag)
       .then(this.setState({ name: "" }));
-    this.props.clearError();
+    this.props.clearErrors();
   }
 
   renderErrors() {

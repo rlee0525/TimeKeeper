@@ -19,14 +19,14 @@ const ProjectsReducer = (state = {}, action) => {
       const nextState = merge({}, state);
       delete nextState[action.project.id];
       return nextState;
-    case PROJECT_ERROR:
-      return merge({}, state, {
-        errors: action.errors
-      });
-    case CLEAR_ERROR:
-      return extend({}, state, {
-        errors: []
-      });
+    // case PROJECT_ERROR:
+    //   return merge({}, state, {
+    //     errors: action.errors
+    //   });
+    // case CLEAR_ERROR:
+    //   return extend({}, state, {
+    //     errors: []
+    //   });
     default:
       return state;
   }
