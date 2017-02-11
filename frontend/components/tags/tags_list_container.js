@@ -7,7 +7,8 @@ import { requestTags,
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  tags: state.tags
+  tags: state.tags,
+  tag: state.tag
 });
 
 const mapDispatchToProps = dispatch => ({
