@@ -44,7 +44,7 @@ class TagForm extends React.Component {
             <input className="create-tag-input"
               ref="name"
               value={ this.state.name }
-              placeholder="Tag name"
+              placeholder="Enter a tag name..."
               onChange={ this.update('name') }
               required />
           </div>

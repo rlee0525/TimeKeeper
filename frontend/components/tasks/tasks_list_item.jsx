@@ -47,6 +47,11 @@ class TasksListItem extends React.Component {
         tag_names: task.tags
       };
 
+      const project = this.props.projects[newTask.project_id];
+      project.seconds += (this.state.elapsed - task.seconds);
+
+      this.props.updateProject(project);
+
       this.props.updateTask(newTask)
         .then(this.setState({
           elapsed: 0,
