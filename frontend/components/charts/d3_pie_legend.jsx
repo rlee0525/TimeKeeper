@@ -17,7 +17,7 @@ class D3Legend extends React.Component {
 
     return(
       <svg className="legend"
-           width={this.props.width}
+           width={180}
            height={this.props.height}>
            {elements}
       </svg>

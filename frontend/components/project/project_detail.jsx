@@ -84,7 +84,7 @@ class ProjectDetail extends React.Component {
           <div className="project-page-body">
             <div className="charts-list">
               <div className="bar-chart">
-                <BarChart width={600} height={350} data={barData}
+                <BarChart width={500} height={350} data={barData}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}>
                   <XAxis dataKey="title"/>
                   <YAxis/>
