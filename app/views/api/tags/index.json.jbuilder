@@ -1,5 +1,5 @@
 @tags.each do |tag|
   json.set! tag.id do
-    json.extract! tag, :id, :name, :created_at
+    json.extract! tag, :id, :name, :created_at, :user_id
   end
 end

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :projects, foreign_key: :author_id
   has_many :tasks
   has_many :subscriptions
+  has_many :tags
 
   attr_reader :password
 

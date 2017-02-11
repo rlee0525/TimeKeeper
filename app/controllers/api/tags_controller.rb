@@ -1,6 +1,6 @@
 class Api::TagsController < ApplicationController
   def index
-    @tags = Tag.all
+    @tags = current_user.tags
   end
 
   def create
@@ -39,6 +39,6 @@ class Api::TagsController < ApplicationController
   def tag_params
     params
       .require(:tag)
-      .permit(:name)
+      .permit(:name, :user_id)
   end
 end

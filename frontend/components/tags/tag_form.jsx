@@ -4,7 +4,8 @@ class TagForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ""
+      name: "",
+      user_id: ""
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,7 +17,10 @@ class TagForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const tag = this.state;
+    const tag = {
+      name: this.state.name,
+      user_id: this.props.currentUser.id
+    };
     this.props.createTag(tag)
       .then(this.setState({ name: "" }));
     this.props.clearErrors();

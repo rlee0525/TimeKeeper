@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { requestTags } from '../../actions/tag_actions';
 
 const mapStateToProps = (state) => ({
-  tags: state.tags
+  tags: state.tags,
+  currentUser: state.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

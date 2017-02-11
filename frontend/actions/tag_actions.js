@@ -30,15 +30,6 @@ export const receiveFoundTags = tags => ({
   tags
 });
 
-// export const tagError = errors => ({
-//   type: TAG_ERROR,
-//   errors
-// });
-//
-// export const clearError = () => ({
-//   type: CLEAR_ERROR
-// });
-
 export const requestTags = () => dispatch => (
   TagsAPIUtil.fetchTags()
     .then(tags => dispatch(receiveTags(tags)))

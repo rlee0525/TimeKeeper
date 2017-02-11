@@ -10,7 +10,7 @@ const TagsReducer = (state = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_TAGS:
-      return merge({}, state, action.tags);
+      return action.tags;
     case RECEIVE_TAG:
       return merge({}, state, {
         [action.tag.id]: action.tag
@@ -19,14 +19,6 @@ const TagsReducer = (state = {}, action) => {
       const nextState = merge({}, state);
       delete nextState[action.tag.id];
       return nextState;
-    // case TAG_ERROR:
-    //   return merge({}, state, {
-    //     errors: action.errors
-    //   });
-    // case CLEAR_ERROR:
-    //   return extend({}, state, {
-    //     errors: []
-    //   });
     default:
       return state;
   }
