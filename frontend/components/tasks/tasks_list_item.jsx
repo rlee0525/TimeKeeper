@@ -96,7 +96,7 @@ class TasksListItem extends React.Component {
     return(
       <div key={this.props.id}>
         <li className="tasks-li">
-          <div className="task-li-title">
+          <div className="task-li-title" onClick={() => this.handleTask(task)}>
             {task.title}
           </div>
           <div className="main-timer-tag-names">

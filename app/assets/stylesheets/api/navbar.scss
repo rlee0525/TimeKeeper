@@ -7,7 +7,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  text-align: center;
+  // text-align: center;
   align-items: center;
   border-right: 1px solid black;
   background: linear-gradient(20deg, #404040, #212121);
@@ -46,7 +46,9 @@
 }
 
 .logout-button > button {
-  height: 40px
+  height: 40px;
+  font-weight: bolder;
+  font-family: $sans;
 }
 
 .nav-tabs > .active {
@@ -62,13 +64,10 @@
 .current-user-logout {
   width: 180px;
   margin-bottom: 20px;
-}
 
-.profile-picture {
-  width: 50px;
-  height: 37px;
-  margin-left: 67px;
-  color: white;
+  #awesome-icon {
+    font-size: 16px;
+  }
 }
 
 #awesome-icon {

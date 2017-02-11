@@ -57,11 +57,8 @@ class Navigation extends React.Component {
         </div>
 
         <div className="current-user-logout">
-          <div className="profile-picture">
-            <FontAwesome className='fa-user' size='2x' name='usericon' />
-          </div>
           <div className="logout-button">
-            <button onClick={this.handleLogout}>Logout</button>
+            <button onClick={this.handleLogout}><FontAwesome className='fa-user' size='2x' name='usericon' id='awesome-icon' />Log Out</button>
           </div>
         </div>
       </div>
