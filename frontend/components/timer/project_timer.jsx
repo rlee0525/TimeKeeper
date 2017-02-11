@@ -152,12 +152,12 @@ class ProjectTimer extends React.Component {
               disabled={this.state.projectId &&
                 this.state.title.length !== 0 ?
                 false : true }>
-                <FontAwesome
-                  className={this.state.timerStatus ?
-                    'fa-stop-circle' : 'fa-play-circle'}
-                    size='2x'
-                    name='playbutton'/>
-                </button>
+              <FontAwesome
+                className={this.state.timerStatus ?
+                  'fa-stop-circle' : 'fa-play-circle'}
+                  size='2x'
+                  name='playbutton'/>
+            </button>
           </div>
         </div>
       </div>

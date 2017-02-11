@@ -20,6 +20,14 @@ export const createTask = task => (
   })
 );
 
+export const updateTask = task => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/tasks/${task.id}`,
+    data: { task }
+  })
+);
+
 export const destroyTask = id => (
   $.ajax({
     method: 'DELETE',

@@ -146,8 +146,16 @@
 
 .task-li-time {
   position: absolute;
-  top: 45%;
-  left: 93%;
+  top: 42%;
+  left: 88%;
+  transform: translate(-30%, -30%);
+  padding-right: 30px;
+}
+
+.task-li-time-button {
+  position: absolute;
+  top: 41%;
+  left: 94%;
   transform: translate(-30%, -30%);
   padding-right: 30px;
 }
@@ -205,4 +213,13 @@
   border-radius: 10px;
   margin-left: 10px;
   padding: 3px 7px 3px 7px;
+}
+
+.task-timer-button {
+  font-size: 20px;
+  color: $dark-pink;
+}
+
+.task-timer-button > .fa-play-circle {
+  color: $teal;
 }

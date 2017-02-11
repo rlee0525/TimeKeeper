@@ -1,6 +1,8 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 import { withRouter } from 'react-router';
 import { values } from 'lodash';
+import TasksListItemContainer from './tasks_list_item_container';
 
 class TasksList extends React.Component {
   constructor(props) {
@@ -52,28 +54,7 @@ class TasksList extends React.Component {
     return(
       <div>
         {tasks.map((task, id) => (
-          <button key={id} className="button-task-detail"
-                  onClick={() => this.handleTask(task)}>
-            <li className="tasks-li">
-              <div className="task-li-title">
-                {task.title}
-              </div>
-              <div className="main-timer-tag-names">
-                <ul>
-                  {values(task.tags).map((tag, i) => (
-                    <li className="main-timer-tag-name" key={i}>{tag.name}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="task-li-project">
-                {this.props.projects[task.project_id] ?
-                  this.props.projects[task.project_id].title : ""}
-              </div>
-              <div className="task-li-time">
-                {this.displayTime(task.seconds)}
-              </div>
-            </li>
-          </button>
+          <TasksListItemContainer task={task} key={id}/>
         ))}
       </div>
     );

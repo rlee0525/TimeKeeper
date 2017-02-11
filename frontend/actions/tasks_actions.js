@@ -43,6 +43,12 @@ export const createTask = data => dispatch => (
     .fail(err => dispatch(taskError(err.responseJSON)))
 );
 
+export const updateTask = data => dispatch => (
+  TasksAPIUtil.updateTask(data)
+    .then(task => dispatch(receiveTask(task)))
+    .fail(err => dispatch(taskError(err.responseJSON)))
+);
+
 export const destroyTask = id => dispatch => (
   TasksAPIUtil.destroyTask(id)
     .then(task => dispatch(removeTask(task)))
