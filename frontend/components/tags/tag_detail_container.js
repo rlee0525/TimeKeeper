@@ -1,10 +1,9 @@
 import TagDetail from './tag_detail';
 import { connect } from 'react-redux';
-import { requestTag, destroyTag } from '../../actions/tag_actions';
-import { destroyTask } from '../../actions/tasks_actions';
+import { requestProjects } from '../../actions/projects_actions';
 
 const mapDispatchToProps = dispatch => ({
-  destroyTask: id => dispatch(destroyTask(id))
+  requestProjects: () => dispatch(requestProjects())
 });
 
 export default connect(

@@ -11,6 +11,7 @@ class MainTags extends React.Component {
 
   componentDidMount() {
     this.props.requestTags();
+    this.props.requestProjects();
   }
 
   render() {
@@ -33,7 +34,8 @@ class MainTags extends React.Component {
               <TagFormContainer />
             </div>
             <div className="tags-list">
-              <TagsListContainer tags={this.props.tags} />
+              <TagsListContainer tags={this.props.tags}
+                                 projects={this.props.projects} />
             </div>
           </div>
         </div>

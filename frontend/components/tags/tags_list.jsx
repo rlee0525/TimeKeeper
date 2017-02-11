@@ -49,7 +49,8 @@ class TagsList extends React.Component {
         <ul className="tags-list-names">
           {tags.map((tag, id) => (
             <li key={id} className="tag-list-item">
-              <div className="tag-item-name" onClick={() => this.openModal(tag)}>
+              <div className="tag-item-name"
+                   onClick={() => this.openModal(tag)}>
                 {tag.name}
               </div>
               <button className="delete-tag-button"
@@ -71,6 +72,7 @@ class TagsList extends React.Component {
             onClick={this.closeModal}>
             <TagDetailContainer
               tag={this.state.tag}
+              projects={this.props.projects}
               handleTagModal={this.handleTagModal} />
           </Modal>
         </div>

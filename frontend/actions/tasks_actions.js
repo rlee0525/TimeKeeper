@@ -20,11 +20,6 @@ export const removeTask = task => ({
   type: REMOVE_TASK,
   task
 });
-//
-// export const taskError = errors => ({
-//   type: TASK_ERROR,
-//   errors
-// });
 
 export const requestTasks = () => dispatch => (
   TasksAPIUtil.fetchTasks()

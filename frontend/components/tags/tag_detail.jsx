@@ -1,11 +1,16 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-import { hashHistory } from 'react-router';
+import { hashHistory, withRouter } from 'react-router';
 import { values } from 'lodash';
 
-class ProjectDetail extends React.Component {
+class TagDetail extends React.Component {
   constructor(props) {
     super(props);
+  }
+
+  handleTask(task) {
+    const projectId = task.project_id;
+    this.props.router.push(`/projects/${projectId}`);
   }
 
   render() {
@@ -14,10 +19,18 @@ class ProjectDetail extends React.Component {
     });
 
     return(
-      <div className="main-page">
+      <div>
         <ul>
           {tasks.map((task, id) => (
-            <li key={id}>{task.title}</li>
+            <li key={id} className="tag-modal-tasks"
+                onClick={() => this.handleTask(task)}>
+              <div className="tag-modal-tasks-title">
+                {task.title}
+              </div>
+              <div className="tag-modal-tasks-project">
+                {this.props.projects[task.project_id].title}
+              </div>
+            </li>
           ))}
         </ul>
       </div>
@@ -25,4 +38,4 @@ class ProjectDetail extends React.Component {
   }
 }
 
-export default ProjectDetail;
+export default withRouter(TagDetail);

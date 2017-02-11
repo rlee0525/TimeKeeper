@@ -13,10 +13,6 @@ const ProjectReducer = (state = {}, action) => {
       const newState = merge({}, state);
       newState.tasks = newState.tasks.filter(task => task.id !== action.task.id);
       return newState;
-    // case PROJECT_ERROR:
-    //   return merge({}, state, {
-    //     errors: action.errors
-    //   });
     default:
       return state;
   }
