@@ -22,8 +22,6 @@ class MainProjects extends React.Component {
   }
 
   componentDidMount() {
-    window.request = this.props.requestProjects();
-    window.props = this.props;
     this.props.requestProjects();
     this.props.clearErrors();
   }
