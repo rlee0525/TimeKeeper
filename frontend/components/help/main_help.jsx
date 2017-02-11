@@ -25,7 +25,7 @@ class MainHelp extends React.Component {
           </div>
           <div className="help-page-body">
             <div className='profile-pic'>
-              <img src="http://res.cloudinary.com/rlee0525/image/upload/v1485064493/RaymondLee_fwkvgw.jpg" />
+              <img src="http://res.cloudinary.com/rlee0525/image/upload/v1485147084/about_oczmbp.png" />
             </div>
             <div className='profile-links'>
               <a href='https://github.com/rlee0525/TimeKeeper' target="_blank"><FontAwesome
@@ -33,6 +33,11 @@ class MainHelp extends React.Component {
                 name='githubbutton'
                 size='3x'
                 id='fa-github' /></a>
+              <a href='http://www.raymondlee.io' target="_blank"><FontAwesome
+                className='fa-user'
+                name='portfoliobutton'
+                size='3x'
+                id='fa-user' /></a>
               <a href='https://www.linkedin.com/in/rlee0525' target="_blank"><FontAwesome
                 className='fa-linkedin-square'
                 name='linkedin-squarebutton'
