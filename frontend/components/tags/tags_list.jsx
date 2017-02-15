@@ -41,7 +41,8 @@ class TagsList extends React.Component {
 
   render() {
     let tags = values(this.props.tags).sort((a, b) => {
-      return Date.parse(b.created_at) - Date.parse(a.created_at);
+      return a.name.toLowerCase().charCodeAt()
+              - b.name.toLowerCase().charCodeAt();
     });
 
     return (
