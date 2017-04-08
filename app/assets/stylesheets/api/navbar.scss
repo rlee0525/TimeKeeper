@@ -43,6 +43,7 @@
 
 .logout-button {
   padding: 8px;
+  width: 160px !important;
 }
 
 .logout-button > button {
@@ -63,7 +64,6 @@
 }
 
 .current-user-logout {
-  width: 180px;
   margin-bottom: 20px;
 
   #awesome-icon {
