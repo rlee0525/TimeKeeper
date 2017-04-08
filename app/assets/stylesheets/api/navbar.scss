@@ -33,7 +33,8 @@
 }
 
 .nav-tabs > button, .logout-button {
-  margin-bottom: 15px;
+  width: 100%;
+  margin-bottom: 18px;
   padding: 15px 0 15px 0;
   font-family: $sans;
   font-size: 15px;
@@ -52,6 +53,7 @@
 
 .nav-tabs > .active {
   border-bottom: 3px solid $dark-pink;
+  padding-bottom: 12px;
 }
 
 .nav-tabs > button:hover, .logout-button:hover, .logout-button > button:hover {
