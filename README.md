@@ -132,7 +132,7 @@ TimeKeeper was built in two weeks including creating the [development plan][deve
 
 TimeKeeper utilizes Ruby on Rails for the back end API and React.js for the front end.
 
-### Front end
+### Frontend
 TimeKeeper is a single page app.
 
 The following is a list of some of the technologies used to create the TimeKeeper front end.
@@ -145,7 +145,7 @@ The following is a list of some of the technologies used to create the TimeKeepe
 * **webpack** is used to bundle and minify javascript files.
 * **Babel** is used to translate jsx into javascript.
 
-### Back end
+### Backend
 TimeKeeper makes asynchronous http requests to the back end to create, fetch, update, and delete data.
 
 The following is a list of some of the technologies used to create the TimeKeeper back end.
